@@ -27,12 +27,14 @@ export const navigationButton = css`
 `
 
 export const pokemonCards = css`
+    padding-bottom: 5vh;
     .am-card-header {
         font-size: 5vw;
         font-weight: bolder;
         margin:auto;
         width: 100%;
         color: white;
+        border-radius: 10px;
         background-color: #343434;
     }
     .am-card-header-content{
@@ -44,16 +46,22 @@ export const pokemonCards = css`
     h3{
         font-weight: bolder;
         font-size: 3vw;
+        margin-top: 0;
     }
     .cardContainer{
         width: 69vw;
         margin-left: auto;
         margin-right: auto
     }
-    padding-bottom: 5vh;
     .pokemonImageContainer{
         background-image: url('${BackgroundImage}');
-        border-radius: 20px;
+        border-radius: 15px;
+    }
+    .pokemonDetailContainer{
+        text-align: left;
+    }
+    .pokemonDetailTypeContainer{
+        text-align: center;
     }
     .pokemonImage{
         width: 40vh;
@@ -65,5 +73,8 @@ export const pokemonCards = css`
         background-color: ${GOLDEN_YELLOW};
         border-color: ${GOLDEN_YELLOW};
         width: 80%;
+    }
+    .am-card-body {
+        padding-top: 7px;
     }
 `

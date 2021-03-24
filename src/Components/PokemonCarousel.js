@@ -27,7 +27,7 @@ export const PokemonCarousel = (data) => {
                             <WhiteSpace size='xl'/>
                             <img
                                 src={val.image}
-                                alt=""
+                                alt="Pokemon Image"
                                 style={{ width: '250px', verticalAlign: 'top'}}
                                 onLoad={() => {
                                     window.dispatchEvent(new Event('resize'));
