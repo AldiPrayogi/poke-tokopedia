@@ -1,4 +1,5 @@
 import {css} from "@emotion/react";
+import {GOLDEN_YELLOW} from "../Constants/Color";
 
 export const topBarCSS = css`
     color: black;
@@ -14,10 +15,10 @@ export const containerGithub = css`
     a {
         background-color: black;
         border-radius: 2vh;
-        border-color: #f2e9ab;
+        border-color: ${GOLDEN_YELLOW};
         border-style: solid;
         border-width: 1px;
-        color: #f2e9ab;
+        color: ${GOLDEN_YELLOW};
         padding: 2.5vh;
         font-weight: bold;
         font-size: 1.8vh;
@@ -38,14 +39,25 @@ export const containerPokeball = css`
         font-size: 7vh;
         padding-top: 5vh;
         margin: auto;
-        color: #f2e9ab;
+        color: ${GOLDEN_YELLOW};
         font-family: Verdana, sans-serif;
     }
 `
 
+export const loading = css`
+        margin: 20px 0;
+        margin-bottom: 20px;
+        padding: 30px 50px;
+        text-align: center;
+        background: rgba(0, 0, 0, 0.05);
+        border-radius: 4px;
+        background-color: white;
+        width: 100%;
+`
+
 export const pokemonCarousel = css`
-    h4{
-        padding-bottom: 4px;
-        border-bottom: 100px;
-    }
+    // h4{
+    //     padding-bottom: 4px;
+    //     border-bottom: 100px;
+    // }
 `

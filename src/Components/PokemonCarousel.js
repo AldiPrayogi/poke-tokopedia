@@ -1,9 +1,9 @@
 import React from "react";
 import {Carousel, WhiteSpace, WingBlank} from "antd-mobile";
-import {pokemonCarousel} from "./ComponentCSS";
+import {pokemonCarousel} from "../Styling/ComponentCSS";
 import {useHistory} from 'react-router-dom';
 
-export const PokemonCarousel = (pokemonData) => {
+export const PokemonCarousel = (data) => {
     const history = useHistory();
 
     const handleListClick =  (id) => {
@@ -19,19 +19,21 @@ export const PokemonCarousel = (pokemonData) => {
                     cellSpacing={10}
                     slideWidth={0.8}
                 >
-                    {pokemonData.data.map(val => (
+                    {data.data.map(val => (
                         <div css={pokemonCarousel}>
+                            <div className='pokemonNameContainer'>
+                                <h4 className='PokemonName' style={{color: '#f2e9ab'}}>{(val.name).toUpperCase()}</h4>
+                            </div>
+                            <WhiteSpace size='xl'/>
                             <img
                                 src={val.image}
                                 alt=""
-                                style={{ width: '200px', verticalAlign: 'top', height:'200px', overflow:'hidden' }}
+                                style={{ width: '250px', verticalAlign: 'top'}}
                                 onLoad={() => {
                                     window.dispatchEvent(new Event('resize'));
                                 }}
                                 onClick={() => handleListClick(val.id)}
                             />
-                            <WhiteSpace size='xl'/>
-                            <h4 className='PokemonName' style={{color: '#f2e9ab'}}>{(val.name).toUpperCase()}</h4>
                         </div>
                     ))}
                 </Carousel>

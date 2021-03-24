@@ -1,0 +1,1 @@
+export const GOLDEN_YELLOW = '#f2e9ab'
