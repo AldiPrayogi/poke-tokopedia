@@ -18,12 +18,12 @@
     "react-scripts": "4.0.3",
     "web-vitals": "^1.1.1"
   },
-  "homepage": "https://aldiprayogi.github.io/poke-tokopedia/",
+  "homepage": ".",
   "scripts": {
     "start": "react-app-rewired start",
     "predeploy": "npm run build",
     "deploy": "gh-pages -b master -d build",
-    "build": "react-scripts build",
+    "build": "react-app-rewired build",
     "test": "react-app-rewired test --env=jsdom",
     "eject": "react-scripts eject"
   },
