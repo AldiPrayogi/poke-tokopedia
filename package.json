@@ -20,7 +20,7 @@
   "homepage": "https://aldiprayogi.github.io/poke-tokopedia/",
   "scripts": {
     "start": "react-app-rewired start",
-    "predeploy": "react-app-rewired build",
+    "predeploy": "react-scripts build",
     "deploy": "gh-pages -d build",
     "test": "react-app-rewired test --env=jsdom",
     "eject": "react-scripts eject"
