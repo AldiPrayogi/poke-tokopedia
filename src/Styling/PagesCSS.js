@@ -1,4 +1,4 @@
-import {css, jsx} from "@emotion/react";
+import {css} from "@emotion/react";
 import BackgroundImage from '../2gfwG.jpg';
 import {GOLDEN_YELLOW} from "../Constants/Color";
 

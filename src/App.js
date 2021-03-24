@@ -28,16 +28,8 @@ const GET_POKEMONS = gql`
 `;
 
 function App() {
-    // const {loading, data, error} = useQuery(GET_POKEMONS)
-    //
-    // if (loading) return <Loading />
-    // if (error) return <Error />
-    // return (
-    //     <div>{data.pokemons[0]}</div>
-    // );
     return(
       <Switch>
-          {/*<TopBar />?*/}
           <Route exact path='/' component={HomePage} />
 
           <Route path='/pokemon-list' component={PokemonListPage}/>
