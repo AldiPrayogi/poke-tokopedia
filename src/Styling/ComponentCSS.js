@@ -70,7 +70,7 @@ export const containerPokeball = css`
 `
 
 export const loading = css`
-        margin: 20px 0;
+        margin: auto;
         margin-bottom: 20px;
         padding: 30px 50px;
         text-align: center;

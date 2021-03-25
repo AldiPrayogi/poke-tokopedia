@@ -5,7 +5,7 @@ import {Card, WingBlank, WhiteSpace, Button} from "antd-mobile";
 import {TopBar} from "../Components/TopBar";
 import {homepage, pokemonCards} from '../Styling/PagesCSS'
 import {gql} from "@apollo/client";
-import {css, jsx} from "@emotion/react";
+import {css} from "@emotion/react";
 import {checkType} from '../Utils/Utils';
 
 const GET_POKEMONS_DETAIL = gql`
@@ -61,7 +61,7 @@ export const PokemonDetailPage = (id) => {
             <div css={homepage} id='Details'>
                 <WhiteSpace size="lg" />
                 <WhiteSpace size="lg" />
-                <WingBlank size="lg" css={pokemonCards}>
+                <WingBlank size='sm' css={pokemonCards}>
                     <WhiteSpace size="lg" />
                     <Card>
                         <div className='cardContainer'>

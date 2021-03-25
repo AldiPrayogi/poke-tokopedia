@@ -1,9 +1,8 @@
 /** @jsxImportSource @emotion/react */
 
 import {containerGithub,containerPokeball,topBarCSS, navigationButton, navigationButtonContainer} from '../Styling/ComponentCSS';
-import PokeBall from '../PinClipart.com_pokeball-clip-art_843046.png';
+import PokeBall from '../Assets/PinClipart.com_pokeball-clip-art_843046.png';
 import { useHistory } from 'react-router-dom'
-import {Button, WhiteSpace} from "antd-mobile";
 import React from "react";
 
 export const TopBar = () => {

@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 
-import React, {useState} from 'react';
-import {Button, WhiteSpace, WingBlank, Carousel, Card} from "antd-mobile";
+import React from 'react';
+import {WhiteSpace, Card} from "antd-mobile";
 import { useHistory } from 'react-router-dom';
 import {TopBar} from "../Components/TopBar";
 import { homepage, titleContainer, pokemonCardsCarousel} from '../Styling/PagesCSS'
@@ -43,9 +43,6 @@ const dataTemp = [
 ];
 
 export const HomePage = () => {
-
-    const history = useHistory();
-
     const { loading, error, data } = useQuery(GET_POKEMONS, {
         variables: gqlVariables,
     });

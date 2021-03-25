@@ -1,5 +1,5 @@
 import {css} from "@emotion/react";
-import BackgroundImage from '../2gfwG.jpg';
+import BackgroundImage from '../Assets/2gfwG.jpg';
 import {BACKGROUND_COLOR, FIGHTING, GOLDEN_YELLOW, GREY_BLACK} from "../Constants/Color";
 
 export const titleContainer = css`
@@ -37,14 +37,14 @@ export const pokemonCards = css`
     .am-card-header-content{
         color: #f2cc65;
         border-style: none;
-        font-size: 4vw;
+        font-size: 20px;
         margin: 0px;
         text-align: center;
         border-radius: 20px;
     }
     h3{
         font-weight: 900;
-        font-size: 3vw;
+        font-size: 3vh;
         margin-top: 0;
         max-width: 720px;
     }
@@ -61,7 +61,7 @@ export const pokemonCards = css`
         border-style: none;
     }
     .cardContainer{
-        width: 69vw;
+        width: 72vw;
         margin: auto;
         max-width: 720px;
     }
@@ -89,7 +89,7 @@ export const pokemonCards = css`
         margin: auto;
         background-color: #f2cc65;
         border-color: ${GOLDEN_YELLOW};
-        width: 80%;
+        width: 90%;
         height: auto;
         max-width: 850px;
     }
@@ -100,7 +100,7 @@ export const pokemonCards = css`
         font-weight: 700;
     }
     .am-card-body {
-        padding-top: 7px;
+        padding: 0px;
         border-style: none;
         max-width: 850px;
     }
@@ -110,6 +110,63 @@ export const pokemonCards = css`
 `
 export const pokemonCardsCarousel = css`
     .am-card-body{
+        min-height: 50vh;
         background-color: ${BACKGROUND_COLOR};
+    }
+`
+
+export const paginationContainer = css`
+    min-height: 70vh;
+    background-color: ${BACKGROUND_COLOR};
+    .am-card-body {
+        background-color: ${BACKGROUND_COLOR};
+        width: 100%;
+        border-style: none;
+        max-width: 850px;
+        margin: auto;
+    }
+    .am-grid-item{
+        border-style: none;
+        background-color: ${BACKGROUND_COLOR};
+        width: 20%;
+    }
+    .gridContainer{
+        margin: auto;
+        text-align: center;
+        min-height: 20%;
+    }
+    h5{
+        align-text: center;
+        font-size: 75%;
+        font-weight: bold;
+        color: ${GOLDEN_YELLOW};
+        background-color: ${GREY_BLACK};
+    }
+    img {
+        width: 100%;
+        min-height: 20%;
+    }
+    .am-card {
+        padding: 0px;
+    }
+    .am-button {
+        background-color: ${GREY_BLACK};
+        color: ${GOLDEN_YELLOW};
+    }
+`
+
+export const pokemonListPage = css`
+    background-color: ${BACKGROUND_COLOR};
+    text-align: center;
+    margin: 0px;
+    Span{
+        font-weight: bold;
+    }
+    .pokemonListTitle {
+        background-color: ${GREY_BLACK};   
+        h2{
+            font-weight: bold;
+            color: ${GOLDEN_YELLOW};
+        }
     }
 `
