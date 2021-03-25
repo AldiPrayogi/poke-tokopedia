@@ -1,6 +1,6 @@
 import {css} from "@emotion/react";
 import BackgroundImage from '../Assets/2gfwG.jpg';
-import {BACKGROUND_COLOR, FIGHTING, GOLDEN_YELLOW, GREY_BLACK} from "../Constants/Color";
+import {BACKGROUND_COLOR, GOLDEN_YELLOW, GREY_BLACK} from "../Constants/Color";
 
 export const titleContainer = css`
     background-color: ${GREY_BLACK};
@@ -142,10 +142,8 @@ export const pokemonCards = css`
         display: inline-block;
         padding: 0px 1% 0px 1%;
         font-size: 1.7vh;
-        overflow: auto;
         border-radius: 10px;
         text-overflow: clip !important;
-        border-style: none;
         word-break: break-word !important; 
     }
 `

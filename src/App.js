@@ -1,5 +1,4 @@
 import React from 'react';
-import { gql, useQuery } from '@apollo/client' ;
 import {HomePage} from "./Pages/HomePage";
 import {Route, Switch} from 'react-router-dom';
 import {PokemonListPage} from "./Pages/PokemonListPage";
@@ -19,6 +18,6 @@ function App() {
       </Switch>
 
     );
-};
+}
 
 export default App;

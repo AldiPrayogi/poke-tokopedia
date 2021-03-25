@@ -1,8 +1,6 @@
 import React from "react";
 import {Carousel, WhiteSpace, WingBlank} from "antd-mobile";
-import {pokemonCarousel} from "../Styling/ComponentCSS";
 import {useHistory} from 'react-router-dom';
-import {GOLDEN_YELLOW} from "../Constants/Color";
 
 export const PokemonCarousel = (data) => {
     const history = useHistory();
@@ -33,7 +31,7 @@ export const PokemonCarousel = (data) => {
                             <WhiteSpace size='xl'/>
                             <img
                                 src={val.image}
-                                alt="Pokemon Image"
+                                alt="Pokemon"
                                 style={{ height: '35vh', verticalAlign: 'top'}}
                                 onLoad={() => {
                                     window.dispatchEvent(new Event('resize'));
@@ -45,6 +43,5 @@ export const PokemonCarousel = (data) => {
                 </Carousel>
             </WingBlank>
         </div>
-
     )
 }

@@ -2,7 +2,6 @@
 
 import React from 'react';
 import {WhiteSpace, Card} from "antd-mobile";
-import { useHistory } from 'react-router-dom';
 import {TopBar} from "../Components/TopBar";
 import { homepage, titleContainer, pokemonCardsCarousel} from '../Styling/PagesCSS'
 import {PokemonCarousel} from "../Components/PokemonCarousel";
@@ -28,17 +27,18 @@ const gqlVariables = {
 };
 const dataTemp = [
     {
-        name: 'Bulbasour',
+        name: 'pokemon',
         image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png'
     },
     {
-        name: 'Ivysaur',
+        name: 'pokemon',
         image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/2.png'
     },
     {
-        name: 'Venusaur',
-        image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/3.png'
-    }
+        name: 'pokemon',
+        image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/3.png',
+        pokemons: 'abc'
+    },
 ];
 
 export const HomePage = () => {

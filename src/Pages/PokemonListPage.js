@@ -24,15 +24,15 @@ const GET_POKEMONS = gql`
 
 const dataTemp = [
     {
-        name: 'Bulbasour',
+        name: 'pokemon',
         image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png'
     },
     {
-        name: 'Ivysaur',
+        name: 'pokemon',
         image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/2.png'
     },
     {
-        name: 'Venusaur',
+        name: 'pokemon',
         image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/3.png'
     }
 
@@ -103,7 +103,7 @@ export const PokemonListPage =  () => {
                                                 <h5>{dataItem.name.toUpperCase()}</h5>
                                                 <img
                                                     src={dataItem.image}
-                                                    alt="Pokemon Image"
+                                                    alt="Pokemon"
                                                     style={{ height: '40%', verticalAlign: 'top'}}
                                                     onClick={() => handlePokemonClick(dataItem.name)}
                                                 />

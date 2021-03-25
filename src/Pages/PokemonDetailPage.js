@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 
 import React from 'react';
-import {Card, WingBlank, WhiteSpace, Button, Accordion, List} from "antd-mobile";
+import {Card, WingBlank, WhiteSpace, Button, Accordion} from "antd-mobile";
 import {TopBar} from "../Components/TopBar";
 import {homepage, pokemonCards} from '../Styling/PagesCSS'
 import {gql, useQuery} from "@apollo/client";
@@ -9,7 +9,6 @@ import {css} from "@emotion/react";
 import {checkType} from '../Utils/Utils';
 import {useLocation} from 'react-router-dom';
 import {Loading} from "../Components/Loading";
-import {GREY_BLACK} from "../Constants/Color";
 
 const GET_POKEMONS_DETAIL = gql`
   query pokemon($name: String!) {
@@ -64,9 +63,9 @@ export const PokemonDetailPage = () => {
     if (error) return `Error! ${error.message}`;
 
     let pokemonData = {
-        name: 'Bulbasaur',
+        name: 'Pokemon',
         sprites: {
-            front_default: 'abc.png'
+            front_default: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/3.png'
         },
         nickName: 'Bulb',
         types: [
@@ -83,10 +82,14 @@ export const PokemonDetailPage = () => {
                     name: 'abc'
                 }
             }
-        ]
+        ],
+        pokemon: {
+            name: 'pokemon'
+        }
     };
 
     if(!loading) pokemonData = data.pokemon;
+
     console.log(location.state.pokemonName);
     return (
         <div>
@@ -112,7 +115,7 @@ export const PokemonDetailPage = () => {
                                     <div>
                                         <h3 className='pokemonName'>{(pokemonData.name).toUpperCase()}</h3>
                                         <div className='pokemonImageContainer'>
-                                            <img src={pokemonData.sprites.front_default} className='pokemonImage'/>
+                                            <img src={pokemonData.sprites.front_default} alt='Pokemon' className='pokemonImage'/>
                                         </div>
                                         <div className='pokemonDetailContainer'>
                                             <WhiteSpace size='md'/>
@@ -127,13 +130,6 @@ export const PokemonDetailPage = () => {
                                             </div>
                                             <WhiteSpace size='md'/>
                                             <WhiteSpace size='md'/>
-                                            {/*<div className='pokemonDetailMovesContainer'>*/}
-                                            {/*    {*/}
-                                            {/*        pokemonData.moves.map(index => (*/}
-                                            {/*            <Button className='buttonMoves'>{index.move.name.toUpperCase()}</Button>*/}
-                                            {/*        ))*/}
-                                            {/*    }*/}
-                                            {/*</div>*/}
                                             <Accordion defaultActiveKey="0" >
                                                 <Accordion.Panel header='MOVES' className='movesAccordion'>
                                                         {
