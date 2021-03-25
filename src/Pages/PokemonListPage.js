@@ -98,8 +98,9 @@ export const PokemonListPage =  () => {
                                         data={pokemonData}
                                         hasLine={false}
                                         square={false}
+                                        columnNum={3}
                                         renderItem={dataItem => (
-                                            <div>
+                                            <div className='contentContainer'>
                                                 <h5>{dataItem.name.toUpperCase()}</h5>
                                                 <img
                                                     src={dataItem.image}

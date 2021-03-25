@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 
 import {containerGithub,containerPokeball,topBarCSS, navigationButton, navigationButtonContainer} from '../Styling/ComponentCSS';
-import PokeBall from '../Assets/PinClipart.com_pokeball-clip-art_843046.png';
+// import PokeBall from '../../public/images/PinClipart.com_pokeball-clip-art_843046.png';
 import { useHistory } from 'react-router-dom'
 import React from "react";
 
@@ -27,7 +27,7 @@ export const TopBar = () => {
     return(
         <div css={topBarCSS}>
             <div css={containerPokeball}>
-                <a onClick={handlePokeballClick}><img src={PokeBall} alt='PokeBall' width='120vw'/></a>
+                <a onClick={handlePokeballClick}><img src='/images/PinClipart.com_pokeball-clip-art_843046.png' alt='PokeBall' width='120vw'/></a>
                 <h2>GOTTA CATCH 'EM ALL!</h2>
             </div>
             <div css={containerGithub}>

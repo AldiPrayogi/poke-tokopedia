@@ -4,7 +4,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
-import {BrowserRouter, useHistory} from 'react-router-dom';
+import {BrowserRouter} from 'react-router-dom';
 
 export const client = new ApolloClient({
     uri: 'https://graphql-pokeapi.vercel.app/api/graphql',

@@ -1,10 +1,11 @@
 import {css} from "@emotion/react";
-import BackgroundImage from '../Assets/2gfwG.jpg';
+// import BackgroundImage from '../../public/images/2gfwG.jpg';
 import {BACKGROUND_COLOR, GOLDEN_YELLOW, GREY_BLACK} from "../Constants/Color";
 
 export const titleContainer = css`
     background-color: ${GREY_BLACK};
     margin-bottom:0;
+    height-min: 130px;
 `
 
 export const homepage = css`
@@ -72,7 +73,7 @@ export const pokemonCards = css`
         max-width: 720px;
     }
     .pokemonImageContainer{
-        background-image: url('${BackgroundImage}');
+        background-image: url('/images/2gfwG.jpg');
         border-radius: 15px;
         text-align: center;
         align-items: center;
@@ -85,7 +86,11 @@ export const pokemonCards = css`
     }
     .pokemonDetailTypeContainer{
         text-align: center;
+        width: auto;
         max-width: 850px;
+        Span {
+            width: auto;
+        }
     }
     .pokemonImage{
         width: 50vh;
@@ -141,10 +146,14 @@ export const pokemonCards = css`
         margin-right: 1vw;
         display: inline-block;
         padding: 0px 1% 0px 1%;
-        font-size: 1.7vh;
         border-radius: 10px;
-        text-overflow: clip !important;
-        word-break: break-word !important; 
+    }
+    .moveContainer{
+        width: 100%;
+        text-align: center;
+        font-size: 1.5vh;
+        word-break: break-word;
+        overflow: auto;
     }
 `
 export const pokemonCardsCarousel = css`
@@ -174,9 +183,12 @@ export const paginationContainer = css`
         text-align: center;
         min-height: 20%;
     }
+    .contentContainer{
+        overflow: hidden;
+    }
     h5{
         align-text: center;
-        font-size: 75%;
+        font-size: 90%;
         font-weight: bold;
         color: ${GOLDEN_YELLOW};
         background-color: ${GREY_BLACK};
@@ -195,6 +207,7 @@ export const paginationContainer = css`
 `
 
 export const pokemonListPage = css`
+    height-min: 130px;
     background-color: ${BACKGROUND_COLOR};
     text-align: center;
     margin: 0px;
@@ -202,10 +215,10 @@ export const pokemonListPage = css`
         font-weight: bold;
     }
     .pokemonListTitle {
-        background-color: ${GREY_BLACK};   
-        h2{
-            font-weight: bold;
-            color: ${GOLDEN_YELLOW};
+        background-color: ${GREY_BLACK};
+        h2 {
+            font-size: 2.2vh;
+            color:${GOLDEN_YELLOW};
         }
     }
 `
