@@ -47,7 +47,7 @@ export const PokemonListPage =  () => {
 
     const handlePokemonClick =  (name) => {
         history.push({
-            pathname: `/pokemon-detail/${name}#Details`,
+            pathname: `/pokemon-detail/${name}`,
             state: {
                 pokemonName: name
             }

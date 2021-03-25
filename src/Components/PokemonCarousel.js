@@ -7,7 +7,7 @@ export const PokemonCarousel = (data) => {
 
     const handleListClick =  (name) => {
         history.push({
-            pathname: `/pokemon-detail/${name}#Details`,
+            pathname: `/pokemon-detail/${name}`,
             state: {
                 pokemonName: name
             }
