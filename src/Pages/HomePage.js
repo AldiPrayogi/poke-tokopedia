@@ -8,7 +8,6 @@ import { homepage, titleContainer, pokemonCardsCarousel} from '../Styling/PagesC
 import {PokemonCarousel} from "../Components/PokemonCarousel";
 import { gql, useQuery } from '@apollo/client';
 import {Loading} from "../Components/Loading";
-import CardBody from "antd-mobile/lib/card/CardBody";
 
 const GET_POKEMONS = gql`
   query pokemons($limit: Int, $offset: Int) {
@@ -27,7 +26,6 @@ const gqlVariables = {
     limit: 10,
     offset: Math.floor((Math.random() * 1108) + 1)
 };
-
 
 const dataTemp = [
     {

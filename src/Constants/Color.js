@@ -1,4 +1,6 @@
 export const GOLDEN_YELLOW = '#f2cc65'
+export const GREY_BLACK = '#222224';
+export const BACKGROUND_COLOR = '#e3e5dd';
 export const NORMAL = '#A8A87A';
 export const FIGHTING = '#BC3330';
 export const FLYING = '#A791EE';
@@ -16,4 +18,5 @@ export const PSYCHIC = '#F35B8A';
 export const DRAGON = '#6E3DF5';
 export const DARK = '#6F5849';
 export const FAIRY = '#EB9AAD';
+export const ICE = '#9cd8d7';
 export const DEFAULT = '#6CA090';

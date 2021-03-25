@@ -1,14 +1,14 @@
 import {css} from "@emotion/react";
 import BackgroundImage from '../2gfwG.jpg';
-import {FIGHTING, GOLDEN_YELLOW} from "../Constants/Color";
+import {BACKGROUND_COLOR, FIGHTING, GOLDEN_YELLOW, GREY_BLACK} from "../Constants/Color";
 
 export const titleContainer = css`
-    background-color: #222224;
+    background-color: ${GREY_BLACK};
     margin-bottom:0;
 `
 
 export const homepage = css`
-    background-color: #f0f0f0;
+    background-color: ${BACKGROUND_COLOR};
     border-bottom: 0px;
     margin-bottom: 0px;
     width: 100%;
@@ -23,13 +23,14 @@ export const homepage = css`
 
 export const pokemonCards = css`
     padding-bottom: 5vh;
+    background-color: ${BACKGROUND_COLOR};
     .am-card-header {
         font-size: 5vw;
         font-weight: bolder;
         width: 100%;
         color: white;
         border-radius: 10px;
-        background-color: #222224;
+        background-color: ${GREY_BLACK};
         max-width: 720px;
         text-align: center;
     }
@@ -42,14 +43,15 @@ export const pokemonCards = css`
         border-radius: 20px;
     }
     h3{
-        font-weight: bolder;
+        font-weight: 900;
         font-size: 3vw;
         margin-top: 0;
         max-width: 720px;
     }
     .catchPokemonButton{
-        background-color: white;
+        background-color: ${GREY_BLACK};
         width: 20vw;
+        color: ${GOLDEN_YELLOW};
         max-width: 120px;
         text-align: center;
         margin-right: 1vw;
@@ -82,7 +84,6 @@ export const pokemonCards = css`
     .pokemonImage{
         width: 65vh;
         max-width: 100%;
-        // height: 40%;
     }
     .am-card {
         margin: auto;
@@ -92,14 +93,23 @@ export const pokemonCards = css`
         height: auto;
         max-width: 850px;
     }
+    .subTitle{
+        border-radius: 20px;
+        background-color: ${BACKGROUND_COLOR};
+        text-align: center;
+        font-weight: 700;
+    }
     .am-card-body {
         padding-top: 7px;
         border-style: none;
         max-width: 850px;
     }
+    .pokemonDetailMovesContainer{
+        text-align: left;
+    }
 `
 export const pokemonCardsCarousel = css`
     .am-card-body{
-        background-color: #f0f0f0;
+        background-color: ${BACKGROUND_COLOR};
     }
 `

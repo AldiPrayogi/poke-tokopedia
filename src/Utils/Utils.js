@@ -1,6 +1,6 @@
 import {
     BUG, DARK, DEFAULT, DRAGON, ELECTRIC, FAIRY,
-    FIGHTING, FIRE, FLYING, GHOST, GRASS, GROUND,
+    FIGHTING, FIRE, FLYING, GHOST, GRASS, GROUND, ICE,
     NORMAL, POISON, PSYCHIC, ROCK, STEEL, WATER
 } from '../Constants/Color';
 
@@ -40,6 +40,8 @@ export const checkType = (type) => {
             return DARK
         case 'fairy':
             return FAIRY
+        case 'ice':
+            return ICE
         default:
             return DEFAULT
     }

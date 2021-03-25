@@ -27,6 +27,7 @@ const checkBackgroundColor = (type) => {
     return css`
         background-color: ${backgroundColor};
         width: 20vw;
+        color: white;
         max-width: 120px;
         text-align: center;
         margin-right: 1vw;
@@ -44,9 +45,12 @@ export const PokemonDetailPage = (id) => {
         image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png',
         nickName: 'Bulb',
         type: [
-          'grass', 'poison', 'fighting', 'flying', 'ice'
+            'grass', 'poison', 'fighting', 'flying', 'ice'
         ],
-        gender: 'Male'
+        gender: 'Male',
+        moves: [
+            'Tackle', 'Snare', 'Blast'
+        ]
     };
 
     return (
@@ -54,7 +58,9 @@ export const PokemonDetailPage = (id) => {
             <div>
                 <TopBar/>
             </div>
-            <div css={homepage}>
+            <div css={homepage} id='Details'>
+                <WhiteSpace size="lg" />
+                <WhiteSpace size="lg" />
                 <WingBlank size="lg" css={pokemonCards}>
                     <WhiteSpace size="lg" />
                     <Card>
@@ -72,9 +78,21 @@ export const PokemonDetailPage = (id) => {
                                 </div>
                                 <div className='pokemonDetailContainer'>
                                     <WhiteSpace size='md'/>
+                                    <h4 className='subTitle'>TYPES</h4>
+                                    <WhiteSpace size='md'/>
                                     <div className='pokemonDetailTypeContainer'>
                                         {
                                             data.type.map(i => (
+                                                <Button css={checkBackgroundColor(i)}>{i.toUpperCase()}</Button>
+                                            ))
+                                        }
+                                    </div>
+                                    <WhiteSpace size='md'/>
+                                    <h4 className='subTitle'>MOVES</h4>
+                                    <WhiteSpace size='md'/>
+                                    <div className='pokemonDetailMovesContainer'>
+                                        {
+                                            data.moves.map(i => (
                                                 <Button css={checkBackgroundColor(i)}>{i.toUpperCase()}</Button>
                                             ))
                                         }
@@ -84,7 +102,6 @@ export const PokemonDetailPage = (id) => {
                                     <WhiteSpace size='md'/>
                                 </div>
                             </Card.Body>
-                            <Card.Footer content="footer content" extra={<div>extra footer content</div>} />
                         </div>
                     </Card>
                     <WhiteSpace size="lg" />

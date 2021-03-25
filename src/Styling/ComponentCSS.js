@@ -1,5 +1,5 @@
 import {css} from "@emotion/react";
-import {GOLDEN_YELLOW} from "../Constants/Color";
+import {GOLDEN_YELLOW, GREY_BLACK} from "../Constants/Color";
 
 export const topBarCSS = css`
     color: black;
@@ -21,7 +21,7 @@ export const navigationButton = css`
      border: auto;
      display: inline-block;
      a {
-         background-color: #222224;
+         background-color: ${GREY_BLACK};
          border-radius: 2vh;
          border-color: ${GOLDEN_YELLOW};
          border-style: solid;
@@ -37,7 +37,7 @@ export const containerGithub = css`
     padding: 5vh 0 2vh 0;
     text-align: center;
     a {
-        background-color: #222224;
+        background-color: ${GREY_BLACK};
         border-radius: 2vh;
         border-color: ${GOLDEN_YELLOW};
         border-style: solid;
