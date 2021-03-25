@@ -4,22 +4,53 @@ import React, {useState} from 'react';
 import {Card, WingBlank, WhiteSpace, Button} from "antd-mobile";
 import {TopBar} from "../Components/TopBar";
 import {homepage, pokemonCards} from '../Styling/PagesCSS'
-import {gql} from "@apollo/client";
+import {gql, useQuery} from "@apollo/client";
 import {css} from "@emotion/react";
 import {checkType} from '../Utils/Utils';
 
 const GET_POKEMONS_DETAIL = gql`
-  query pokemons($id: Int) {
-    pokemons(id: $id) {
-      results {
-        id
-        url
+  query pokemon($name: String!) {
+  pokemon(name: $name) {
+    id
+    name
+    abilities {
+      ability {
         name
-        image
       }
     }
+    moves {
+      move {
+        name
+      }
+    }
+    types {
+      type {
+        name
+      }
+    }
+    sprites {
+        front_default
+    }
   }
+}
 `;
+
+const GET_MOVES = gql`
+    query moves {
+      moves {
+        count
+        next
+        previous
+        results {
+          url
+          name
+        }
+      }
+    }
+`
+const gqlVariables = {
+    name: 'bulbasaur'
+}
 
 const checkBackgroundColor = (type) => {
     const backgroundColor =  checkType(type)
@@ -40,19 +71,37 @@ const checkBackgroundColor = (type) => {
 
 export const PokemonDetailPage = (id) => {
 
-    const data = {
-        name: 'Bulbasour',
-        image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png',
+    const { loading, error, data } = useQuery(GET_POKEMONS_DETAIL, {
+        variables: gqlVariables
+    });
+    if (error) return `Error! ${error.message}`;
+
+    let pokemonData = {
+        name: 'Bulbasaur',
+        sprites: {
+            front_default: 'abc.png'
+        },
         nickName: 'Bulb',
-        type: [
-            'grass', 'poison', 'fighting', 'flying', 'ice'
+        types: [
+            {
+                type:{
+                    name: 'abc'
+                }
+            }
         ],
         gender: 'Male',
         moves: [
-            'Tackle', 'Snare', 'Blast'
+            {
+                move: {
+                    name: 'abc'
+                }
+            }
         ]
     };
 
+    if(!loading) pokemonData = data.pokemon;
+
+    if (!loading) console.log(data.pokemon);
     return (
         <div>
             <div>
@@ -72,9 +121,9 @@ export const PokemonDetailPage = (id) => {
                                 </h3>
                             </div>
                             <Card.Body>
-                                <h3>{(data.name).toUpperCase()}</h3>
+                                <h3>{(pokemonData.name).toUpperCase()}</h3>
                                 <div className='pokemonImageContainer'>
-                                    <img src={data.image} className='pokemonImage'/>
+                                    <img src={pokemonData.sprites.front_default} className='pokemonImage'/>
                                 </div>
                                 <div className='pokemonDetailContainer'>
                                     <WhiteSpace size='md'/>
@@ -82,8 +131,8 @@ export const PokemonDetailPage = (id) => {
                                     <WhiteSpace size='md'/>
                                     <div className='pokemonDetailTypeContainer'>
                                         {
-                                            data.type.map(i => (
-                                                <Button css={checkBackgroundColor(i)}>{i.toUpperCase()}</Button>
+                                            pokemonData.types.map(index => (
+                                                <Button css={checkBackgroundColor(index.type.name)}>{index.type.name.toUpperCase()}</Button>
                                             ))
                                         }
                                     </div>
@@ -92,8 +141,8 @@ export const PokemonDetailPage = (id) => {
                                     <WhiteSpace size='md'/>
                                     <div className='pokemonDetailMovesContainer'>
                                         {
-                                            data.moves.map(i => (
-                                                <Button css={checkBackgroundColor(i)}>{i.toUpperCase()}</Button>
+                                            pokemonData.moves.map(index => (
+                                                <Button css={checkBackgroundColor(index.move.name)}>{index.move.name.toUpperCase()}</Button>
                                             ))
                                         }
                                     </div>

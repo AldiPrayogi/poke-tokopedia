@@ -105,7 +105,7 @@ export const pokemonCards = css`
         max-width: 850px;
     }
     .pokemonDetailMovesContainer{
-        text-align: left;
+        text-align: center;
     }
 `
 export const pokemonCardsCarousel = css`
