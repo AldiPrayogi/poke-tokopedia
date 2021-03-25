@@ -26,7 +26,6 @@ const gqlVariables = {
     limit: 10,
     offset: Math.floor((Math.random() * 1108) + 1)
 };
-
 const dataTemp = [
     {
         name: 'Bulbasour',
@@ -46,6 +45,7 @@ export const HomePage = () => {
     const { loading, error, data } = useQuery(GET_POKEMONS, {
         variables: gqlVariables,
     });
+
     if (error) return `Error! ${error.message}`;
 
     let pokemonData = dataTemp;

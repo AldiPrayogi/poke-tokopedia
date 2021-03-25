@@ -9,15 +9,17 @@ export const titleContainer = css`
 
 export const homepage = css`
     background-color: ${BACKGROUND_COLOR};
-    border-bottom: 0px;
-    margin-bottom: 0px;
     width: 100%;
     height: auto;
-    // max-width: 850px;
+    padding: 0;
     text-align: center;
     h2 {
         font-size: 2.2vh;
         color:${GOLDEN_YELLOW};
+    }
+    .am-card{
+        border-bottom: 0px;
+        padding: 0;
     }
 `
 
@@ -33,6 +35,8 @@ export const pokemonCards = css`
         background-color: ${GREY_BLACK};
         max-width: 720px;
         text-align: center;
+        border-style: none;
+        border: 0px;
     }
     .am-card-header-content{
         color: #f2cc65;
@@ -41,10 +45,12 @@ export const pokemonCards = css`
         margin: 0px;
         text-align: center;
         border-radius: 20px;
+        border-style: none;
+        border: 0px;
     }
-    h3{
+    .pokemonName{
         font-weight: 900;
-        font-size: 3vh;
+        font-size: 5vh;
         margin-top: 0;
         max-width: 720px;
     }
@@ -82,30 +88,65 @@ export const pokemonCards = css`
         max-width: 850px;
     }
     .pokemonImage{
-        width: 65vh;
-        max-width: 100%;
+        width: 50vh;
+        max-width: 80%;
     }
     .am-card {
         margin: auto;
         background-color: #f2cc65;
+        border-style: ridge;
+        border-color: blue;
+        border-width: 1vw;
         border-color: ${GOLDEN_YELLOW};
         width: 90%;
         height: auto;
         max-width: 850px;
     }
-    .subTitle{
-        border-radius: 20px;
-        background-color: ${BACKGROUND_COLOR};
+    .movesAccordion{
         text-align: center;
         font-weight: 700;
     }
+    .am-accordion-content-box{
+        background-color: ${GOLDEN_YELLOW};
+        border-style: none !important;
+        border: none !important;
+        border-top: none !important;
+        padding: 10px;
+    }
+    .am-accordion-header{
+        background-color: ${BACKGROUND_COLOR} !important;
+        border: none !important;
+        border-style: 10px !important;
+    }
+    .subTitle{
+        background-color: ${BACKGROUND_COLOR};
+        text-align: center;
+        font-weight: 700;
+        font-size: 2.5vh;
+        height: 20%;
+    }
     .am-card-body {
         padding: 0px;
-        border-style: none;
         max-width: 850px;
     }
     .pokemonDetailMovesContainer{
         text-align: center;
+    }
+    .buttonMoves{
+        background-color: ${BACKGROUND_COLOR};
+        color: ${GREY_BLACK};
+        width: 15vw;
+        max-width: 100px;
+        text-align: center;
+        margin-right: 1vw;
+        display: inline-block;
+        padding: 0px 1% 0px 1%;
+        font-size: 1.7vh;
+        overflow: auto;
+        border-radius: 10px;
+        text-overflow: clip !important;
+        border-style: none;
+        word-break: break-word !important; 
     }
 `
 export const pokemonCardsCarousel = css`

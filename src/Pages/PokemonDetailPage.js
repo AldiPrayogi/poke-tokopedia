@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 
 import React from 'react';
-import {Card, WingBlank, WhiteSpace, Button} from "antd-mobile";
+import {Card, WingBlank, WhiteSpace, Button, Accordion, List} from "antd-mobile";
 import {TopBar} from "../Components/TopBar";
 import {homepage, pokemonCards} from '../Styling/PagesCSS'
 import {gql, useQuery} from "@apollo/client";
@@ -9,6 +9,7 @@ import {css} from "@emotion/react";
 import {checkType} from '../Utils/Utils';
 import {useLocation} from 'react-router-dom';
 import {Loading} from "../Components/Loading";
+import {GREY_BLACK} from "../Constants/Color";
 
 const GET_POKEMONS_DETAIL = gql`
   query pokemon($name: String!) {
@@ -47,7 +48,7 @@ const checkBackgroundColor = (type) => {
         text-align: center;
         margin-right: 1vw;
         display: inline-block;
-        font-size: 70%;
+        font-size: 100%;
         font-weight: bold;
         border-style: none;
     `
@@ -99,7 +100,8 @@ export const PokemonDetailPage = () => {
                     <WhiteSpace size="lg" />
                     <Card>
                         <div className='cardContainer'>
-                            <WhiteSpace size='lg'/>
+                            <WhiteSpace size='xl'/>
+                            <WhiteSpace size='md'/>
                             <div className='am-card-header'>
                                 <h3 className='am-card-header-content'>
                                     POKEMON
@@ -108,7 +110,7 @@ export const PokemonDetailPage = () => {
                             <Card.Body>
                                 {loading ? <Loading/> :
                                     <div>
-                                        <h3>{(pokemonData.name).toUpperCase()}</h3>
+                                        <h3 className='pokemonName'>{(pokemonData.name).toUpperCase()}</h3>
                                         <div className='pokemonImageContainer'>
                                             <img src={pokemonData.sprites.front_default} className='pokemonImage'/>
                                         </div>
@@ -124,16 +126,24 @@ export const PokemonDetailPage = () => {
                                                 }
                                             </div>
                                             <WhiteSpace size='md'/>
-                                            <h4 className='subTitle'>MOVES</h4>
                                             <WhiteSpace size='md'/>
-                                            <div className='pokemonDetailMovesContainer'>
-                                                {
-                                                    pokemonData.moves.map(index => (
-                                                        <Button css={checkBackgroundColor(index.move.name)}>{index.move.name.toUpperCase()}</Button>
-                                                    ))
-                                                }
-                                            </div>
-                                            <WhiteSpace size='md'/>
+                                            {/*<div className='pokemonDetailMovesContainer'>*/}
+                                            {/*    {*/}
+                                            {/*        pokemonData.moves.map(index => (*/}
+                                            {/*            <Button className='buttonMoves'>{index.move.name.toUpperCase()}</Button>*/}
+                                            {/*        ))*/}
+                                            {/*    }*/}
+                                            {/*</div>*/}
+                                            <Accordion defaultActiveKey="0" >
+                                                <Accordion.Panel header='MOVES' className='movesAccordion'>
+                                                        {
+                                                            pokemonData.moves.map(index => (
+                                                                <Button className='buttonMoves'>{index.move.name.toUpperCase()}</Button>
+                                                            ))
+                                                        }
+                                                </Accordion.Panel>
+                                            </Accordion>
+                                            <WhiteSpace size='xl'/>
                                             <Button className='catchPokemonButton' id='Details'>CATCH</Button>
                                             <WhiteSpace size='md'/>
                                         </div>
