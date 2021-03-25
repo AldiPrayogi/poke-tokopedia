@@ -55,7 +55,8 @@ const checkBackgroundColor = (type) => {
 
 export const PokemonDetailPage = () => {
     const location = useLocation();
-    const pokemonName = location.state.pokemonName;
+
+    let pokemonName =  location ? location.state.pokemonName : window.location.href;
 
     const { loading, error, data } = useQuery(GET_POKEMONS_DETAIL, {
         variables: {name: pokemonName}
