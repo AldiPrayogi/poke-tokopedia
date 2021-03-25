@@ -1,20 +1,21 @@
 import React from 'react';
 import {HomePage} from "./Pages/HomePage";
-import {Route, Switch} from 'react-router-dom';
+import {Route, Switch, useHistory} from 'react-router-dom';
 import {PokemonListPage} from "./Pages/PokemonListPage";
 import {PokedexPage} from "./Pages/PokedexPage";
 import {PokemonDetailPage} from "./Pages/PokemonDetailPage";
 
 function App() {
+    const history = useHistory();
     return(
       <Switch>
-          <Route exact path='/' component={HomePage} />
+          <Route history={history} exact path='/' component={HomePage} />
 
-          <Route path='/pokemon-list' component={PokemonListPage}/>
+          <Route history={history} path='/pokemon-list' component={PokemonListPage}/>
 
-          <Route path='/pokedex' component={PokedexPage}/>
+          <Route history={history} path='/pokedex' component={PokedexPage}/>
 
-          <Route path='/pokemon-detail/:id' component={PokemonDetailPage} />
+          <Route history={history} path='/pokemon-detail/:id' component={PokemonDetailPage} />
       </Switch>
 
     );
