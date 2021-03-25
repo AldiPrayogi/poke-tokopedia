@@ -7,8 +7,13 @@ import {GOLDEN_YELLOW} from "../Constants/Color";
 export const PokemonCarousel = (data) => {
     const history = useHistory();
 
-    const handleListClick =  (id) => {
-        history.push(`/pokemon-detail/${id}#Details`);
+    const handleListClick =  (name) => {
+        history.push({
+            pathname: `/pokemon-detail/${name}#Details`,
+            state: {
+                pokemonName: name
+            }
+        });
     }
 
     return(
@@ -33,7 +38,7 @@ export const PokemonCarousel = (data) => {
                                 onLoad={() => {
                                     window.dispatchEvent(new Event('resize'));
                                 }}
-                                onClick={() => handleListClick(val.id)}
+                                onClick={() => handleListClick(val.name)}
                             />
                         </div>
                     ))}

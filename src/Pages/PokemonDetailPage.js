@@ -1,12 +1,14 @@
 /** @jsxImportSource @emotion/react */
 
-import React, {useState} from 'react';
+import React from 'react';
 import {Card, WingBlank, WhiteSpace, Button} from "antd-mobile";
 import {TopBar} from "../Components/TopBar";
 import {homepage, pokemonCards} from '../Styling/PagesCSS'
 import {gql, useQuery} from "@apollo/client";
 import {css} from "@emotion/react";
 import {checkType} from '../Utils/Utils';
+import {useLocation} from 'react-router-dom';
+import {Loading} from "../Components/Loading";
 
 const GET_POKEMONS_DETAIL = gql`
   query pokemon($name: String!) {
@@ -34,24 +36,6 @@ const GET_POKEMONS_DETAIL = gql`
   }
 }
 `;
-
-const GET_MOVES = gql`
-    query moves {
-      moves {
-        count
-        next
-        previous
-        results {
-          url
-          name
-        }
-      }
-    }
-`
-const gqlVariables = {
-    name: 'bulbasaur'
-}
-
 const checkBackgroundColor = (type) => {
     const backgroundColor =  checkType(type)
 
@@ -69,10 +53,12 @@ const checkBackgroundColor = (type) => {
     `
 }
 
-export const PokemonDetailPage = (id) => {
+export const PokemonDetailPage = () => {
+    const location = useLocation();
+    const pokemonName = location.state.pokemonName;
 
     const { loading, error, data } = useQuery(GET_POKEMONS_DETAIL, {
-        variables: gqlVariables
+        variables: {name: pokemonName}
     });
     if (error) return `Error! ${error.message}`;
 
@@ -100,14 +86,13 @@ export const PokemonDetailPage = (id) => {
     };
 
     if(!loading) pokemonData = data.pokemon;
-
-    if (!loading) console.log(data.pokemon);
+    console.log(location.state.pokemonName);
     return (
         <div>
             <div>
                 <TopBar/>
             </div>
-            <div css={homepage} id='Details'>
+            <div css={homepage}>
                 <WhiteSpace size="lg" />
                 <WhiteSpace size="lg" />
                 <WingBlank size='sm' css={pokemonCards}>
@@ -121,35 +106,39 @@ export const PokemonDetailPage = (id) => {
                                 </h3>
                             </div>
                             <Card.Body>
-                                <h3>{(pokemonData.name).toUpperCase()}</h3>
-                                <div className='pokemonImageContainer'>
-                                    <img src={pokemonData.sprites.front_default} className='pokemonImage'/>
-                                </div>
-                                <div className='pokemonDetailContainer'>
-                                    <WhiteSpace size='md'/>
-                                    <h4 className='subTitle'>TYPES</h4>
-                                    <WhiteSpace size='md'/>
-                                    <div className='pokemonDetailTypeContainer'>
-                                        {
-                                            pokemonData.types.map(index => (
-                                                <Button css={checkBackgroundColor(index.type.name)}>{index.type.name.toUpperCase()}</Button>
-                                            ))
-                                        }
+                                {loading ? <Loading/> :
+                                    <div>
+                                        <h3>{(pokemonData.name).toUpperCase()}</h3>
+                                        <div className='pokemonImageContainer'>
+                                            <img src={pokemonData.sprites.front_default} className='pokemonImage'/>
+                                        </div>
+                                        <div className='pokemonDetailContainer'>
+                                            <WhiteSpace size='md'/>
+                                            <h4 className='subTitle'>TYPES</h4>
+                                            <WhiteSpace size='md'/>
+                                            <div className='pokemonDetailTypeContainer'>
+                                                {
+                                                    pokemonData.types.map(index => (
+                                                        <Button css={checkBackgroundColor(index.type.name)}>{index.type.name.toUpperCase()}</Button>
+                                                    ))
+                                                }
+                                            </div>
+                                            <WhiteSpace size='md'/>
+                                            <h4 className='subTitle'>MOVES</h4>
+                                            <WhiteSpace size='md'/>
+                                            <div className='pokemonDetailMovesContainer'>
+                                                {
+                                                    pokemonData.moves.map(index => (
+                                                        <Button css={checkBackgroundColor(index.move.name)}>{index.move.name.toUpperCase()}</Button>
+                                                    ))
+                                                }
+                                            </div>
+                                            <WhiteSpace size='md'/>
+                                            <Button className='catchPokemonButton' id='Details'>CATCH</Button>
+                                            <WhiteSpace size='md'/>
+                                        </div>
                                     </div>
-                                    <WhiteSpace size='md'/>
-                                    <h4 className='subTitle'>MOVES</h4>
-                                    <WhiteSpace size='md'/>
-                                    <div className='pokemonDetailMovesContainer'>
-                                        {
-                                            pokemonData.moves.map(index => (
-                                                <Button css={checkBackgroundColor(index.move.name)}>{index.move.name.toUpperCase()}</Button>
-                                            ))
-                                        }
-                                    </div>
-                                    <WhiteSpace size='md'/>
-                                    <Button className='catchPokemonButton'>CATCH</Button>
-                                    <WhiteSpace size='md'/>
-                                </div>
+                                }
                             </Card.Body>
                         </div>
                     </Card>

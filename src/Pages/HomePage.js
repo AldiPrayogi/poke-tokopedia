@@ -51,7 +51,7 @@ export const HomePage = () => {
     let pokemonData = dataTemp;
 
     if(!loading) pokemonData = data.pokemons.results;
-    console.log(pokemonData)
+
     return (
         <div>
             <div>

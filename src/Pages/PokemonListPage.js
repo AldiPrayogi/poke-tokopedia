@@ -2,10 +2,11 @@
 
 import React, {useState} from 'react';
 import {TopBar} from "../Components/TopBar";
-import {homepage, titleContainer, paginationContainer, pokemonListPage} from "../Styling/PagesCSS";
+import {paginationContainer, pokemonListPage} from "../Styling/PagesCSS";
 import {Card, Grid, WhiteSpace, Pagination} from "antd-mobile";
 import {gql, useQuery} from "@apollo/client";
 import {Loading} from "../Components/Loading";
+import {useHistory} from 'react-router-dom';
 
 const GET_POKEMONS = gql`
   query pokemons($limit: Int, $offset: Int) {
@@ -42,6 +43,16 @@ const limit = 12;
 export const PokemonListPage =  () => {
     const [offset, setOffset] = useState(0);
     const [currentPage, setCurrentPage] = useState(1);
+    const history = useHistory();
+
+    const handlePokemonClick =  (name) => {
+        history.push({
+            pathname: `/pokemon-detail/${name}#Details`,
+            state: {
+                pokemonName: name
+            }
+        });
+    }
 
     const handlePaginationChange = (changePage) => {
         setOffset(limit*(changePage-1));
@@ -94,6 +105,7 @@ export const PokemonListPage =  () => {
                                                     src={dataItem.image}
                                                     alt="Pokemon Image"
                                                     style={{ height: '40%', verticalAlign: 'top'}}
+                                                    onClick={() => handlePokemonClick(dataItem.name)}
                                                 />
                                             </div>
                                         )}
