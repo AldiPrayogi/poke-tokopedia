@@ -10,12 +10,12 @@ export const PokemonListPage =  () => {
                 <TopBar />
             </div>
             <div css={homepage}>
-                <div css={navigationButton}>
-                    <WhiteSpace size='xl'/>
-                    <WhiteSpace size='xl'/>
-                    <WhiteSpace size='xl'/>
-                    <WhiteSpace size='xl'/>
-                </div>
+                {/*<div css={navigationButton}>*/}
+                {/*    <WhiteSpace size='xl'/>*/}
+                {/*    <WhiteSpace size='xl'/>*/}
+                {/*    <WhiteSpace size='xl'/>*/}
+                {/*    <WhiteSpace size='xl'/>*/}
+                {/*</div>*/}
             </div>
         </div>
     );

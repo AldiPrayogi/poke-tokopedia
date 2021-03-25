@@ -9,11 +9,34 @@ export const topBarCSS = css`
     height: auto;
     background-image: linear-gradient(75deg, #bd4949, #7b2916);
 `
+
+export const navigationButtonContainer = css`
+    text-align: center;
+    margin-bottom: 0;
+`
+
+export const navigationButton = css`
+     padding: 10vh 0 10vh 0;
+     border: auto;
+     display: inline-block;
+     a {
+         background-color: #222224;
+         border-radius: 2vh;
+         border-color: ${GOLDEN_YELLOW};
+         border-style: solid;
+         border-width: 1px;
+         color: ${GOLDEN_YELLOW};
+         padding: 2.5vh;
+         font-weight: bold;
+         font-size: 1.5vh;
+     }
+`
+
 export const containerGithub = css`
-    padding: 10vh 0 10vh 0;
+    padding: 5vh 0 2vh 0;
     text-align: center;
     a {
-        background-color: black;
+        background-color: #222224;
         border-radius: 2vh;
         border-color: ${GOLDEN_YELLOW};
         border-style: solid;
@@ -36,7 +59,8 @@ export const containerPokeball = css`
     h2{
         text-align: center;
         font-style: italic;
-        font-size: 7vh;
+        font-weight: bold;
+        font-size: 6.5vh;
         padding-top: 5vh;
         margin: auto;
         color: ${GOLDEN_YELLOW};
@@ -56,8 +80,11 @@ export const loading = css`
 `
 
 export const pokemonCarousel = css`
-    // h4{
-    //     padding-bottom: 4px;
-    //     border-bottom: 100px;
+    // .pokemonNameContainer {
+    //     background-color: black;
+    // }
+    // h4 {
+    //     font-size: 100px;
+    //     color: white;
     // }
 `

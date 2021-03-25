@@ -1,13 +1,14 @@
 /** @jsxImportSource @emotion/react */
 
 import React, {useState} from 'react';
-import {Button, WhiteSpace, WingBlank, Carousel} from "antd-mobile";
+import {Button, WhiteSpace, WingBlank, Carousel, Card} from "antd-mobile";
 import { useHistory } from 'react-router-dom';
 import {TopBar} from "../Components/TopBar";
-import { homepage, navigationButton,pokemonCards} from '../Styling/PagesCSS'
+import { homepage, titleContainer, pokemonCardsCarousel} from '../Styling/PagesCSS'
 import {PokemonCarousel} from "../Components/PokemonCarousel";
 import { gql, useQuery } from '@apollo/client';
 import {Loading} from "../Components/Loading";
+import CardBody from "antd-mobile/lib/card/CardBody";
 
 const GET_POKEMONS = gql`
   query pokemons($limit: Int, $offset: Int) {
@@ -55,14 +56,6 @@ export const HomePage = () => {
     let pokemonData = dataTemp;
 
     if(!loading) pokemonData = data.pokemons.results;
-
-    const handleListClick =  () => {
-        history.push('/pokemon-list');
-    }
-
-    const handlePokedexClick = () => {
-        history.push('/pokedex');
-    }
     console.log(pokemonData)
     return (
         <div>
@@ -70,20 +63,17 @@ export const HomePage = () => {
                 <TopBar/>
             </div>
             <div css={homepage}>
-                <div css={navigationButton}>
+                <div css={titleContainer}>
                     <WhiteSpace size='xl'/>
+                    <h2>RANDOM POKEMONS OF THE DAY</h2>
                     <WhiteSpace size='xl'/>
-                    <WhiteSpace size='l'/>
-                    <Button inline size="small" onClick={handleListClick} style={{marginRight: '8vw'} }>Pokemon List</Button>
-                    <Button inline size="small" onClick={handlePokedexClick}>Your Pokedex</Button>
                 </div>
-                <WhiteSpace size='xl'/>
-                <h2>Random Pokemons of the day</h2>
-                <WhiteSpace size='xl'/>
-                <div css={pokemonCards}>
-                    {/*<PokemonCarousel data={pokemonData}/>*/}
-                    {loading ? <Loading /> : <PokemonCarousel data={pokemonData}/>}
-                    {/*<Loading/>*/}
+                <div css={pokemonCardsCarousel}>
+                    <Card>
+                        <Card.Body>
+                            {loading ? <Loading /> : <PokemonCarousel data={pokemonData}/>}
+                        </Card.Body>
+                    </Card>
                 </div>
             </div>
         </div>

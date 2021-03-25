@@ -2,8 +2,14 @@ import {css} from "@emotion/react";
 import BackgroundImage from '../2gfwG.jpg';
 import {GOLDEN_YELLOW} from "../Constants/Color";
 
+export const titleContainer = css`
+    background-color: #222224;
+    margin-bottom:0;
+`
+
 export const homepage = css`
-    background-color: #343434;
+    background-color: #f0f0f0;
+    border-bottom: 0px;
     margin-bottom: 0px;
     width: 100%;
     height: auto;
@@ -11,19 +17,8 @@ export const homepage = css`
     h2 {
         font-size: 2.2vh;
         color:${GOLDEN_YELLOW};
+        // color: black
     }
-`
-
-export const navigationButton = css`
-     .am-button-small {
-        font-size: 2.2vh;
-        font-weight: bold;
-        border-style: solid;
-        border-width: 1px;
-        background-color: black;
-        border-color: ${GOLDEN_YELLOW};
-        color:#f2e9ab;
-     }
 `
 
 export const pokemonCards = css`
@@ -35,11 +30,12 @@ export const pokemonCards = css`
         width: 100%;
         color: white;
         border-radius: 10px;
-        background-color: #343434;
+        background-color: #222224;
     }
     .am-card-header-content{
         text-align: center;
-        color: ${GOLDEN_YELLOW};
+        // color: ${GOLDEN_YELLOW};
+        color: #f2cc65;
         margin-left: 33%;
         border-radius: 20px;
     }
@@ -68,13 +64,18 @@ export const pokemonCards = css`
         margin: auto;
     }
     .am-card {
-        height: 100vh;
         margin: auto;
-        background-color: ${GOLDEN_YELLOW};
+        background-color: #f2cc65;
         border-color: ${GOLDEN_YELLOW};
         width: 80%;
+        height: auto;
     }
     .am-card-body {
         padding-top: 7px;
+    }
+`
+export const pokemonCardsCarousel = css`
+    .am-card-body{
+        background-color: #f0f0f0;
     }
 `

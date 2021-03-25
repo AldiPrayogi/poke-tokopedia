@@ -1,4 +1,4 @@
-export const GOLDEN_YELLOW = '#f2e9ab'
+export const GOLDEN_YELLOW = '#f2cc65'
 export const NORMAL = '#A8A87A';
 export const FIGHTING = '#BC3330';
 export const FLYING = '#A791EE';
