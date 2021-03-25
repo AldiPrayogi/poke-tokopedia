@@ -6,6 +6,7 @@ export const topBarCSS = css`
     width: 100%;
     border: 0px;
     padding: auto;
+    min-width: 200px;
     height: auto;
     background-image: linear-gradient(75deg, #bd4949, #7b2916);
 `

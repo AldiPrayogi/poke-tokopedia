@@ -23,7 +23,7 @@ export const PokemonCarousel = (data) => {
                     {data.data.map(val => (
                         <div style={{textAlign: "center"}}>
                             <div style={{backgroundColor: "#222224", width: "100%"}}>
-                                <h4 style={{color: "white", fontSize: "3vh", width: "100%"}}>{(val.name).toUpperCase()}</h4>
+                                <h4 style={{color: "#f2cc65", fontSize: "2.7vh", width: "100%"}}>{(val.name).toUpperCase()}</h4>
                             </div>
                             <WhiteSpace size='xl'/>
                             <img

@@ -3,7 +3,7 @@
 import React, {useState} from 'react';
 import {Card, WingBlank, WhiteSpace, Button} from "antd-mobile";
 import {TopBar} from "../Components/TopBar";
-import { homepage, pokemonCards} from '../Styling/PagesCSS'
+import {homepage, pokemonCards} from '../Styling/PagesCSS'
 import {gql} from "@apollo/client";
 import {css, jsx} from "@emotion/react";
 import {checkType} from '../Utils/Utils';
@@ -26,11 +26,14 @@ const checkBackgroundColor = (type) => {
 
     return css`
         background-color: ${backgroundColor};
-        width: 31%;
+        width: 20vw;
+        max-width: 120px;
         text-align: center;
         margin-right: 1vw;
         display: inline-block;
-        font-size: 3vw;
+        font-size: 70%;
+        font-weight: bold;
+        border-style: none;
     `
 }
 
@@ -45,16 +48,6 @@ export const PokemonDetailPage = (id) => {
         ],
         gender: 'Male'
     };
-    const color = [];
-    data.type.map(t => {
-        color.push(checkType(t));
-    })
-    console.log(color);
-    const newData = {
-        ...data,
-        backgroundColor: color
-    };
-    console.log(newData);
 
     return (
         <div>
@@ -66,26 +59,29 @@ export const PokemonDetailPage = (id) => {
                     <WhiteSpace size="lg" />
                     <Card>
                         <div className='cardContainer'>
-                            <WhiteSpace size='md'/>
-                            <Card.Header
-                                title='POKEMON'
-                            />
+                            <WhiteSpace size='lg'/>
+                            <div className='am-card-header'>
+                                <h3 className='am-card-header-content'>
+                                    POKEMON
+                                </h3>
+                            </div>
                             <Card.Body>
                                 <h3>{(data.name).toUpperCase()}</h3>
                                 <div className='pokemonImageContainer'>
                                     <img src={data.image} className='pokemonImage'/>
                                 </div>
-                            </Card.Body>
-                            <Card.Body>
                                 <div className='pokemonDetailContainer'>
-                                    <h4>asdawd</h4>
+                                    <WhiteSpace size='md'/>
                                     <div className='pokemonDetailTypeContainer'>
                                         {
-                                            newData.type.map(i => (
+                                            data.type.map(i => (
                                                 <Button css={checkBackgroundColor(i)}>{i.toUpperCase()}</Button>
                                             ))
                                         }
                                     </div>
+                                    <WhiteSpace size='md'/>
+                                    <Button className='catchPokemonButton'>CATCH</Button>
+                                    <WhiteSpace size='md'/>
                                 </div>
                             </Card.Body>
                             <Card.Footer content="footer content" extra={<div>extra footer content</div>} />
