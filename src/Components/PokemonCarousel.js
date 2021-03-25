@@ -5,14 +5,14 @@ import {useHistory} from 'react-router-dom';
 export const PokemonCarousel = (data) => {
     const history = useHistory();
 
-    // const handleListClick =  (name) => {
-    //     history.push({
-    //         pathname: `/pokemon-detail/${name}`,
-    //         state: {
-    //             pokemonName: name
-    //         }
-    //     });
-    // }
+    const handleListClick =  (name) => {
+        history.push({
+            pathname: `/pokemon-detail/${name}`,
+            state: {
+                pokemonName: name
+            }
+        });
+    }
 
     return(
         <div style={{width: "100%", textAlign: 'center'}}>
@@ -29,17 +29,15 @@ export const PokemonCarousel = (data) => {
                                 <h4 style={{color: "#f2cc65", fontSize: "2.7vh", width: "100%"}}>{(val.name).toUpperCase()}</h4>
                             </div>
                             <WhiteSpace size='xl'/>
-                            <a href={`/pokemon-detail/${val.name}`}>
-                                <img
-                                    src={val.image}
-                                    alt="Pokemon"
-                                    style={{ height: '35vh', verticalAlign: 'top'}}
-                                    onLoad={() => {
-                                        window.dispatchEvent(new Event('resize'));
-                                    }}
-                                    // onClick={() => handleListClick(val.name)}
-                                />
-                            </a>
+                            <img
+                                src={val.image}
+                                alt="Pokemon"
+                                style={{ height: '35vh', verticalAlign: 'top'}}
+                                onLoad={() => {
+                                    window.dispatchEvent(new Event('resize'));
+                                }}
+                                onClick={() => handleListClick(val.name)}
+                            />
                         </div>
                     ))}
                 </Carousel>
