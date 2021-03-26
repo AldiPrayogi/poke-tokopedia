@@ -1,6 +1,6 @@
 import React from 'react';
 import {HomePage} from "./Pages/HomePage";
-import {Route, Switch, useHistory} from 'react-router-dom';
+import {Route, Switch} from 'react-router-dom';
 import {PokemonListPage} from "./Pages/PokemonListPage";
 import {PokedexPage} from "./Pages/PokedexPage";
 import {PokemonDetailPage} from "./Pages/PokemonDetailPage";

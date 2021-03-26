@@ -7,9 +7,7 @@ import {pokemonCards, pokemonListPage} from '../Styling/PagesCSS'
 import {gql, useQuery} from "@apollo/client";
 import {css} from "@emotion/react";
 import {checkType} from '../Utils/Utils';
-import {useLocation} from 'react-router-dom';
 import {Loading} from "../Components/Loading";
-const ls = require('local-storage');
 
 const GET_POKEMONS_DETAIL = gql`
   query pokemon($name: String!) {
@@ -55,11 +53,8 @@ const checkBackgroundColor = (type) => {
 }
 
 export const PokemonDetailPage = () => {
-    // const location = useLocation();
-    //
-    // let pokemonName =  location ? location.state.pokemonName : window.location.href;
+    const pokemonName = (window.location.href).substring((window.location.href).lastIndexOf('/')+1);
 
-    let pokemonName = ls.get('name');
     console.log(pokemonName);
 
     const { loading, error, data } = useQuery(GET_POKEMONS_DETAIL, {
@@ -102,12 +97,12 @@ export const PokemonDetailPage = () => {
                 <TopBar/>
             </div>
             <div css={pokemonListPage}>
-                    <div className='pokemonListTitle'>
-                        <WhiteSpace size='xl'/>
-                        <h2>POKEMON DETAIL</h2>
-                        <WhiteSpace size='xl'/>
-                    </div>
-                    <WhiteSpace size="lg" />
+                <div className='pokemonListTitle'>
+                    <WhiteSpace size='xl'/>
+                    <h2>POKEMON DETAIL</h2>
+                    <WhiteSpace size='xl'/>
+                </div>
+                <WhiteSpace size="lg" />
                 <WingBlank size='sm' css={pokemonCards}>
                     <Card>
                         <div className='cardContainer'>
@@ -140,15 +135,15 @@ export const PokemonDetailPage = () => {
                                             <WhiteSpace size='md'/>
                                             <Accordion defaultActiveKey="0" >
                                                 <Accordion.Panel header='MOVES' className='movesAccordion'>
-                                                        {
-                                                            pokemonData.moves.map(index => (
-                                                                <Button className='buttonMoves'>
-                                                                    <div className='moveContainer'>
-                                                                        {index.move.name.toUpperCase()}
-                                                                    </div>
-                                                                </Button>
-                                                            ))
-                                                        }
+                                                    {
+                                                        pokemonData.moves.map(index => (
+                                                            <Button className='buttonMoves'>
+                                                                <div className='moveContainer'>
+                                                                    {index.move.name.toUpperCase()}
+                                                                </div>
+                                                            </Button>
+                                                        ))
+                                                    }
                                                 </Accordion.Panel>
                                             </Accordion>
                                             <WhiteSpace size='xl'/>
