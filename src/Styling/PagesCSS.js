@@ -5,6 +5,9 @@ import {BACKGROUND_COLOR, GOLDEN_YELLOW, GREY_BLACK} from "../Constants/Color";
 export const titleContainer = css`
     background-color: ${GREY_BLACK};
     margin-bottom:0;
+    h2 {
+        font-weight: 900;
+    }
     height-min: 130px;
 `
 
@@ -218,6 +221,7 @@ export const pokemonListPage = css`
         background-color: ${GREY_BLACK};
         h2 {
             font-size: 2.2vh;
+            font-weight:900;
             color:${GOLDEN_YELLOW};
         }
     }

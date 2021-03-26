@@ -25,6 +25,7 @@ const gqlVariables = {
     limit: 10,
     offset: Math.floor((Math.random() * 1108) + 1)
 };
+
 const dataTemp = [
     {
         name: 'pokemon',

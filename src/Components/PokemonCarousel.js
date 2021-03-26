@@ -1,17 +1,25 @@
 import React from "react";
 import {Carousel, WhiteSpace, WingBlank} from "antd-mobile";
 import {useHistory} from 'react-router-dom';
+const ls = require('local-storage')
 
 export const PokemonCarousel = (data) => {
     const history = useHistory();
 
+    // const handleListClick =  (name) => {
+    //     history.push({
+    //         pathname: `/pokemon-detail/${name}`,
+    //         state: {
+    //             pokemonName: name
+    //         }
+    //     });
+    // }
+
     const handleListClick =  (name) => {
         history.push({
-            pathname: `/pokemon-detail/${name}`,
-            state: {
-                pokemonName: name
-            }
+            pathname: `/pokemon-detail/${name}`
         });
+        ls.set('name', name);
     }
 
     return(

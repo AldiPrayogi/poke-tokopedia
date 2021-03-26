@@ -7,6 +7,7 @@ import {Card, Grid, WhiteSpace, Pagination} from "antd-mobile";
 import {gql, useQuery} from "@apollo/client";
 import {Loading} from "../Components/Loading";
 import {useHistory} from 'react-router-dom';
+const ls = require('local-storage');
 
 const GET_POKEMONS = gql`
   query pokemons($limit: Int, $offset: Int) {
@@ -45,13 +46,20 @@ export const PokemonListPage =  () => {
     const [currentPage, setCurrentPage] = useState(1);
     const history = useHistory();
 
+    // const handlePokemonClick =  (name) => {
+    //     history.push({
+    //         pathname: `/pokemon-detail/${name}`,
+    //         state: {
+    //             pokemonName: name
+    //         }
+    //     });
+    // }
+
     const handlePokemonClick =  (name) => {
         history.push({
-            pathname: `/pokemon-detail/${name}`,
-            state: {
-                pokemonName: name
-            }
+            pathname: `/pokemon-detail/${name}`
         });
+        ls.set('name', name);
     }
 
     const handlePaginationChange = (changePage) => {
