@@ -7,6 +7,7 @@ import {Card, Grid, WhiteSpace, Pagination} from "antd-mobile";
 import {gql, useQuery} from "@apollo/client";
 import {Loading} from "../Components/Loading";
 import {useHistory} from 'react-router-dom';
+const ls = require('local-storage');
 
 const GET_POKEMONS = gql`
   query pokemons($limit: Int, $offset: Int) {
@@ -43,6 +44,7 @@ const limit = 12;
 export const PokemonListPage =  () => {
     const [offset, setOffset] = useState(0);
     const [currentPage, setCurrentPage] = useState(1);
+    const ownedPokemon = ls.get('pokemonList');
 
     const history = useHistory();
 
@@ -60,16 +62,40 @@ export const PokemonListPage =  () => {
     const { loading, error, data } = useQuery(GET_POKEMONS, {
         variables: {limit, offset},
     });
+
     if (error) return `Error! ${error.message}`;
 
     let pokemonData = dataTemp;
 
     if(!loading) {
         pokemonData = data.pokemons.results;
-        console.log(data.count);
-    }
-    console.log(pokemonData);
 
+        const modifiedPokemonData = pokemonData.map(object => ({
+            ...object, count: 0
+        }))
+
+        const tempResult = {};
+        for(let {name} of ownedPokemon){
+            tempResult[name] = {
+                name,
+                count: tempResult[name] ? tempResult[name].count+1 : 1
+            };
+        }
+
+        const ownedPokemonDataWithCount = (Object.values(tempResult));
+
+        modifiedPokemonData.map(item => {
+            ownedPokemonDataWithCount.map(ownedItem => {
+                if(item.name === ownedItem.name){
+                    item.count = ownedItem.count
+                }
+                return null;
+            })
+            return null;
+        });
+
+        pokemonData = modifiedPokemonData;
+    }
 
     const locale = {
         prevText: 'Prev',
@@ -106,6 +132,7 @@ export const PokemonListPage =  () => {
                                                     style={{ height: '40%', verticalAlign: 'top'}}
                                                     onClick={() => handlePokemonClick(dataItem.name)}
                                                 />
+                                                <h5>Owned amount: {dataItem.count}</h5>
                                             </div>
                                         )}
                                     />
