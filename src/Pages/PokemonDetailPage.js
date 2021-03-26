@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 
-import React from 'react';
+import React, {useState} from 'react';
 import {Card, WingBlank, WhiteSpace, Button, Accordion} from "antd-mobile";
 import {TopBar} from "../Components/TopBar";
 import {pokemonCards, pokemonListPage} from '../Styling/PagesCSS'
@@ -8,6 +8,7 @@ import {gql, useQuery} from "@apollo/client";
 import {css} from "@emotion/react";
 import {checkType} from '../Utils/Utils';
 import {Loading} from "../Components/Loading";
+import {CatchModal} from "../Components/CatchModal";
 
 const GET_POKEMONS_DETAIL = gql`
   query pokemon($name: String!) {
@@ -35,6 +36,7 @@ const GET_POKEMONS_DETAIL = gql`
   }
 }
 `;
+
 const checkBackgroundColor = (type) => {
     const backgroundColor =  checkType(type)
 
@@ -53,9 +55,10 @@ const checkBackgroundColor = (type) => {
 }
 
 export const PokemonDetailPage = () => {
+    const [isCatchModalVisible, setIsCatchModalVisible] = useState(false);
     const pokemonName = (window.location.href).substring((window.location.href).lastIndexOf('/')+1);
 
-    console.log(pokemonName);
+    console.log(isCatchModalVisible);
 
     const { loading, error, data } = useQuery(GET_POKEMONS_DETAIL, {
         variables: {name: pokemonName}
@@ -89,6 +92,10 @@ export const PokemonDetailPage = () => {
     };
 
     if(!loading) pokemonData = data.pokemon;
+
+    const handlePokemonClick = () => {
+        setIsCatchModalVisible(true);
+    }
 
     console.log(window.location.href);
     return (
@@ -147,7 +154,8 @@ export const PokemonDetailPage = () => {
                                                 </Accordion.Panel>
                                             </Accordion>
                                             <WhiteSpace size='xl'/>
-                                            <Button className='catchPokemonButton' id='Details'>CATCH</Button>
+                                            <CatchModal visible={isCatchModalVisible} setVisible={setIsCatchModalVisible} name={pokemonData.name}/>
+                                            <Button className='catchPokemonButton' id='Details' onClick={handlePokemonClick}>CATCH</Button>
                                             <WhiteSpace size='md'/>
                                         </div>
                                     </div>

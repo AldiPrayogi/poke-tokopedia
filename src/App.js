@@ -4,6 +4,7 @@ import {Route, Switch} from 'react-router-dom';
 import {PokemonListPage} from "./Pages/PokemonListPage";
 import {PokedexPage} from "./Pages/PokedexPage";
 import {PokemonDetailPage} from "./Pages/PokemonDetailPage";
+import {Error} from './Components/Error';
 
 function App() {
     return(
@@ -15,6 +16,7 @@ function App() {
           <Route path='/pokedex' component={PokedexPage}/>
 
           <Route path='/pokemon-detail/:name' component={PokemonDetailPage} />
+          <Route path='/err' component={Error}/>
       </Switch>
 
     );
