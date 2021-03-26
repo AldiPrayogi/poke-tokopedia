@@ -95,7 +95,7 @@ export const PokemonDetailPage = () => {
 
     if(!loading) pokemonData = data.pokemon;
 
-    // console.log(location.state.pokemonName);
+    console.log(window.location.href);
     return (
         <div>
             <div>

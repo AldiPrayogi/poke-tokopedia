@@ -6,16 +6,15 @@ import {PokedexPage} from "./Pages/PokedexPage";
 import {PokemonDetailPage} from "./Pages/PokemonDetailPage";
 
 function App() {
-    const history = useHistory();
     return(
       <Switch>
-          <Route history={history} exact path='/' component={HomePage} />
+          <Route exact path='/' component={HomePage} />
 
-          <Route history={history} path='/pokemon-list' component={PokemonListPage}/>
+          <Route path='/pokemon-list' component={PokemonListPage}/>
 
-          <Route history={history} path='/pokedex' component={PokedexPage}/>
+          <Route path='/pokedex' component={PokedexPage}/>
 
-          <Route history={history} path='/pokemon-detail/:id' component={PokemonDetailPage} />
+          <Route path='/pokemon-detail/:name' component={PokemonDetailPage} />
       </Switch>
 
     );
