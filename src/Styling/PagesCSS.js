@@ -1,8 +1,7 @@
 import {css} from "@emotion/react";
-// import BackgroundImage from '../../public/images/2gfwG.jpg';
 import {BACKGROUND_COLOR, GOLDEN_YELLOW, GREY_BLACK} from "../Constants/Color";
 
-export const titleContainer = css`
+export const TitleContainerCSS = css`
     background-color: ${GREY_BLACK};
     margin-bottom:0;
     h2 {
@@ -11,7 +10,7 @@ export const titleContainer = css`
     height-min: 130px;
 `
 
-export const homepage = css`
+export const HomePageCSS = css`
     background-color: ${BACKGROUND_COLOR};
     width: 100%;
     height: auto;
@@ -100,6 +99,7 @@ export const pokemonCards = css`
         max-width: 80%;
     }
     .am-card {
+        border-radius: 2vh;
         margin: auto;
         background-color: #f2cc65;
         border-style: ridge;
@@ -124,13 +124,14 @@ export const pokemonCards = css`
     .am-accordion-header{
         background-color: ${BACKGROUND_COLOR} !important;
         border: none !important;
+        padding: 0px !important;
         border-style: 10px !important;
     }
     .subTitle{
         background-color: ${BACKGROUND_COLOR};
         text-align: center;
         font-weight: 700;
-        font-size: 2.5vh;
+        font-size: 150%;
         height: 20%;
     }
     .am-card-body {
@@ -159,14 +160,15 @@ export const pokemonCards = css`
         overflow: auto;
     }
 `
-export const pokemonCardsCarousel = css`
+
+export const PokemonCardCarousel = css`
     .am-card-body{
         min-height: 50vh;
         background-color: ${BACKGROUND_COLOR};
     }
 `
 
-export const paginationContainer = css`
+export const PaginationContainer = css`
     min-height: 70vh;
     background-color: ${BACKGROUND_COLOR};
     .am-card-body {
@@ -209,7 +211,7 @@ export const paginationContainer = css`
     }
 `
 
-export const pokemonListPage = css`
+export const PokemonListPageCSS = css`
     height-min: 130px;
     background-color: ${BACKGROUND_COLOR};
     text-align: center;
@@ -224,5 +226,50 @@ export const pokemonListPage = css`
             font-weight:900;
             color:${GOLDEN_YELLOW};
         }
+    }
+`
+
+export const CatchModalCSS = css`
+    .am-modal-header:{
+        font-weight: bold;
+    }
+    .pokemon-image{
+        width: 50vw;
+        max-width: 500px;
+        background-image: url('/images/2gfwG.jpg');
+    }
+    Button{
+        width: 30%;
+        display: inline-block;
+    }
+    h3{
+        font-size: 2.6vw;
+        font-weight: bold;
+        background-color: ${GREY_BLACK};
+        color: ${GOLDEN_YELLOW};
+    }
+    .button-throw{
+        width: 100%;
+        display: inline-block;
+        color: ${GOLDEN_YELLOW};
+        background-color: ${GREY_BLACK};
+    }
+    .container{
+        text-align: center;
+        width: 100%;
+        display: inline-block;
+    }
+    .button-close{
+        width: 50%;
+        display: inline-block;
+        color: ${GOLDEN_YELLOW};
+        background-color: ${GREY_BLACK};
+    }
+    width: 80vw;
+    text-align: center;
+    max-width: 800px;
+    .button-retry{
+        color: ${GOLDEN_YELLOW};
+        background-color: ${GREY_BLACK};
     }
 `

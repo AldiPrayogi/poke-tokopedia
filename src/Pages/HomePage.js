@@ -3,7 +3,7 @@
 import React from 'react';
 import {WhiteSpace, Card} from "antd-mobile";
 import {TopBar} from "../Components/TopBar";
-import { homepage, titleContainer, pokemonCardsCarousel} from '../Styling/PagesCSS'
+import { HomePageCSS, TitleContainerCSS, PokemonCardCarousel} from '../Styling/PagesCSS'
 import {PokemonCarousel} from "../Components/PokemonCarousel";
 import { gql, useQuery } from '@apollo/client';
 import {Loading} from "../Components/Loading";
@@ -51,23 +51,23 @@ export const HomePage = () => {
 
     let pokemonData = dataTemp;
 
-    if(!loading) pokemonData = data.pokemons.results;
+    if (!loading) pokemonData = data.pokemons.results;
 
     return (
         <div>
             <div>
                 <TopBar/>
             </div>
-            <div css={homepage}>
-                <div css={titleContainer}>
+            <div css={HomePageCSS}>
+                <div css={TitleContainerCSS}>
                     <WhiteSpace size='xl'/>
                     <h2>RANDOM POKEMONS OF THE DAY</h2>
                     <WhiteSpace size='xl'/>
                 </div>
-                <div css={pokemonCardsCarousel}>
+                <div css={PokemonCardCarousel}>
                     <Card>
                         <Card.Body>
-                            {loading ? <Loading /> : <PokemonCarousel data={pokemonData}/>}
+                            {loading ? <div style={{minHeight: '30vh'}}><Loading /></div> : <PokemonCarousel data={pokemonData}/>}
                         </Card.Body>
                     </Card>
                 </div>

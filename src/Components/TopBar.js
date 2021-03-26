@@ -1,7 +1,6 @@
 /** @jsxImportSource @emotion/react */
 
 import {containerGithub,containerPokeball,topBarCSS, navigationButton, navigationButtonContainer} from '../Styling/ComponentCSS';
-// import PokeBall from '../../public/images/PinClipart.com_pokeball-clip-art_843046.png';
 import { useHistory } from 'react-router-dom'
 import React from "react";
 

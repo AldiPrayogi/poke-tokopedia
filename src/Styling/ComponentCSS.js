@@ -1,5 +1,5 @@
 import {css} from "@emotion/react";
-import {GOLDEN_YELLOW, GREY_BLACK} from "../Constants/Color";
+import {BACKGROUND_COLOR, GOLDEN_YELLOW, GREY_BLACK} from "../Constants/Color";
 
 export const topBarCSS = css`
     color: black;
@@ -70,13 +70,10 @@ export const containerPokeball = css`
 `
 
 export const loading = css`
-        margin: auto;
-        margin-bottom: 20px;
-        padding: 30px 50px;
+        margin-top: 5%;
+        margin-bottom: 5%;
         text-align: center;
-        background: rgba(0, 0, 0, 0.05);
         border-radius: 4px;
-        background-color: white;
         width: 100%;
 `
 

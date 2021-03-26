@@ -2,7 +2,7 @@
 
 import React, {useState} from 'react';
 import {TopBar} from "../Components/TopBar";
-import {paginationContainer, pokemonListPage} from "../Styling/PagesCSS";
+import {PaginationContainer, PokemonListPageCSS} from "../Styling/PagesCSS";
 import {Card, Grid, WhiteSpace, Pagination} from "antd-mobile";
 import {gql, useQuery} from "@apollo/client";
 import {Loading} from "../Components/Loading";
@@ -81,13 +81,13 @@ export const PokemonListPage =  () => {
             <div>
                 <TopBar/>
             </div>
-            <div css={pokemonListPage}>
+            <div css={PokemonListPageCSS}>
                 <div className='pokemonListTitle'>
                     <WhiteSpace size='xl'/>
                     <h2>POKEMON LIST</h2>
                     <WhiteSpace size='xl'/>
                 </div>
-                <Card css={paginationContainer}>
+                <Card css={PaginationContainer}>
                     <Card.Body>
                         <div>
                             {loading ? <Loading /> :
