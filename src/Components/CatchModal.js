@@ -4,7 +4,7 @@ import React from 'react';
 import {Button, Modal, WhiteSpace} from 'antd-mobile';
 import 'antd/es/spin/style/css';
 import {NameForm} from './NameForm';
-import {CatchModalCSS} from "../Styling/PagesCSS";
+import {ModalCSS} from "../Styling/PagesCSS";
 import {Loading} from "./Loading";
 
 export const CatchModal =  ({visible, setVisible, pokemon, catchChance, setChance, isLoading, setIsLoading}) => {
@@ -14,7 +14,7 @@ export const CatchModal =  ({visible, setVisible, pokemon, catchChance, setChanc
     }
 
     const handleChance = (chance) => {
-        return chance < 100;
+        return chance < 90;
     }
 
     const handleThrow = () => {
@@ -35,7 +35,7 @@ export const CatchModal =  ({visible, setVisible, pokemon, catchChance, setChanc
                 markClosable={true}
                 transparent
                 afterClose={() => handleOnClose()}
-                css={CatchModalCSS}
+                css={ModalCSS}
             >
                 {isLoading ?
                     <div>
@@ -46,18 +46,24 @@ export const CatchModal =  ({visible, setVisible, pokemon, catchChance, setChanc
                         {handleChance(catchChance) ?
                             <div className='successful-catch-container'>
                                 <div>
-                                    <h3>{pokemon.name}</h3>
+                                    <h2>CONGRATULATIONS!</h2>
                                 </div>
                                 <div>
                                     <img src={pokemon.sprites.front_default} className='pokemon-image' alt={pokemon.name}/>
                                 </div>
+                                <WhiteSpace size='md'/>
+                                <div>
+                                    <h3>GOTCHA!</h3>
+                                    <h3>{pokemon.name.toUpperCase()} WAS CAUGHT!</h3>
+                                </div>
+                                <WhiteSpace size='md'/>
                                 <NameForm setVisible={setVisible} pokemon={pokemon}/>
-                                <WhiteSpace size='xl'/>
-                                <WhiteSpace size='xl'/>
                             </div>
                             :
                             <div className='failed-catch-container'>
-                                <h1>OH NO, THE POKEMON BROKE FREE!</h1>
+                                <div className='failed-catch-text'>
+                                    <h1>OH NO, THE POKEMON BROKE FREE!</h1>
+                                </div>
                                 <WhiteSpace size='md'/>
                                 <div className='button-container'>
                                     <Button onClick={handleRetry}>Retry</Button>

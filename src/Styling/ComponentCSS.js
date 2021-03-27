@@ -1,25 +1,27 @@
 import {css} from "@emotion/react";
 import {GOLDEN_YELLOW, GREY_BLACK} from "../Constants/Color";
 
-export const topBarCSS = css`
+export const TopBarCSS = css`
     color: black;
     width: 100%;
     border: 0px;
     padding: auto;
     min-width: 200px;
     height: auto;
+    text-align: center;
     background-image: linear-gradient(75deg, #bd4949, #7b2916);
 `
 
-export const navigationButtonContainer = css`
+export const NavigationButtonContainer = css`
     text-align: center;
     margin-bottom: 0;
 `
 
-export const navigationButton = css`
+export const NavigationButtonCSS = css`
      padding: 10vh 0 10vh 0;
      border: auto;
      display: inline-block;
+     min-width: 60px;
      a {
          background-color: ${GREY_BLACK};
          border-radius: 2vh;
@@ -29,11 +31,11 @@ export const navigationButton = css`
          color: ${GOLDEN_YELLOW};
          padding: 2.5vh;
          font-weight: bold;
-         font-size: 1.5vh;
+         font-size: 1.2vh;
      }
 `
 
-export const containerGithub = css`
+export const ContainerGithubCSS = css`
     padding: 5vh 0 2vh 0;
     text-align: center;
     a {
@@ -75,7 +77,7 @@ export const CarouselComponentCSS = css`
     }
 `
 
-export const containerPokeball = css`
+export const ContainerPokeballCSS = css`
     width: 100%;
     padding: 6vh 0 2vh 0;
     img {
@@ -95,7 +97,7 @@ export const containerPokeball = css`
     }
 `
 
-export const loading = css`
+export const LoadingCSS = css`
         margin-top: 5%;
         margin-bottom: 5%;
         text-align: center;
@@ -103,7 +105,7 @@ export const loading = css`
         width: 100%;
 `
 
-export const pokemonCarousel = css`
+export const PokemonCarouselCSS = css`
     // .pokemonNameContainer {
     //     background-color: black;
     // }
@@ -111,4 +113,16 @@ export const pokemonCarousel = css`
     //     font-size: 100px;
     //     color: white;
     // }
+`
+
+export const NicknameFormCSS = css`
+    background-color: ${GREY_BLACK};
+    h4{
+        color: ${GOLDEN_YELLOW};
+        font-weight: bold;
+    }
+    .error-message{
+        margin-top: 0.7em;
+        color: red;
+    }
 `

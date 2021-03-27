@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 
-import {containerGithub,containerPokeball,topBarCSS, navigationButton, navigationButtonContainer} from '../Styling/ComponentCSS';
+import {ContainerGithubCSS,ContainerPokeballCSS, TopBarCSS, NavigationButtonCSS} from '../Styling/ComponentCSS';
 import { useHistory } from 'react-router-dom'
 import React from "react";
 
@@ -24,25 +24,23 @@ export const TopBar = () => {
     }
 
     return(
-        <div css={topBarCSS}>
-            <div css={containerPokeball}>
+        <div css={TopBarCSS}>
+            <div css={ContainerPokeballCSS}>
                 <a onClick={handlePokeballClick}><img src='/images/PinClipart.com_pokeball-clip-art_843046.png' alt='PokeBall' width='170px'/></a>
                 <h2>GOTTA CATCH 'EM ALL!</h2>
             </div>
-            <div css={containerGithub}>
+            <div css={ContainerGithubCSS}>
                 <a target="_blank" href='https://github.com/AldiPrayogi/' rel='noreferrer'>GitHub</a>
             </div>
-            <p css={navigationButtonContainer}>
-                <div css={navigationButton}>
+                <div css={NavigationButtonCSS}>
                     <a onClick={handleListClick}>Pokemon List</a>
                 </div>
-                <div css={navigationButton}>
+                <div css={NavigationButtonCSS}>
                     <a onClick={handleHomeClick} style={{margin: "2vw"}}>Home</a>
                 </div>
-                <div css={navigationButton}>
+                <div css={NavigationButtonCSS}>
                     <a onClick={handlePokedexClick}>Your Pokedex</a>
                 </div>
-            </p>
         </div>
     );
 }

@@ -54,7 +54,7 @@ export const checkBackgroundColor = (type) => {
     return css`
         background-color: ${backgroundColor};
         width: 25vw;
-        color: white;
+        color: black;
         max-width: 120px;
         padding: 0;
         text-align: center;
@@ -71,17 +71,16 @@ export const checkBackgroundColorPokedex = (type) => {
 
     return css`
         background-color: ${backgroundColor};
-        width: 10vh;
-        max-width: 120px;
-        text-align: center;
+        width: 40%;
+        margin-left: 5%;
+        margin-top: 5%;
+        color: black;
         padding: 0;
-        margin-right: 1vw;
+        text-align: center;
+        margin-right: 5%;
         display: inline-block;
-        font-size: 50%;
+        font-size: 1vh;
         font-weight: bold;
         border-style: none;
-        Span{
-            margin: 0;
-        }
     `
 }

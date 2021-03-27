@@ -127,7 +127,7 @@ export const PokemonCardsCSS = css`
         height: auto;
         max-width: 850px;
     }
-    .movesAccordion{
+    .accordion-content{
         text-align: center;
         font-weight: 700;
     }
@@ -140,7 +140,6 @@ export const PokemonCardsCSS = css`
     }
     .am-accordion-header{
         background-color: ${BACKGROUND_COLOR} !important;
-        border: none !important;
         padding: 0px !important;
         border-style: 10px !important;
     }
@@ -284,21 +283,36 @@ export const PokemonDetailPageCSS = css`
     }
 `
 
-export const CatchModalCSS = css`
+export const ModalCSS = css`
+    .am-modal-transparent{
+        width: 20vh;
+    }
+    max-width: 300px;
     .am-modal-header:{
         font-weight: bold;
+        border-radius: 10px;
+    }
+    h2{
+        background-color: ${GREY_BLACK};
+        color: ${GOLDEN_YELLOW};
+        font-weight: bolder;
     }
     .pokemon-image{
         width: 50vw;
         max-width: 500px;
         background-image: url('/images/2gfwG.jpg');
     }
+    .am-modal-content: {
+        background-color: ${GOLDEN_YELLOW};
+        padding-top: 0px !important;
+    }
     .successful-catch-container{
+        background-color: ${GOLDEN_YELLOW};
         h3{
             font-size: 2.6vw;
             font-weight: bold;
-            background-color: ${GREY_BLACK};
-            color: ${GOLDEN_YELLOW};
+            background-color: ${GOLDEN_YELLOW};
+            color: ${GREY_BLACK};
         }
     }
     .container{
@@ -314,14 +328,34 @@ export const CatchModalCSS = css`
         background-color: ${GREY_BLACK};
     }
     .failed-catch-container{
-        // background-color: ${GOLDEN_YELLOW};
+        h1{
+            color: ${GOLDEN_YELLOW};
+        }
+        background-color: ${GOLDEN_YELLOW};
+        padding: 0 0 10px 0;
         h1{
             font-weight: bolder;
         }
     }
+    .confirmation-modal-container{
+        h2{
+            color: ${GOLDEN_YELLOW};
+        }
+        background-color: ${GOLDEN_YELLOW};
+        padding: 0 0 10px 0;
+        h1{
+            font-weight: bolder;
+        }
+    }
+    .failed-catch-text{
+        background-color: ${GREY_BLACK};
+        width: 100%;
+        padding: 10px;
+    }
     .button-container{
         display: flex;
         justify-content: space-between;
+        font-weight: bold;
     }
     width: 80vw;
     text-align: center;
@@ -335,7 +369,25 @@ export const CatchModalCSS = css`
 export const PokedexContainer = css`
     padding-bottom: 5vh;
     background-color: ${BACKGROUND_COLOR};
+    .am-card-header {
+        font-size: 1.4vh;
+        text-align: center;
+        font-weight: bolder;
+        text-align: center;
+        width: 100%;
+        color: white;
+        background-color: ${GREY_BLACK};
+        border-style: none;
+        border: 0px;
+    }
+    .am-card-header-content{
+        text-align: center;
+        font-weight: bolder;
+        color: ${GOLDEN_YELLOW};
+        margin-bottom: 0;
+    }
     .am-card {
+        text-align: center;
         border-radius: 2vh;
         margin: auto;
         background-color: ${GOLDEN_YELLOW};
@@ -346,6 +398,11 @@ export const PokedexContainer = css`
         width: 90%;
         height: auto;
         max-width: 850px;
+    }
+    .am-card-body {
+        padding: 0px;
+        max-width: 850px;
+        border-style: none;
     }
     .empty-container{
         margin: auto;
@@ -405,26 +462,20 @@ export const PokedexContainer = css`
         }
     }
     .pokedex-info{
-        display: flex;
-        padding-left: 1vw;
-        width: 40vw;
+        padding-top: 1%;
+        padding-left: 2vw;
+        width: 30vw;
         max-width: 300px;
         display: inline-block;
-        h2{
-            font-weight: 1000;
-            color: ${GREY_BLACK};
-            font-size: 2.5vh;
-            margin-bottom: 0px;
-        }
-        h5 {
+        h5{
             font-weight: bold;
-            font-size: 2vh;
-            margin-bottom: 0px;
+            font-size: 1.5vh;
         }
     }
+    
     .pokedex-release-button{
         float: right;
-        width: 10vw;
+        width: 20vw;
         max-width: 100px;
         padding-right: 1%;
         display: inline-block;
@@ -438,31 +489,22 @@ export const PokedexContainer = css`
         }
     }
     .am-button-disabled {
-        color: white;
+        color: black;
+    }
+    .abilities-button{
+        width: 40%;
+        margin-top: 5%;
+        color: black;
+        padding: 0;
+        text-align: center;
+        margin-right: 5%;
+        display: inline-block;
+        font-size: 1vh;
+        font-weight: bold;
+        border-style: none;
     }
     .pokedex-types{
         vertical-align: bottom;
         height: 100%;
-    }
-    .am-card-header {
-        font-size: 3vw;
-        font-weight: bolder;
-        text-align: center;
-        width: 100%;
-        color: white;
-        border-radius: 10px;
-        background-color: ${GREY_BLACK};
-        border-style: none;
-        border: 0px;
-    }
-    .am-card-header-content{
-        text-align: center;
-        color: ${GOLDEN_YELLOW};
-        margin: auto;
-    }
-    .am-card-body {
-        padding: 0px;
-        max-width: 850px;
-        border-style: none;
     }
 `

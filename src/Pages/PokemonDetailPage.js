@@ -19,6 +19,11 @@ const GET_POKEMONS_DETAIL = gql`
         name
       }
     }
+    abilities {
+      ability {
+        name
+      }
+    }
     moves {
       move {
         name
@@ -32,6 +37,8 @@ const GET_POKEMONS_DETAIL = gql`
     sprites {
         front_default
     }
+    height
+    weight
   }
 }
 `;
@@ -68,12 +75,21 @@ export const PokemonDetailPage = () => {
                 }
             }
         ],
+        abilities: [
+            {
+                ability: {
+                    name: 'abc'
+                }
+            }
+        ],
         pokemon: {
             name: 'pokemon'
         }
     };
 
     if(!loading) pokemonData = data.pokemon;
+
+    console.log(pokemonData);
 
     const handlePokemonClick = () => {
         setChance(Math.floor((Math.random() * 100) + 1));
@@ -134,7 +150,7 @@ export const PokemonDetailPage = () => {
                                                 <WhiteSpace size='md'/>
                                                 <WhiteSpace size='md'/>
                                                 <Accordion>
-                                                    <Accordion.Panel header='MOVES' className='movesAccordion'>
+                                                    <Accordion.Panel header='MOVES' className='accordion-content'>
                                                         {
                                                             pokemonData.moves.map(index => (
                                                                 <div className='moveContainer'>
@@ -143,8 +159,18 @@ export const PokemonDetailPage = () => {
                                                             ))
                                                         }
                                                     </Accordion.Panel>
+                                                    <WhiteSpace size='xl'/>
+                                                    <Accordion.Panel header='ABILITIES' className='accordion-content'>
+                                                        {
+                                                            pokemonData.abilities.map(index => (
+                                                                <div className='moveContainer'>
+                                                                    <p>{index.ability.name.toUpperCase()}</p>
+                                                                </div>
+                                                            ))
+                                                        }
+                                                    </Accordion.Panel>
                                                 </Accordion>
-                                                <WhiteSpace size='xl'/>
+                                                <WhiteSpace size='md'/>
                                                 <CatchModal
                                                     visible={isCatchModalVisible}
                                                     setVisible={setIsCatchModalVisible}
