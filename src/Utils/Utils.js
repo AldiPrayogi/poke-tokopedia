@@ -84,3 +84,5 @@ export const checkBackgroundColorPokedex = (type) => {
         border-style: none;
     `
 }
+
+export const FIRST_TEXT = 'YOU THROW A POKEBALL....';

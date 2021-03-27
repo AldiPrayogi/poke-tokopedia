@@ -5,7 +5,7 @@ import {Card, WingBlank, WhiteSpace, Button, Accordion} from "antd-mobile";
 import {TopBar} from "../Components/TopBar";
 import {PokemonCardsCSS, PokemonDetailPageCSS} from '../Styling/PagesCSS'
 import {gql, useQuery} from "@apollo/client";
-import {checkBackgroundColor} from '../Utils/Utils';
+import {checkBackgroundColor, FIRST_TEXT} from '../Utils/Utils';
 import {Loading} from "../Components/Loading";
 import {CatchModal} from "../Components/CatchModal";
 
@@ -45,6 +45,7 @@ const GET_POKEMONS_DETAIL = gql`
 
 export const PokemonDetailPage = () => {
     const [isCatchModalVisible, setIsCatchModalVisible] = useState(false);
+    const [loadingText, setLoadingText] = useState(FIRST_TEXT);
     const [isLoading, setIsLoading] = useState(true);
     const [chance, setChance] = useState(0);
     const pokemonName = (window.location.href).substring((window.location.href).lastIndexOf('/')+1);
@@ -52,6 +53,7 @@ export const PokemonDetailPage = () => {
     const { loading, error, data } = useQuery(GET_POKEMONS_DETAIL, {
         variables: {name: pokemonName}
     });
+
     if (error) return `Error! ${error.message}`;
 
     let pokemonData = {
@@ -89,14 +91,24 @@ export const PokemonDetailPage = () => {
 
     if(!loading) pokemonData = data.pokemon;
 
-    console.log(pokemonData);
+    const handleLoading = () => {
+        setTimeout(() => {
+            setIsLoading(false);
+        }, 4000);
+        setTimeout(() => {
+            setLoadingText('THE BALL IS SHAKING....');
+        }, 1000);
+        setTimeout(() => {
+            setLoadingText('IS IT GOING TO BE IT?....');
+        }, 2000);
+        setTimeout(() => {
+            setLoadingText('THE BALL IS SETTLING....');
+        }, 3000);
+    }
 
     const handlePokemonClick = () => {
         setChance(Math.floor((Math.random() * 100) + 1));
-        setTimeout(() => {
-            setIsLoading(false);
-        }, 2000);
-
+        handleLoading();
         setIsCatchModalVisible(true);
     }
     return (
@@ -174,11 +186,14 @@ export const PokemonDetailPage = () => {
                                                 <CatchModal
                                                     visible={isCatchModalVisible}
                                                     setVisible={setIsCatchModalVisible}
+                                                    loadingText={loadingText}
+                                                    setLoadingText={setLoadingText}
                                                     pokemon={pokemonData}
                                                     catchChance={chance}
                                                     setChance={setChance}
                                                     isLoading={isLoading}
                                                     setIsLoading={setIsLoading}
+                                                    handleLoading={handleLoading}
                                                 />
                                                 <WhiteSpace size='sm'/>
                                                 <Button className='catchPokemonButton' id='Details' onClick={handlePokemonClick}>THROW POKEBALL</Button>

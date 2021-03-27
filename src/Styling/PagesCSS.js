@@ -287,11 +287,11 @@ export const PokemonDetailPageCSS = css`
 `
 
 export const ModalCSS = css`
+    max-width: 800px;
+    margin-bottom: 100px;
     .am-modal-transparent{
         width: 20vh;
     }
-    max-width: 300px;
-    margin-bottom: 100px;
     .am-modal-header:{
         font-weight: bold;
         border-radius: 10px;
@@ -301,9 +301,18 @@ export const ModalCSS = css`
         color: ${GOLDEN_YELLOW};
         font-weight: bolder;
     }
+    .loading-catch-text{
+        h1{
+            background-color: ${GREY_BLACK};
+            color: ${GOLDEN_YELLOW};
+            font-weight: bolder;
+        }
+        background-color: ${GOLDEN_YELLOW};
+        padding: 2vh 0 5px 0;
+    }
     .pokemon-image{
         width: 50vw;
-        max-width: 500px;
+        max-width: 300px;
         background-image: url('/images/2gfwG.jpg');
     }
     .am-modal-content: {
@@ -334,22 +343,10 @@ export const ModalCSS = css`
     .failed-catch-container{
         h1{
             color: ${GOLDEN_YELLOW};
+            font-weight: bolder;
         }
         background-color: ${GOLDEN_YELLOW};
         padding: 0 0 10px 0;
-        h1{
-            font-weight: bolder;
-        }
-    }
-    .confirmation-modal-container{
-        h2{
-            color: ${GOLDEN_YELLOW};
-        }
-        background-color: ${GOLDEN_YELLOW};
-        padding: 0 0 10px 0;
-        h1{
-            font-weight: bolder;
-        }
     }
     .failed-catch-text{
         background-color: ${GREY_BLACK};
@@ -363,8 +360,48 @@ export const ModalCSS = css`
     }
     width: 80vw;
     text-align: center;
-    max-width: 800px;
     .button-retry{
+        color: ${GOLDEN_YELLOW};
+        background-color: ${GREY_BLACK};
+    }
+`
+
+export const ReleaseConfirmationModalCSS = css`
+    .confirmation-modal-container{
+        h2{
+            color: ${GOLDEN_YELLOW};
+        }
+        background-color: ${GOLDEN_YELLOW};
+        padding: 0 0 10px 0;
+        h1{
+            font-weight: bolder;
+        }
+    }
+    .button-container{
+        display: flex;
+        justify-content: space-between;
+        font-weight: bold;
+    }
+    .confirmation-modal-text{
+        background-color: ${GREY_BLACK};
+        width: 100%;
+        padding: 10px;
+    }
+    .am-modal-transparent{
+        width: 20vh;
+    }
+    width: 80vw;
+    text-align: center;
+    max-width: 300px;
+    margin-bottom: 100px;
+    .am-modal-header:{
+        font-weight: bold;
+        border-radius: 10px;
+    }
+    .am-button{
+        margin: auto;
+        width: 40%;
+        display: inline-block;
         color: ${GOLDEN_YELLOW};
         background-color: ${GREY_BLACK};
     }

@@ -3,7 +3,12 @@
 import React, {useState} from 'react';
 import {Button, Card, List, Modal, WhiteSpace, WingBlank} from "antd-mobile";
 import {TopBar} from "../Components/TopBar";
-import {ModalCSS, HomePageCSS, PokedexContainer, TitleContainerCSS} from '../Styling/PagesCSS'
+import {
+    HomePageCSS,
+    PokedexContainer,
+    TitleContainerCSS,
+    ReleaseConfirmationModalCSS
+} from '../Styling/PagesCSS'
 import {checkBackgroundColorPokedex} from "../Utils/Utils";
 const ls = require('local-storage')
 
@@ -11,22 +16,26 @@ const Item = List.Item;
 
 export const PokedexPage = () => {
     const [pokemonList, setPokemonList] = useState(ls.get('pokemonList'));
+    const [deletedPokemon, setDeletedPokemon] = useState({});
     const [isConfirmationModalOpen, setIsConfirmationModalOpen] = useState(false);
 
-    const handleRelease = () => {
+    const handleRelease = (pokemon) => {
+        setDeletedPokemon(pokemon);
         setIsConfirmationModalOpen(true);
     }
     const handleCancelRelease = () => {
         setIsConfirmationModalOpen(false);
     }
 
-    const handleConfirmedRelease = (pokemon) => {
+    const handleConfirmedRelease = () => {
+        console.log(deletedPokemon);
         const modifiedPokemon = pokemonList.filter(item => {
-            if(item.nickname !== pokemon.nickname){
+            if(item.nickname !== deletedPokemon.nickname){
                 return item;
             }
             return null;
         })
+        console.log(modifiedPokemon);
         ls.set('pokemonList', modifiedPokemon);
         setPokemonList(modifiedPokemon);
         if(modifiedPokemon.length === 0){
@@ -97,21 +106,21 @@ export const PokedexPage = () => {
                                                             </div>
                                                         </div>
                                                         <div className='pokedex-release-button'>
-                                                            <Button size={'small'} onClick={() => handleRelease()}>RELEASE</Button>
+                                                            <Button size={'small'} onClick={() => handleRelease(item)}>RELEASE</Button>
                                                         </div>
                                                     </Item>
                                                     <Modal
                                                         visible={isConfirmationModalOpen}
-                                                        css={ModalCSS}
+                                                        css={ReleaseConfirmationModalCSS}
                                                         transparent
                                                     >
                                                         <div className='confirmation-modal-container'>
-                                                            <div className='failed-catch-text'>
+                                                            <div className='confirmation-modal-text'>
                                                                 <h2>ARE YOU SURE? THIS WILL RELEASE YOUR POKEMON INTO THE WILD!</h2>
                                                             </div>
                                                             <WhiteSpace size='md'/>
                                                             <div className='button-container'>
-                                                                <Button onClick={() => handleConfirmedRelease(item)}>YES</Button>
+                                                                <Button onClick={() => handleConfirmedRelease()}>YES</Button>
                                                                 <Button onClick={() => handleCancelRelease()}>NO</Button>
                                                             </div>
                                                         </div>

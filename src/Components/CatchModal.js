@@ -5,25 +5,30 @@ import {Button, Modal, WhiteSpace} from 'antd-mobile';
 import 'antd/es/spin/style/css';
 import {NameForm} from './NameForm';
 import {ModalCSS} from "../Styling/PagesCSS";
-import {Loading} from "./Loading";
+import {FIRST_TEXT} from "../Utils/Utils";
 
-export const CatchModal =  ({visible, setVisible, pokemon, catchChance, setChance, isLoading, setIsLoading}) => {
+export const CatchModal =  ({visible, setVisible, pokemon, catchChance, setChance, isLoading, setIsLoading, loadingText, setLoadingText, handleLoading}) => {
+
     const handleOnClose = () => {
         setVisible(false);
         setIsLoading(true);
+        setLoadingText(FIRST_TEXT);
     }
 
     const handleChance = (chance) => {
-        return chance < 50;
+        return chance <= 50;
     }
 
     const handleThrow = () => {
+        setLoadingText(FIRST_TEXT);
         setTimeout(() => {
             setIsLoading(false);
-        }, 2000);
+        }, 4000);
+        handleLoading();
     }
 
     const handleRetry = () => {
+        setLoadingText(FIRST_TEXT);
         setIsLoading(true);
         setChance(Math.floor((Math.random() * 100) + 1));
         handleThrow();
@@ -39,7 +44,9 @@ export const CatchModal =  ({visible, setVisible, pokemon, catchChance, setChanc
             >
                 {isLoading ?
                     <div>
-                        <Loading/>
+                        <div className='loading-catch-text'>
+                            <h1>{loadingText}</h1>
+                        </div>
                     </div>
                     :
                     <div>
