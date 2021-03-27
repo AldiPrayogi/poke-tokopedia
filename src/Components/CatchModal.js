@@ -24,12 +24,8 @@ export const CatchModal =  ({visible, setVisible, pokemon, catchChance, setChanc
     }
 
     const handleRetry = () => {
-        console.log(catchChance);
-        console.log(isLoading);
         setIsLoading(true);
-        console.log(isLoading);
         setChance(Math.floor((Math.random() * 100) + 1));
-        console.log(catchChance);
         handleThrow();
     }
     return (

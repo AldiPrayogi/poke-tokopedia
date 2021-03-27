@@ -12,8 +12,6 @@ const Item = List.Item;
 export const PokedexPage = () => {
     const [pokemonList, setPokemonList] = useState(ls.get('pokemonList'));
 
-    console.log(pokemonList);
-
     const handleRelease = (pokemon) => {
         const modifiedPokemon = pokemonList.filter(item => {
             if(item.nickname !== pokemon.nickname){
@@ -24,7 +22,6 @@ export const PokedexPage = () => {
         ls.set('pokemonList', modifiedPokemon);
         setPokemonList(modifiedPokemon);
         if(modifiedPokemon.length === 0){
-            console.log('masuk');
             ls.remove('pokemonList');
             setPokemonList(ls.get('pokemonList'));
         }

@@ -42,8 +42,6 @@ export const PokemonDetailPage = () => {
     const [chance, setChance] = useState(0);
     const pokemonName = (window.location.href).substring((window.location.href).lastIndexOf('/')+1);
 
-    console.log(isCatchModalVisible);
-
     const { loading, error, data } = useQuery(GET_POKEMONS_DETAIL, {
         variables: {name: pokemonName}
     });
@@ -81,12 +79,10 @@ export const PokemonDetailPage = () => {
         setChance(Math.floor((Math.random() * 100) + 1));
         setTimeout(() => {
             setIsLoading(false);
-        }, 2400);
-        console.log(chance);
+        }, 2000);
+
         setIsCatchModalVisible(true);
     }
-
-    console.log(window.location.href);
     return (
         <div>
             <div>
