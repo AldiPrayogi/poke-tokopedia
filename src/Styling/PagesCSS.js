@@ -168,24 +168,23 @@ export const PokemonCardsCSS = css`
         padding: 0px 1% 0px 1%;
         border-radius: 10px;
     }
-    .moveContainer{
+    .moveContainer{        
+        display: flex;
+        align-items: center;
         background-color: ${BACKGROUND_COLOR};
         color: ${GREY_BLACK};
-        width: 10vw;
-        display: flex;
+        width: 10.5vw;
         overflow: hidden;
-        max-height: 90px;
-        height: 7vh;
-        text-align: center;
-        align-items: center;
+        max-height: 80px;
+        height: 10vh;
         word-break: break-word;
         margin-right: 1vw;
         display: inline-block;
         border-radius: 10px;
         p{
             font-weight: bold;
-            font-size: 1.1vh;
-            padding: 30% 0px 5px 0px;
+            font-size: 1.3vh;
+            padding: 1vh 0px 0 1px;
         }
     }
 `
