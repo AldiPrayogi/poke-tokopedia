@@ -30,7 +30,7 @@ export const TopBar = () => {
                 <h2>GOTTA CATCH 'EM ALL!</h2>
             </div>
             <div css={ContainerGithubCSS}>
-                <a target="_blank" href='https://github.com/AldiPrayogi/' rel='noreferrer'>GitHub</a>
+                <a target="_blank" href='https://github.com/AldiPrayogi/poke-tokopedia' rel='noreferrer'>GitHub</a>
             </div>
                 <div css={NavigationButtonCSS}>
                     <a onClick={handleListClick}>Pokemon List</a>
