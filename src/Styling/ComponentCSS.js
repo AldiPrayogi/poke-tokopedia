@@ -1,5 +1,5 @@
 import {css} from "@emotion/react";
-import {BACKGROUND_COLOR, GOLDEN_YELLOW, GREY_BLACK} from "../Constants/Color";
+import {GOLDEN_YELLOW, GREY_BLACK} from "../Constants/Color";
 
 export const topBarCSS = css`
     color: black;
@@ -65,8 +65,11 @@ export const CarouselComponentCSS = css`
         width: 100%;
         padding-right: 9%;
     }
+    .am-carousel-wrap{
+        margin-top: 100px important!;
+    }
     img{
-        height: 35vh;
+        height: 25vh;
         vertical-align: top;
         padding-right:2%;
     }

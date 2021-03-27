@@ -37,6 +37,8 @@ export const PokemonCarousel = (data) => {
                                 }}
                                 onClick={() => handleListClick(val.name)}
                             />
+                            <WhiteSpace size='xl'/>
+                            <WhiteSpace size='xl'/>
                         </div>
                     ))}
                 </Carousel>

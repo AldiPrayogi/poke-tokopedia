@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 
 import React from 'react';
-import {WhiteSpace, Card} from "antd-mobile";
+import {WhiteSpace, Card, WingBlank} from "antd-mobile";
 import {TopBar} from "../Components/TopBar";
 import { HomePageCSS, TitleContainerCSS, PokemonCardCarousel} from '../Styling/PagesCSS'
 import {PokemonCarousel} from "../Components/PokemonCarousel";
@@ -64,12 +64,17 @@ export const HomePage = () => {
                     <h2>RANDOM POKEMONS OF THE DAY</h2>
                     <WhiteSpace size='xl'/>
                 </div>
-                <div css={PokemonCardCarousel}>
-                    <Card>
-                        <Card.Body>
-                            {loading ? <div style={{minHeight: '30vh'}}><Loading /></div> : <PokemonCarousel data={pokemonData}/>}
-                        </Card.Body>
-                    </Card>
+                <WhiteSpace size='xl'/>
+                <div className='card-carousel-container'>
+                    <WingBlank>
+                        <div css={PokemonCardCarousel}>
+                            <Card>
+                                <Card.Body>
+                                    {loading ? <div style={{minHeight: '30vh'}}><Loading /></div> : <PokemonCarousel data={pokemonData}/>}
+                                </Card.Body>
+                            </Card>
+                        </div>
+                    </WingBlank>
                 </div>
             </div>
         </div>

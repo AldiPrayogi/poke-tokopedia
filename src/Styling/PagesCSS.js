@@ -15,6 +15,7 @@ export const HomePageCSS = css`
     width: 100%;
     height: auto;
     padding: 0;
+    margin: auto;
     text-align: center;
     h2 {
         font-size: 2.2vh;
@@ -23,6 +24,18 @@ export const HomePageCSS = css`
     .am-card{
         border-bottom: 0px;
         padding: 0;
+        border-style: none !important;
+    }
+    .am-card-body{
+        border-bottom: 0px;
+        border-style: none !important;
+    }
+    .card-carousel-container{
+        width: 90vw;
+        border-top: 10px;
+        max-width: 500px;
+        border-style: none;
+        margin: auto;
     }
 `
 
@@ -53,7 +66,7 @@ export const PokemonCardsCSS = css`
     }
     .pokemonName{
         font-weight: 900;
-        font-size: 5vh;
+        font-size: 5vw;
         margin-top: 0;
         max-width: 720px;
     }
@@ -94,6 +107,9 @@ export const PokemonCardsCSS = css`
         Span {
             width: auto;
         }
+        .am-button-disabled {
+            color: white;
+        }
     }
     .pokemonImage{
         width: 50vh;
@@ -120,7 +136,7 @@ export const PokemonCardsCSS = css`
         border-style: none !important;
         border: none !important;
         border-top: none !important;
-        padding: 10px;
+        padding: 10px 0px 10px 0px;
     }
     .am-accordion-header{
         background-color: ${BACKGROUND_COLOR} !important;
@@ -154,16 +170,29 @@ export const PokemonCardsCSS = css`
         border-radius: 10px;
     }
     .moveContainer{
-        width: 100%;
+        background-color: ${BACKGROUND_COLOR};
+        color: ${GREY_BLACK};
+        width: 10vw;
+        display: flex;
+        overflow: hidden;
+        max-height: 90px;
+        height: 7vh;
         text-align: center;
-        font-size: 1.5vh;
+        align-items: center;
         word-break: break-word;
-        overflow: auto;
+        margin-right: 1vw;
+        display: inline-block;
+        border-radius: 10px;
+        p{
+            font-size: 1vh;
+            padding: 30% 0px 5px 0px;
+        }
     }
 `
 
 export const PokemonCardCarousel = css`
     .am-card-body{
+        width: 100%;
         min-height: 50vh;
         background-color: ${BACKGROUND_COLOR};
     }
@@ -264,32 +293,35 @@ export const CatchModalCSS = css`
         max-width: 500px;
         background-image: url('/images/2gfwG.jpg');
     }
-    Button{
-        width: 30%;
-        display: inline-block;
-    }
-    h3{
-        font-size: 2.6vw;
-        font-weight: bold;
-        background-color: ${GREY_BLACK};
-        color: ${GOLDEN_YELLOW};
-    }
-    .button-throw{
-        width: 100%;
-        display: inline-block;
-        color: ${GOLDEN_YELLOW};
-        background-color: ${GREY_BLACK};
+    .successful-catch-container{
+        h3{
+            font-size: 2.6vw;
+            font-weight: bold;
+            background-color: ${GREY_BLACK};
+            color: ${GOLDEN_YELLOW};
+        }
     }
     .container{
         text-align: center;
         width: 100%;
         display: inline-block;
     }
-    .button-close{
-        width: 50%;
+    .am-button{
+        margin: auto;
+        width: 40%;
         display: inline-block;
         color: ${GOLDEN_YELLOW};
         background-color: ${GREY_BLACK};
+    }
+    .failed-catch-container{
+        // background-color: ${GOLDEN_YELLOW};
+        h1{
+            font-weight: bolder;
+        }
+    }
+    .button-container{
+        display: flex;
+        justify-content: space-between;
     }
     width: 80vw;
     text-align: center;
@@ -297,5 +329,140 @@ export const CatchModalCSS = css`
     .button-retry{
         color: ${GOLDEN_YELLOW};
         background-color: ${GREY_BLACK};
+    }
+`
+
+export const PokedexContainer = css`
+    padding-bottom: 5vh;
+    background-color: ${BACKGROUND_COLOR};
+    .am-card {
+        border-radius: 2vh;
+        margin: auto;
+        background-color: ${GOLDEN_YELLOW};
+        border-style: ridge;
+        border-color: blue;
+        border-width: 1vw;
+        border-color: ${GOLDEN_YELLOW};
+        width: 90%;
+        height: auto;
+        max-width: 850px;
+    }
+    .empty-container{
+        margin: auto;
+        font-weight: bolder;
+        padding: 1vw;
+        h3 {
+            margin-bottom: auto;
+            font-size: 4vh;
+            color: ${BACKGROUND_COLOR};
+            font-weight: bolder;
+            -webkit-text-stroke: 2px ${GREY_BLACK};
+        }
+    }
+    .am-list-body{
+        border-radius: 5px;
+        background-color: ${GOLDEN_YELLOW};
+    }
+    .am-list{
+        border-radius: 5px;
+        background-color: ${GOLDEN_YELLOW};
+    }
+    am-list-line-wrap{
+        border-style: none;
+        background-color: ${GOLDEN_YELLOW};
+    }
+    .am-list-item {
+        background-color: ${GOLDEN_YELLOW};
+    }
+    .am-list-body{
+        background-color: ${GOLDEN_YELLOW};
+        border-style: none;
+    }
+    .am-list-item-middle{
+        border-style: none;
+        padding-left: 2vw;
+    }
+    .am-list-line-wrap{
+        padding-right: 0px !important;
+    }
+    .whitespace{
+        background-color: ${GOLDEN_YELLOW};
+    }
+    .pokedex-image {
+        margin: auto;
+        width: 25vw;
+        max-width: 250px;
+        display: inline-block;
+        float: left;
+        padding-top: 1.2%;
+        img {
+            width: 100%;
+            max-width: 250px;
+            height: auto;
+            min-height: 100%;
+            border-radius: 5px;
+            background-image: url('/images/2gfwG.jpg');
+        }
+    }
+    .pokedex-info{
+        display: flex;
+        padding-left: 1vw;
+        width: 40vw;
+        max-width: 300px;
+        display: inline-block;
+        h2{
+            font-weight: 1000;
+            color: ${GREY_BLACK};
+            font-size: 2.5vh;
+            margin-bottom: 0px;
+        }
+        h5 {
+            font-weight: bold;
+            font-size: 2vh;
+            margin-bottom: 0px;
+        }
+    }
+    .pokedex-release-button{
+        float: right;
+        width: 10vw;
+        max-width: 100px;
+        padding-right: 1%;
+        display: inline-block;
+        .am-button {
+            font-weight: bold;
+            padding: 0px;
+            width: auto;
+            font-size: 1.5vw;
+            background-color: ${GREY_BLACK};
+            color: ${GOLDEN_YELLOW};
+        }
+    }
+    .am-button-disabled {
+        color: white;
+    }
+    .pokedex-types{
+        vertical-align: bottom;
+        height: 100%;
+    }
+    .am-card-header {
+        font-size: 3vw;
+        font-weight: bolder;
+        text-align: center;
+        width: 100%;
+        color: white;
+        border-radius: 10px;
+        background-color: ${GREY_BLACK};
+        border-style: none;
+        border: 0px;
+    }
+    .am-card-header-content{
+        text-align: center;
+        color: ${GOLDEN_YELLOW};
+        margin: auto;
+    }
+    .am-card-body {
+        padding: 0px;
+        max-width: 850px;
+        border-style: none;
     }
 `
