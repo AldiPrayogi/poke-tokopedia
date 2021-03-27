@@ -26,7 +26,7 @@ export const TopBar = () => {
     return(
         <div css={topBarCSS}>
             <div css={containerPokeball}>
-                <a onClick={handlePokeballClick}><img src='/images/PinClipart.com_pokeball-clip-art_843046.png' alt='PokeBall' width='120vw'/></a>
+                <a onClick={handlePokeballClick}><img src='/images/PinClipart.com_pokeball-clip-art_843046.png' alt='PokeBall' width='170px'/></a>
                 <h2>GOTTA CATCH 'EM ALL!</h2>
             </div>
             <div css={containerGithub}>

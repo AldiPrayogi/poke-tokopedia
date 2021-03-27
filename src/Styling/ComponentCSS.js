@@ -49,6 +49,29 @@ export const containerGithub = css`
     }
 `
 
+export const CarouselComponentCSS = css`
+    width: "100%";
+    textAlign: center
+    .carousel-container{
+        textAlign: center
+    }
+    .pokemon-name-header{
+        background-color: ${GREY_BLACK};
+        width: 110%
+    }
+    .pokemon-name{
+        color: ${GOLDEN_YELLOW};
+        font-size: 2.7vh;
+        width: 100%;
+        padding-right: 9%;
+    }
+    img{
+        height: 35vh;
+        vertical-align: top;
+        padding-right:2%;
+    }
+`
+
 export const containerPokeball = css`
     width: 100%;
     padding: 6vh 0 2vh 0;

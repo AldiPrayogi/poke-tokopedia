@@ -132,7 +132,7 @@ export const PokemonListPage =  () => {
                                                     style={{ height: '40%', verticalAlign: 'top'}}
                                                     onClick={() => handlePokemonClick(dataItem.name)}
                                                 />
-                                                <h5>Owned amount: {dataItem.count}</h5>
+                                                <h5 className='owned-amount'>OWNED AMOUNT: {dataItem.count}</h5>
                                             </div>
                                         )}
                                     />

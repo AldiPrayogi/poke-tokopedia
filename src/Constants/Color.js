@@ -1,4 +1,4 @@
-export const GOLDEN_YELLOW = '#f2cc65'
+export const GOLDEN_YELLOW = '#f0c44d'
 export const GREY_BLACK = '#222224';
 export const BACKGROUND_COLOR = '#e3e5dd';
 export const NORMAL = '#A8A87A';

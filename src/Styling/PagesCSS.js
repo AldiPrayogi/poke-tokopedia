@@ -26,7 +26,7 @@ export const HomePageCSS = css`
     }
 `
 
-export const pokemonCards = css`
+export const PokemonCardsCSS = css`
     padding-bottom: 5vh;
     background-color: ${BACKGROUND_COLOR};
     .am-card-header {
@@ -59,7 +59,8 @@ export const pokemonCards = css`
     }
     .catchPokemonButton{
         background-color: ${GREY_BLACK};
-        width: 20vw;
+        width: auto;
+        padding: 0px 1vw 0px 1vw;
         color: ${GOLDEN_YELLOW};
         max-width: 120px;
         text-align: center;
@@ -101,7 +102,7 @@ export const pokemonCards = css`
     .am-card {
         border-radius: 2vh;
         margin: auto;
-        background-color: #f2cc65;
+        background-color: ${GOLDEN_YELLOW};
         border-style: ridge;
         border-color: blue;
         border-width: 1vw;
@@ -198,6 +199,13 @@ export const PaginationContainer = css`
         color: ${GOLDEN_YELLOW};
         background-color: ${GREY_BLACK};
     }
+    .owned-amount{
+        align-text: center;
+        font-size: 70%;
+        font-weight: normal;
+        color: ${GOLDEN_YELLOW};
+        background-color: ${GREY_BLACK};
+    }
     img {
         width: 100%;
         min-height: 20%;
@@ -212,6 +220,24 @@ export const PaginationContainer = css`
 `
 
 export const PokemonListPageCSS = css`
+    height-min: 130px;
+    background-color: ${BACKGROUND_COLOR};
+    text-align: center;
+    margin: 0px;
+    Span{
+        font-weight: bold;
+    }
+    .pokemonListTitle {
+        background-color: ${GREY_BLACK};
+        h2 {
+            font-size: 2.2vh;
+            font-weight:900;
+            color:${GOLDEN_YELLOW};
+        }
+    }
+`
+
+export const PokemonDetailPageCSS = css`
     height-min: 130px;
     background-color: ${BACKGROUND_COLOR};
     text-align: center;

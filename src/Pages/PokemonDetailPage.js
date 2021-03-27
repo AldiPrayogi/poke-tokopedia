@@ -3,10 +3,10 @@
 import React, {useState} from 'react';
 import {Card, WingBlank, WhiteSpace, Button, Accordion} from "antd-mobile";
 import {TopBar} from "../Components/TopBar";
-import {pokemonCards, PokemonListPageCSS} from '../Styling/PagesCSS'
+import {PokemonCardsCSS, PokemonDetailPageCSS, PokemonListPageCSS} from '../Styling/PagesCSS'
 import {gql, useQuery} from "@apollo/client";
 import {css} from "@emotion/react";
-import {checkType} from '../Utils/Utils';
+import {checkBackgroundColor} from '../Utils/Utils';
 import {Loading} from "../Components/Loading";
 import {CatchModal} from "../Components/CatchModal";
 
@@ -36,23 +36,6 @@ const GET_POKEMONS_DETAIL = gql`
   }
 }
 `;
-
-const checkBackgroundColor = (type) => {
-    const backgroundColor =  checkType(type)
-
-    return css`
-        background-color: ${backgroundColor};
-        width: 20vw;
-        color: white;
-        max-width: 120px;
-        text-align: center;
-        margin-right: 1vw;
-        display: inline-block;
-        font-size: 100%;
-        font-weight: bold;
-        border-style: none;
-    `
-}
 
 export const PokemonDetailPage = () => {
     const [isCatchModalVisible, setIsCatchModalVisible] = useState(false);
@@ -106,7 +89,7 @@ export const PokemonDetailPage = () => {
             <div>
                 <TopBar/>
             </div>
-            <div css={PokemonListPageCSS}>
+            <div css={PokemonDetailPageCSS}>
                 <div className='pokemonListTitle'>
                     <WhiteSpace size='xl'/>
                     <h2>POKEMON DETAIL</h2>
@@ -114,8 +97,8 @@ export const PokemonDetailPage = () => {
                 </div>
                 <WhiteSpace size="xl" />
                 <WhiteSpace size="xl" />
-                <WhiteSpace size="xl" />
-                <WingBlank size='sm' css={pokemonCards}>
+                <WhiteSpace size="md" />
+                <WingBlank size='sm' css={PokemonCardsCSS}>
                     {
                         loading ? <Loading/>:
                             <Card>

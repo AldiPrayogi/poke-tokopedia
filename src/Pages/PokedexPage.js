@@ -3,7 +3,7 @@
 import React from 'react';
 import {List} from "antd-mobile";
 import {TopBar} from "../Components/TopBar";
-import { HomePageCSS, navigationButton,pokemonCards} from '../Styling/PagesCSS'
+import { HomePageCSS, navigationButton,PokemonCardsCSS} from '../Styling/PagesCSS'
 const ls = require('local-storage')
 
 const Item = List.Item;

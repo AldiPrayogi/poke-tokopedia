@@ -3,6 +3,7 @@ import {
     FIGHTING, FIRE, FLYING, GHOST, GRASS, GROUND, ICE,
     NORMAL, POISON, PSYCHIC, ROCK, STEEL, WATER
 } from '../Constants/Color';
+import {css} from "@emotion/react";
 
 export const checkType = (type) => {
     switch (type){
@@ -45,4 +46,21 @@ export const checkType = (type) => {
         default:
             return DEFAULT
     }
+}
+
+export const checkBackgroundColor = (type) => {
+    const backgroundColor = checkType(type)
+
+    return css`
+        background-color: ${backgroundColor};
+        width: 20vw;
+        color: white;
+        max-width: 120px;
+        text-align: center;
+        margin-right: 1vw;
+        display: inline-block;
+        font-size: 100%;
+        font-weight: bold;
+        border-style: none;
+    `
 }

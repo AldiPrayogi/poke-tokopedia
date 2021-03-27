@@ -17,7 +17,8 @@ export const NameForm = ({setVisible, pokemon}) => {
                 name: pokemon.name,
                 image: pokemon.sprites.front_default,
                 level: Math.floor((Math.random() * 100) + 1),
-                nickname: values.nickname
+                nickname: values.nickname,
+                types: pokemon.types
             }
             temp.push(newPokemon);
             ls.set('pokemonList', temp);
@@ -51,7 +52,6 @@ export const NameForm = ({setVisible, pokemon}) => {
                     value={formik.values.name}
                 />
                 {formik.touched.nickname && formik.errors.nickname ? <div>{formik.errors.nickname}</div> : null}
-                <button type="submit">Submit</button>
             </form>
         </div>
     );
