@@ -66,7 +66,7 @@ export const PokemonCardsCSS = css`
     }
     .pokemonName{
         font-weight: 900;
-        font-size: 5vw;
+        font-size: 4vh;
         margin-top: 0;
         max-width: 720px;
     }
@@ -173,10 +173,13 @@ export const PokemonCardsCSS = css`
         align-items: center;
         background-color: ${BACKGROUND_COLOR};
         color: ${GREY_BLACK};
-        width: 10.5vw;
+        width: 8vw;
+        max-width: 180px;
+        min-width: 50px;
+        min-height: 60px;
         overflow: hidden;
-        max-height: 80px;
-        height: 10vh;
+        max-height: 120px;
+        height: 6vh;
         word-break: break-word;
         margin-right: 1vw;
         display: inline-block;
@@ -184,7 +187,7 @@ export const PokemonCardsCSS = css`
         p{
             font-weight: bold;
             font-size: 1.3vh;
-            padding: 1vh 0px 0 1px;
+            padding: 1.2vh 0px 0 1px;
         }
     }
 `
