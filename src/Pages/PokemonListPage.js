@@ -44,7 +44,7 @@ const limit = 12;
 export const PokemonListPage =  () => {
     const [offset, setOffset] = useState(0);
     const [currentPage, setCurrentPage] = useState(1);
-    const ownedPokemon = ls.get('pokemonList');
+    const ownedPokemon = ls.get('pokemonList') ? ls.get('pokemonList') : [{}];
 
     const history = useHistory();
 
@@ -75,6 +75,7 @@ export const PokemonListPage =  () => {
         }))
 
         const tempResult = {};
+
         for(let {name} of ownedPokemon){
             tempResult[name] = {
                 name,
