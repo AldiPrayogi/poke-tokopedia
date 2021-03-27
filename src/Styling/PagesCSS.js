@@ -75,11 +75,11 @@ export const PokemonCardsCSS = css`
         width: auto;
         padding: 0px 1vw 0px 1vw;
         color: ${GOLDEN_YELLOW};
-        max-width: 120px;
+        max-width: 220px;
         text-align: center;
         margin-right: 1vw;
         display: inline-block;
-        font-size: 70%;
+        font-size: 1.4vh;
         font-weight: bold;
         border-style: none;
     }
@@ -291,6 +291,7 @@ export const ModalCSS = css`
         width: 20vh;
     }
     max-width: 300px;
+    margin-bottom: 100px;
     .am-modal-header:{
         font-weight: bold;
         border-radius: 10px;
@@ -470,9 +471,9 @@ export const PokedexContainer = css`
         width: 30vw;
         max-width: 300px;
         display: inline-block;
-        h5{
-            font-weight: bold;
-            font-size: 1.5vh;
+        h4{
+            font-weight: bolder;
+            font-size: 1.3vh;
         }
     }
     
@@ -486,7 +487,7 @@ export const PokedexContainer = css`
             font-weight: bold;
             padding: 0px;
             width: auto;
-            font-size: 1.5vw;
+            font-size: 1.5vh;
             background-color: ${GREY_BLACK};
             color: ${GOLDEN_YELLOW};
         }
@@ -494,8 +495,13 @@ export const PokedexContainer = css`
     .am-button-disabled {
         color: black;
     }
+    .abilities-container{
+        width: 150%;
+    }
     .abilities-button{
         width: 40%;
+        max-width: 100px;
+        overflow: auto;
         margin-top: 5%;
         color: black;
         padding: 0;

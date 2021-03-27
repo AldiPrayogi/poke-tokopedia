@@ -83,12 +83,12 @@ export const PokedexPage = () => {
                                                             </div>
                                                         </div>
                                                         <div className='pokedex-info'>
-                                                            <h5>NAME: {item.name.toUpperCase()}</h5>
-                                                            <h5>LEVEL: {item.level}</h5>
-                                                            <h5>WEIGHT: {item.weight}KG</h5>
-                                                            <h5>HEIGHT: {item.height}M</h5>
-                                                            <div>
-                                                                <h5>ABILITIES:</h5>
+                                                            <h4>POKEMON: {item.name.toUpperCase()}</h4>
+                                                            <h4>LEVEL: {item.level}</h4>
+                                                            <h4>WEIGHT: {item.weight}KG</h4>
+                                                            <h4>HEIGHT: {item.height}M</h4>
+                                                            <div className='abilities-container'>
+                                                                <h4>ABILITIES:</h4>
                                                                 {
                                                                     item.abilities.map(index => (
                                                                         <Button disabled className='abilities-button' size='small'>{index.ability.name.toUpperCase()}</Button>

@@ -14,7 +14,7 @@ export const CatchModal =  ({visible, setVisible, pokemon, catchChance, setChanc
     }
 
     const handleChance = (chance) => {
-        return chance < 90;
+        return chance < 50;
     }
 
     const handleThrow = () => {

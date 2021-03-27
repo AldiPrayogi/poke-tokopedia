@@ -180,6 +180,7 @@ export const PokemonDetailPage = () => {
                                                     isLoading={isLoading}
                                                     setIsLoading={setIsLoading}
                                                 />
+                                                <WhiteSpace size='sm'/>
                                                 <Button className='catchPokemonButton' id='Details' onClick={handlePokemonClick}>THROW POKEBALL</Button>
                                                 <WhiteSpace size='xl'/>
                                                 <WhiteSpace size='xl'/>
