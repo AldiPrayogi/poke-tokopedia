@@ -174,7 +174,7 @@ export const PokemonCardsCSS = css`
         width: 10vw;
         display: flex;
         overflow: hidden;
-        max-height: 90px;
+        max-height: 80px;
         height: 7vh;
         text-align: center;
         align-items: center;
@@ -183,7 +183,8 @@ export const PokemonCardsCSS = css`
         display: inline-block;
         border-radius: 10px;
         p{
-            font-size: 1vh;
+            font-weight: bold;
+            font-size: 1.2vh;
             padding: 30% 0px 5px 0px;
         }
     }
