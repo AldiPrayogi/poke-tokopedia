@@ -42,6 +42,18 @@ export const HomePageCSS = css`
 export const PokemonCardsCSS = css`
     padding-bottom: 5vh;
     background-color: ${BACKGROUND_COLOR};
+    .empty-container{
+        margin: auto;
+        font-weight: bolder;
+        padding: 1vw;
+        h3 {
+            margin-bottom: auto;
+            font-size: 4vh;
+            color: ${BACKGROUND_COLOR};
+            font-weight: bolder;
+            -webkit-text-stroke: 2px ${GREY_BLACK};
+        }
+    }
     .am-card-header {
         font-size: 5vw;
         font-weight: bolder;

@@ -8,6 +8,7 @@ import {gql, useQuery} from "@apollo/client";
 import {checkBackgroundColor, FIRST_TEXT} from '../Utils/Utils';
 import {Loading} from "../Components/Loading";
 import {CatchModal} from "../Components/CatchModal";
+import {DetailedPokemonData} from "../Fixtures/PokemonData";
 
 const GET_POKEMONS_DETAIL = gql`
   query pokemon($name: String!) {
@@ -46,51 +47,29 @@ const GET_POKEMONS_DETAIL = gql`
 export const PokemonDetailPage = () => {
     const [isCatchModalVisible, setIsCatchModalVisible] = useState(false);
     const [loadingText, setLoadingText] = useState(FIRST_TEXT);
+    const [isEmpty, setIsEmpty] = useState(false);
     const [isLoading, setIsLoading] = useState(true);
     const [chance, setChance] = useState(0);
+
+
     const pokemonName = (window.location.href).substring((window.location.href).lastIndexOf('/')+1);
 
     const { loading, error, data } = useQuery(GET_POKEMONS_DETAIL, {
         variables: {name: pokemonName}
     });
 
-    if (error) return `Error! ${error.message}`;
+    let pokemonData = DetailedPokemonData
 
-    let pokemonData = {
-        name: 'Pokemon',
-        sprites: {
-            front_default: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/3.png'
-        },
-        nickName: 'Bulb',
-        types: [
-            {
-                type:{
-                    name: 'abc'
-                }
-            }
-        ],
-        gender: 'Male',
-        moves: [
-            {
-                move: {
-                    name: 'abc'
-                }
-            }
-        ],
-        abilities: [
-            {
-                ability: {
-                    name: 'abc'
-                }
-            }
-        ],
-        pokemon: {
-            name: 'pokemon'
+    if (!loading) {
+        pokemonData = data.pokemon
+        if(pokemonData.name === null){
+            pokemonData = DetailedPokemonData;
+            console.log(pokemonData);
+            console.log('masuk');
         }
-    };
+    }
 
-    if(!loading) pokemonData = data.pokemon;
-
+    if (error) return `Error! ${error.message}`;
     const handleLoading = () => {
         setTimeout(() => {
             setIsLoading(false);
@@ -132,78 +111,91 @@ export const PokemonDetailPage = () => {
                                 <Loading  style={{minHeight: '30vh'}}/>
                             </div>
                             :
-                            <Card>
-                                <div className='cardContainer'>
-                                    <WhiteSpace size='xl'/>
-                                    <WhiteSpace size='xl'/>
-                                    <div className='am-card-header'>
-                                        <h3 className='am-card-header-content'>
-                                            POKEMON
-                                        </h3>
+                            <div>
+                                {pokemonData.gender  ?
+                                    <div>
+                                        <Card>
+                                            <div className='empty-container'>
+                                                <h3>YOUR POKEDEX IS EMPTY!</h3>
+                                            </div>
+                                        </Card>
                                     </div>
-                                    <Card.Body>
-                                        <div>
-                                            <WhiteSpace size='sm'/>
-                                            <h3 className='pokemonName'>{(pokemonData.name).toUpperCase()}</h3>
-                                            <div className='pokemonImageContainer'>
-                                                <img src={pokemonData.sprites.front_default} alt='Pokemon' className='pokemonImage'/>
+                                    :
+                                    <Card>
+                                        <div className='cardContainer'>
+                                            <WhiteSpace size='xl'/>
+                                            <WhiteSpace size='xl'/>
+                                            <div className='am-card-header'>
+                                                <h3 className='am-card-header-content'>
+                                                    POKEMON
+                                                </h3>
                                             </div>
-                                            <div className='pokemonDetailContainer'>
-                                                <WhiteSpace size='md'/>
-                                                <h4 className='subTitle'>TYPES</h4>
-                                                <WhiteSpace size='md'/>
-                                                <div className='pokemonDetailTypeContainer'>
-                                                    {
-                                                        pokemonData.types.map(index => (
-                                                            <Button css={checkBackgroundColor(index.type.name)} disabled>{index.type.name.toUpperCase()}</Button>
-                                                        ))
-                                                    }
+                                            <Card.Body>
+                                                <div>
+                                                    <WhiteSpace size='sm'/>
+                                                    <h3 className='pokemonName'>{(pokemonData.name).toUpperCase()}</h3>
+                                                    <div className='pokemonImageContainer'>
+                                                        <img src={pokemonData.sprites.front_default} alt='Pokemon' className='pokemonImage'/>
+                                                    </div>
+                                                    <div className='pokemonDetailContainer'>
+                                                        <WhiteSpace size='md'/>
+                                                        <h4 className='subTitle'>TYPES</h4>
+                                                        <WhiteSpace size='md'/>
+                                                        <div className='pokemonDetailTypeContainer'>
+                                                            {
+                                                                pokemonData.types.map(index => (
+                                                                    <Button css={checkBackgroundColor(index.type.name)} disabled>{index.type.name.toUpperCase()}</Button>
+                                                                ))
+                                                            }
+                                                        </div>
+                                                        <WhiteSpace size='md'/>
+                                                        <WhiteSpace size='md'/>
+                                                        <Accordion>
+                                                            <Accordion.Panel header='MOVES' className='accordion-content'>
+                                                                {
+                                                                    pokemonData.moves.map(index => (
+                                                                        <div className='moveContainer'>
+                                                                            <p>{index.move.name.toUpperCase()}</p>
+                                                                        </div>
+                                                                    ))
+                                                                }
+                                                            </Accordion.Panel>
+                                                            <WhiteSpace size='xl'/>
+                                                            <Accordion.Panel header='ABILITIES' className='accordion-content'>
+                                                                {
+                                                                    pokemonData.abilities.map(index => (
+                                                                        <div className='moveContainer'>
+                                                                            <p>{index.ability.name.toUpperCase()}</p>
+                                                                        </div>
+                                                                    ))
+                                                                }
+                                                            </Accordion.Panel>
+                                                        </Accordion>
+                                                        <WhiteSpace size='md'/>
+                                                        <CatchModal
+                                                            visible={isCatchModalVisible}
+                                                            setVisible={setIsCatchModalVisible}
+                                                            loadingText={loadingText}
+                                                            setLoadingText={setLoadingText}
+                                                            pokemon={pokemonData}
+                                                            catchChance={chance}
+                                                            setChance={setChance}
+                                                            isLoading={isLoading}
+                                                            setIsLoading={setIsLoading}
+                                                            handleLoading={handleLoading}
+                                                        />
+                                                        <WhiteSpace size='sm'/>
+                                                        <Button className='catchPokemonButton' id='Details' onClick={handlePokemonClick}>THROW POKEBALL</Button>
+                                                        <WhiteSpace size='xl'/>
+                                                        <WhiteSpace size='xl'/>
+                                                    </div>
                                                 </div>
-                                                <WhiteSpace size='md'/>
-                                                <WhiteSpace size='md'/>
-                                                <Accordion>
-                                                    <Accordion.Panel header='MOVES' className='accordion-content'>
-                                                        {
-                                                            pokemonData.moves.map(index => (
-                                                                <div className='moveContainer'>
-                                                                    <p>{index.move.name.toUpperCase()}</p>
-                                                                </div>
-                                                            ))
-                                                        }
-                                                    </Accordion.Panel>
-                                                    <WhiteSpace size='xl'/>
-                                                    <Accordion.Panel header='ABILITIES' className='accordion-content'>
-                                                        {
-                                                            pokemonData.abilities.map(index => (
-                                                                <div className='moveContainer'>
-                                                                    <p>{index.ability.name.toUpperCase()}</p>
-                                                                </div>
-                                                            ))
-                                                        }
-                                                    </Accordion.Panel>
-                                                </Accordion>
-                                                <WhiteSpace size='md'/>
-                                                <CatchModal
-                                                    visible={isCatchModalVisible}
-                                                    setVisible={setIsCatchModalVisible}
-                                                    loadingText={loadingText}
-                                                    setLoadingText={setLoadingText}
-                                                    pokemon={pokemonData}
-                                                    catchChance={chance}
-                                                    setChance={setChance}
-                                                    isLoading={isLoading}
-                                                    setIsLoading={setIsLoading}
-                                                    handleLoading={handleLoading}
-                                                />
-                                                <WhiteSpace size='sm'/>
-                                                <Button className='catchPokemonButton' id='Details' onClick={handlePokemonClick}>THROW POKEBALL</Button>
-                                                <WhiteSpace size='xl'/>
-                                                <WhiteSpace size='xl'/>
-                                            </div>
+                                            </Card.Body>
                                         </div>
-                                    </Card.Body>
-                                </div>
-                            </Card>
+                                    </Card>
+                                }
+
+                            </div>
                     }
                 </WingBlank>
             </div>

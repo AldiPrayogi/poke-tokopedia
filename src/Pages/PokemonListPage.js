@@ -7,6 +7,7 @@ import {Card, Grid, WhiteSpace, Pagination} from "antd-mobile";
 import {gql, useQuery} from "@apollo/client";
 import {Loading} from "../Components/Loading";
 import {useHistory} from 'react-router-dom';
+import {PokemonData} from '../Fixtures/PokemonData'
 const ls = require('local-storage');
 
 const GET_POKEMONS = gql`
@@ -23,23 +24,12 @@ const GET_POKEMONS = gql`
   }
 `;
 
-const dataTemp = [
-    {
-        name: 'pokemon',
-        image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png'
-    },
-    {
-        name: 'pokemon',
-        image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/2.png'
-    },
-    {
-        name: 'pokemon',
-        image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/3.png'
-    }
-
-];
-
 const limit = 12;
+
+const locale = {
+    prevText: 'Prev',
+    nextText: 'Next',
+};
 
 export const PokemonListPage =  () => {
     const [offset, setOffset] = useState(0);
@@ -57,15 +47,15 @@ export const PokemonListPage =  () => {
     const handlePaginationChange = (changePage) => {
         setOffset(limit*(changePage-1));
         setCurrentPage(changePage);
-        console.log(offset);
     }
+
     const { loading, error, data } = useQuery(GET_POKEMONS, {
         variables: {limit, offset},
     });
 
     if (error) return `Error! ${error.message}`;
 
-    let pokemonData = dataTemp;
+    let pokemonData = PokemonData;
 
     if(!loading) {
         pokemonData = data.pokemons.results;
@@ -97,11 +87,6 @@ export const PokemonListPage =  () => {
 
         pokemonData = modifiedPokemonData;
     }
-
-    const locale = {
-        prevText: 'Prev',
-        nextText: 'Next',
-    };
 
     return (
         <div>

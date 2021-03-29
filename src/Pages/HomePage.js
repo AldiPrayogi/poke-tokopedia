@@ -7,6 +7,7 @@ import { HomePageCSS, TitleContainerCSS, PokemonCardCarousel} from '../Styling/P
 import {PokemonCarousel} from "../Components/PokemonCarousel";
 import { gql, useQuery } from '@apollo/client';
 import {Loading} from "../Components/Loading";
+import {PokemonData} from '../Fixtures/PokemonData';
 
 const GET_POKEMONS = gql`
   query pokemons($limit: Int, $offset: Int) {
@@ -26,22 +27,6 @@ const gqlVariables = {
     offset: Math.floor((Math.random() * 1108) + 1)
 };
 
-const dataTemp = [
-    {
-        name: 'pokemon',
-        image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png'
-    },
-    {
-        name: 'pokemon',
-        image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/2.png'
-    },
-    {
-        name: 'pokemon',
-        image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/3.png',
-        pokemons: 'abc'
-    },
-];
-
 export const HomePage = () => {
     const { loading, error, data } = useQuery(GET_POKEMONS, {
         variables: gqlVariables,
@@ -49,7 +34,7 @@ export const HomePage = () => {
 
     if (error) return `Error! ${error.message}`;
 
-    let pokemonData = dataTemp;
+    let pokemonData = PokemonData;
 
     if (!loading) pokemonData = data.pokemons.results;
 
