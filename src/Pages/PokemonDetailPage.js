@@ -155,7 +155,7 @@ export const PokemonDetailPage = () => {
                                                             <Accordion.Panel header='MOVES' className='accordion-content'>
                                                                 {
                                                                     pokemonData.moves.map(index => (
-                                                                        <Button className='move-container'>
+                                                                        <Button disabled className='move-container' size='small'>
                                                                             <p>{index.move.name.toUpperCase()}</p>
                                                                         </Button>
                                                                     ))

@@ -185,10 +185,11 @@ export const PokemonCardsCSS = css`
     }
     .move-container{        
         display: flex;
+        opacity: 1 !important;
         align-items: center;
         background-color: ${BACKGROUND_COLOR};
         color: ${GREY_BLACK};
-        width: 10vh;
+        width: 10.5vh;
         min-width: 60px;
         max-width: 250px;
         margin-right: 1vw;
@@ -197,7 +198,7 @@ export const PokemonCardsCSS = css`
         padding: 0;
         p{
             font-weight: bold;
-            font-size: 1.2vh;
+            font-size: 1vh;
             word-break: break-word;
             overflow: auto;
         }
@@ -579,6 +580,7 @@ export const PokedexContainer = css`
         width: 100%;
     }
     .abilities-button{
+        opacity: 1 !important;
         width: 40%;
         max-width: 100px;
         margin-top: 2%;

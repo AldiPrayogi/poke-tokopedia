@@ -86,7 +86,7 @@ export const PokedexPage = () => {
                                                             <div className='pokedex-types'>
                                                                 {
                                                                     item.types.map(index => (
-                                                                        <Button size='small' css={checkBackgroundColorPokedex(index.type.name)}>
+                                                                        <Button disabled size='small' css={checkBackgroundColorPokedex(index.type.name)}>
                                                                             <p>
                                                                                 {index.type.name.toUpperCase()}
                                                                             </p>
@@ -116,7 +116,7 @@ export const PokedexPage = () => {
                                                             <div className='abilities-container'>
                                                                 {
                                                                     item.abilities.map(index => (
-                                                                        <Button className='abilities-button' size='small'>
+                                                                        <Button disabled className='abilities-button' size='small'>
                                                                             <p>{index.ability.name.toUpperCase()}</p>
                                                                         </Button>
                                                                     ))

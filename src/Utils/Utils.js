@@ -68,6 +68,7 @@ export const checkBackgroundColor = (type) => {
         font-size: 100%;
         font-weight: bold;
         border-style: none;
+        opacity: 1 !important;
     `
 }
 
@@ -77,6 +78,7 @@ export const checkBackgroundColorPokedex = (type) => {
     return css`
         background-color: ${backgroundColor};
         width: 40%;
+        opacity: 1 !important;
         margin-left: 5%;
         margin-top: 5%;
         color: white;
