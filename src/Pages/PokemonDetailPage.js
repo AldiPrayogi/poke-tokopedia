@@ -152,21 +152,21 @@ export const PokemonDetailPage = () => {
                                                         <WhiteSpace size='md'/>
                                                         <WhiteSpace size='md'/>
                                                         <Accordion>
-                                                            <Accordion.Panel header='MOVES' className='accordion-content'>
-                                                                {
-                                                                    pokemonData.moves.map(index => (
-                                                                        <Button disabled className='move-container' size='small'>
-                                                                            <p>{index.move.name.toUpperCase()}</p>
-                                                                        </Button>
-                                                                    ))
-                                                                }
-                                                            </Accordion.Panel>
-                                                            <WhiteSpace size='xl'/>
                                                             <Accordion.Panel header='ABILITIES' className='accordion-content'>
                                                                 {
                                                                     pokemonData.abilities.map(index => (
                                                                         <Button disabled size='small' className='move-container'>
                                                                             <p>{index.ability.name.toUpperCase()}</p>
+                                                                        </Button>
+                                                                    ))
+                                                                }
+                                                            </Accordion.Panel>
+                                                            <WhiteSpace size='xl'/>
+                                                            <Accordion.Panel header='MOVES' className='accordion-content'>
+                                                                {
+                                                                    pokemonData.moves.map(index => (
+                                                                        <Button disabled className='move-container' size='small'>
+                                                                            <p>{index.move.name.toUpperCase()}</p>
                                                                         </Button>
                                                                     ))
                                                                 }
@@ -186,7 +186,9 @@ export const PokemonDetailPage = () => {
                                                             handleLoading={handleLoading}
                                                         />
                                                         <WhiteSpace size='sm'/>
-                                                        <Button className='catchPokemonButton' id='Details' onClick={handlePokemonClick}>THROW POKEBALL</Button>
+                                                        <div className='catch-pokemon-button-container'>
+                                                            <Button className='catch-pokemon-button' size='large' onClick={handlePokemonClick}>THROW POKEBALL</Button>
+                                                        </div>
                                                         <WhiteSpace size='xl'/>
                                                         <WhiteSpace size='xl'/>
                                                     </div>

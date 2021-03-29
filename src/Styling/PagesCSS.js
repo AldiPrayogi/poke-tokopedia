@@ -88,18 +88,23 @@ export const PokemonCardsCSS = css`
         max-width: 720px;
         color: ${BACKGROUND_COLOR};
     }
-    .catchPokemonButton{
-        background-color: ${GREY_BLACK};
-        width: auto;
-        padding: 0px 1vw 0px 1vw;
-        color: ${GOLDEN_YELLOW};
-        max-width: 220px;
+    .catch-pokemon-button-container{
+        width: 100%;
+        margin: auto;
         text-align: center;
-        margin-right: 1vw;
-        display: inline-block;
-        font-size: 1.4vh;
-        font-weight: bold;
-        border-style: none;
+        .catch-pokemon-button{
+            background-color: ${GREY_BLACK};
+            width: 70vw;
+            padding: 0px 1vw 0px 1vw;
+            color: ${GOLDEN_YELLOW};
+            max-width: 720px;
+            text-align: center;
+            margin-right: 1vw;
+            display: inline-block;
+            font-size: 1.4vh;
+            font-weight: bold;
+            border-style: none;
+        }
     }
     .cardContainer{
         width: 72vw;
