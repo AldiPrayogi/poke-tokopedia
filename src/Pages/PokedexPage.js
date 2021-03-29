@@ -86,27 +86,47 @@ export const PokedexPage = () => {
                                                             <div className='pokedex-types'>
                                                                 {
                                                                     item.types.map(index => (
-                                                                        <Button css={checkBackgroundColorPokedex(index.type.name)} disabled size={"small"}>{index.type.name.toUpperCase()}</Button>
+                                                                        <Button css={checkBackgroundColorPokedex(index.type.name)} disabled size={"small"}>
+                                                                            <p>
+                                                                                {index.type.name.toUpperCase()}
+                                                                            </p>
+                                                                        </Button>
                                                                     ))
                                                                 }
                                                             </div>
                                                         </div>
-                                                        <div className='pokedex-info'>
-                                                            <h4>POKEMON: {item.name.toUpperCase()}</h4>
-                                                            <h4>LEVEL: {item.level}</h4>
-                                                            <h4>WEIGHT: {item.weight}KG</h4>
-                                                            <h4>HEIGHT: {item.height}M</h4>
+                                                        <div className='pokedex-info-container'>
+                                                            <div className='pokedex-info'>
+                                                                <div className='pokedex-info-left'>
+                                                                    <h4>POKEMON</h4>
+                                                                    <h4>LEVEL</h4>
+                                                                    <h4>WEIGHT</h4>
+                                                                    <h4>HEIGHT</h4>
+                                                                </div>
+                                                                <div className='pokedex-info-right'>
+                                                                    <h4>: {item.name.toUpperCase()}</h4>
+                                                                    <h4>: {item.level}</h4>
+                                                                    <h4>: {item.weight}KG</h4>
+                                                                    <h4>: {item.height}M</h4>
+                                                                </div>
+                                                                <div className='abilities-container-title'>
+                                                                    <h4>ABILITIES:</h4>
+                                                                </div>
+                                                            </div>
                                                             <div className='abilities-container'>
-                                                                <h4>ABILITIES:</h4>
                                                                 {
                                                                     item.abilities.map(index => (
-                                                                        <Button disabled className='abilities-button' size='small'>{index.ability.name.toUpperCase()}</Button>
+                                                                        <Button disabled className='abilities-button' size='small'>
+                                                                            <p>{index.ability.name.toUpperCase()}</p>
+                                                                        </Button>
                                                                     ))
                                                                 }
                                                             </div>
                                                         </div>
                                                         <div className='pokedex-release-button'>
-                                                            <Button size={'small'} onClick={() => handleRelease(item)}>RELEASE</Button>
+                                                            <Button size='small' type='warning' onClick={() => handleRelease(item)}>
+                                                                <p>RELEASE</p>
+                                                            </Button>
                                                         </div>
                                                     </Item>
                                                     <Modal

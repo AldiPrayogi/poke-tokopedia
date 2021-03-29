@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { useFormik } from 'formik';
-import {WhiteSpace} from "antd-mobile";
+import {Button, WhiteSpace} from "antd-mobile";
 import {Input} from "antd";
 import {NicknameFormCSS} from "../Styling/ComponentCSS";
 const ls = require('local-storage');
@@ -43,25 +43,39 @@ export const NameForm = ({setVisible, pokemon}) => {
             if(values.nickname.length > 15){
                 errors.nickname = 'Nickname is more than 15 characters';
             }
+            if(values.nickname.length < 3){
+                errors.nickname = 'Nickname is less than 3 characters';
+            }
             return errors;
         }
     });
     return (
         <div css={NicknameFormCSS}>
             <WhiteSpace size='xl'/>
-            <h4>Enter its nickname!</h4>
+            <h4>GIVE IT A UNIQUE NICKNAME!</h4>
             <WhiteSpace size='md'/>
             <form onSubmit={formik.handleSubmit}>
-                <Input
-                    className='input-nickname'
-                    placeholder='Nickname'
-                    id="nickname"
-                    name="nickname"
-                    type="text"
-                    onChange={formik.handleChange}
-                    value={formik.values.nickname}
-                    width={'500px'}
-                />
+                <div className='form-container'>
+                    <div className='input-container'>
+                        <Input
+                            className='input-nickname'
+                            placeholder='Nickname'
+                            id="nickname"
+                            name="nickname"
+                            type="text"
+                            onChange={formik.handleChange}
+                            value={formik.values.nickname}
+                            size='100000'
+                        />
+                    </div>
+                    <div className='input-submit-container'>
+                        <Button size='small' className='submit-button' onClick={formik.handleSubmit}>
+                            <p>
+                                SUBMIT
+                            </p>
+                        </Button>
+                    </div>
+                </div>
                 {
                     formik.touched.nickname && formik.errors.nickname
                         ?

@@ -1,5 +1,5 @@
 import {css} from "@emotion/react";
-import {BACKGROUND_COLOR, GOLDEN_YELLOW, GREY_BLACK} from "../Constants/Color";
+import {BACKGROUND_COLOR, ELECTRIC_BLUE, GOLDEN_YELLOW, GREY_BLACK} from "../Constants/Color";
 
 export const TitleContainerCSS = css`
     background-color: ${GREY_BLACK};
@@ -12,6 +12,11 @@ export const TitleContainerCSS = css`
 
 export const HomePageCSS = css`
     background-color: ${BACKGROUND_COLOR};
+    .searchbar {
+        width: 90vw;
+        max-width: 600px;
+        margin: auto;
+    }
     width: 100%;
     height: auto;
     padding: 0;
@@ -63,11 +68,12 @@ export const PokemonCardsCSS = css`
         background-color: ${GREY_BLACK};
         max-width: 720px;
         text-align: center;
-        border-style: none;
+        border-style: none !important;
         border: 0px;
     }
     .am-card-header-content{
         color: #f2cc65;
+        border-style: none !important;
         border-style: none;
         font-size: 20px;
         margin: 0px;
@@ -81,6 +87,7 @@ export const PokemonCardsCSS = css`
         font-size: 4vh;
         margin-top: 0;
         max-width: 720px;
+        color: ${BACKGROUND_COLOR};
     }
     .catchPokemonButton{
         background-color: ${GREY_BLACK};
@@ -130,11 +137,11 @@ export const PokemonCardsCSS = css`
     .am-card {
         border-radius: 2vh;
         margin: auto;
-        background-color: ${GOLDEN_YELLOW};
+        background-color: ${ELECTRIC_BLUE};
         border-style: ridge;
         border-color: blue;
         border-width: 1vw;
-        border-color: ${GOLDEN_YELLOW};
+        border-color: ${GREY_BLACK};
         width: 90%;
         height: auto;
         max-width: 850px;
@@ -144,11 +151,14 @@ export const PokemonCardsCSS = css`
         font-weight: 700;
     }
     .am-accordion-content-box{
-        background-color: ${GOLDEN_YELLOW};
+        background-color: ${ELECTRIC_BLUE};
         border-style: none !important;
         border: none !important;
         border-top: none !important;
         padding: 10px 0px 10px 0px;
+        :after{
+            background-color: ${ELECTRIC_BLUE} !important;
+        }
     }
     .am-accordion-header{
         background-color: ${BACKGROUND_COLOR} !important;
@@ -163,43 +173,33 @@ export const PokemonCardsCSS = css`
         height: 20%;
     }
     .am-card-body {
+        :before {
+            background-color: ${ELECTRIC_BLUE} !important;
+        }
         padding: 0px;
         max-width: 850px;
+        background-color: ${ELECTRIC_BLUE};
     }
     .pokemonDetailMovesContainer{
         text-align: center;
     }
-    .buttonMoves{
-        background-color: ${BACKGROUND_COLOR};
-        color: ${GREY_BLACK};
-        width: 15vw;
-        max-width: 100px;
-        text-align: center;
-        margin-right: 1vw;
-        display: inline-block;
-        padding: 0px 1% 0px 1%;
-        border-radius: 10px;
-    }
-    .moveContainer{        
+    .move-container{        
         display: flex;
         align-items: center;
         background-color: ${BACKGROUND_COLOR};
         color: ${GREY_BLACK};
-        width: 8vw;
-        max-width: 180px;
-        min-width: 50px;
-        min-height: 60px;
-        overflow: hidden;
-        max-height: 120px;
-        height: 6vh;
-        word-break: break-word;
+        width: 10vh;
+        min-width: 60px;
+        max-width: 250px;
         margin-right: 1vw;
         display: inline-block;
         border-radius: 10px;
+        padding: 0;
         p{
             font-weight: bold;
-            font-size: 1.3vh;
-            padding: 1.2vh 0px 0 1px;
+            font-size: 1.2vh;
+            word-break: break-word;
+            overflow: auto;
         }
     }
 `
@@ -319,7 +319,7 @@ export const ModalCSS = css`
             color: ${GOLDEN_YELLOW};
             font-weight: bolder;
         }
-        background-color: ${GOLDEN_YELLOW};
+        background-color: ${ELECTRIC_BLUE};
         padding: 2vh 0 5px 0;
     }
     .pokemon-image{
@@ -328,16 +328,19 @@ export const ModalCSS = css`
         background-image: url('/images/2gfwG.jpg');
     }
     .am-modal-content: {
-        background-color: ${GOLDEN_YELLOW};
+        background-color: ${ELECTRIC_BLUE};
         padding-top: 0px !important;
     }
     .successful-catch-container{
-        background-color: ${GOLDEN_YELLOW};
+        background-color: ${ELECTRIC_BLUE};
         h3{
             font-size: 2.6vw;
             font-weight: bold;
-            background-color: ${GOLDEN_YELLOW};
-            color: ${GREY_BLACK};
+            background-color: ${ELECTRIC_BLUE};
+            color: white;
+        }
+        h2{
+            font-size: 2.8vh;
         }
     }
     .container{
@@ -351,13 +354,14 @@ export const ModalCSS = css`
         display: inline-block;
         color: ${GOLDEN_YELLOW};
         background-color: ${GREY_BLACK};
+        border-color: ${GOLDEN_YELLOW};
     }
     .failed-catch-container{
         h1{
             color: ${GOLDEN_YELLOW};
             font-weight: bolder;
         }
-        background-color: ${GOLDEN_YELLOW};
+        background-color: ${ELECTRIC_BLUE};
         padding: 0 0 10px 0;
     }
     .failed-catch-text{
@@ -443,7 +447,7 @@ export const PokedexContainer = css`
         text-align: center;
         border-radius: 2vh;
         margin: auto;
-        background-color: ${GOLDEN_YELLOW};
+        background-color: ${ELECTRIC_BLUE};
         border-style: ridge;
         border-color: blue;
         border-width: 1vw;
@@ -471,21 +475,27 @@ export const PokedexContainer = css`
     }
     .am-list-body{
         border-radius: 5px;
-        background-color: ${GOLDEN_YELLOW};
+        background-color: ${ELECTRIC_BLUE};
     }
     .am-list{
         border-radius: 5px;
-        background-color: ${GOLDEN_YELLOW};
+        background-color: ${ELECTRIC_BLUE};
     }
-    am-list-line-wrap{
+    .am-list-line-wrap{
         border-style: none;
-        background-color: ${GOLDEN_YELLOW};
+        background-color: ${ELECTRIC_BLUE};
+        border-color: ${ELECTRIC_BLUE} !important;
     }
     .am-list-item {
-        background-color: ${GOLDEN_YELLOW};
+        background-color: ${ELECTRIC_BLUE};
+    }
+    .am-list-line-wrap{
+        :after{
+            background-color: ${ELECTRIC_BLUE} !important;
+        }
     }
     .am-list-body{
-        background-color: ${GOLDEN_YELLOW};
+        background-color: ${ELECTRIC_BLUE};
         border-style: none;
     }
     .am-list-item-middle{
@@ -514,45 +524,65 @@ export const PokedexContainer = css`
             background-image: url('/images/2gfwG.jpg');
         }
     }
-    .pokedex-info{
+    .pokedex-info-container{
+        float: left;
         padding-top: 1%;
         padding-left: 2vw;
-        width: 30vw;
+        width: 45vw;
         max-width: 300px;
         display: inline-block;
+        .pokedex-info{
+            background-color: ${GREY_BLACK};
+            padding: 1%;
+            border-radius: 5px;
+            h4{
+                color: ${BACKGROUND_COLOR};
+                font-weight: bolder;
+                font-size: 1.3vh;
+            }
+            .pokedex-info-left{
+                display: inline-block;
+                width: 50%;
+            }
+            .pokedex-info-right{
+                display: inline-block;
+                width: 50%;
+            }
+        }
         h4{
+            color: ${BACKGROUND_COLOR};
             font-weight: bolder;
             font-size: 1.3vh;
+            margin-bottom: 0px;
         }
     }
-    
     .pokedex-release-button{
         float: right;
-        width: 20vw;
+        width: 10vw;
         max-width: 100px;
         padding-right: 1%;
         display: inline-block;
         .am-button {
-            font-weight: bold;
             padding: 0px;
             width: auto;
-            font-size: 1.5vh;
-            background-color: ${GREY_BLACK};
-            color: ${GOLDEN_YELLOW};
+            border-color: black;
+            font-weight: bolder;
+            font-size: 1vh;
+            background-color: #E91916;
         }
     }
     .am-button-disabled {
-        color: black;
+        color: white;
     }
     .abilities-container{
-        width: 150%;
+        margin-top: 0;
+        width: 100%;
     }
     .abilities-button{
         width: 40%;
         max-width: 100px;
-        overflow: auto;
-        margin-top: 5%;
-        color: black;
+        margin-top: 2%;
+        color: ${GREY_BLACK};
         padding: 0;
         text-align: center;
         margin-right: 5%;

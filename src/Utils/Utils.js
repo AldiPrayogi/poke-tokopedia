@@ -52,8 +52,13 @@ export const checkBackgroundColor = (type) => {
     const backgroundColor = checkType(type)
 
     return css`
+        display: flex;
+        align-items: center;
         background-color: ${backgroundColor};
-        width: 25vw;
+        width: 10vh;
+        min-width: 60px;
+        max-width: 250px;
+        margin-right: 1vw;
         color: black;
         max-width: 120px;
         padding: 0;

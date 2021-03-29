@@ -47,7 +47,6 @@ const GET_POKEMONS_DETAIL = gql`
 export const PokemonDetailPage = () => {
     const [isCatchModalVisible, setIsCatchModalVisible] = useState(false);
     const [loadingText, setLoadingText] = useState(FIRST_TEXT);
-    const [isEmpty, setIsEmpty] = useState(false);
     const [isLoading, setIsLoading] = useState(true);
     const [chance, setChance] = useState(0);
 
@@ -107,8 +106,8 @@ export const PokemonDetailPage = () => {
                 <WingBlank size='xl' css={PokemonCardsCSS}>
                     {
                         loading ?
-                            <div>
-                                <Loading  style={{minHeight: '30vh'}}/>
+                            <div  style={{minHeight: '50vh'}}>
+                                <Loading/>
                             </div>
                             :
                             <div>
@@ -116,7 +115,7 @@ export const PokemonDetailPage = () => {
                                     <div>
                                         <Card>
                                             <div className='empty-container'>
-                                                <h3>YOUR POKEDEX IS EMPTY!</h3>
+                                                <h3>POKEMON NOT FOUND!</h3>
                                             </div>
                                         </Card>
                                     </div>
@@ -144,7 +143,9 @@ export const PokemonDetailPage = () => {
                                                         <div className='pokemonDetailTypeContainer'>
                                                             {
                                                                 pokemonData.types.map(index => (
-                                                                    <Button css={checkBackgroundColor(index.type.name)} disabled>{index.type.name.toUpperCase()}</Button>
+                                                                    <Button css={checkBackgroundColor(index.type.name)} disabled>
+                                                                        <p>{index.type.name.toUpperCase()}</p>
+                                                                    </Button>
                                                                 ))
                                                             }
                                                         </div>
@@ -154,9 +155,9 @@ export const PokemonDetailPage = () => {
                                                             <Accordion.Panel header='MOVES' className='accordion-content'>
                                                                 {
                                                                     pokemonData.moves.map(index => (
-                                                                        <div className='moveContainer'>
+                                                                        <Button className='move-container'>
                                                                             <p>{index.move.name.toUpperCase()}</p>
-                                                                        </div>
+                                                                        </Button>
                                                                     ))
                                                                 }
                                                             </Accordion.Panel>
@@ -164,9 +165,9 @@ export const PokemonDetailPage = () => {
                                                             <Accordion.Panel header='ABILITIES' className='accordion-content'>
                                                                 {
                                                                     pokemonData.abilities.map(index => (
-                                                                        <div className='moveContainer'>
+                                                                        <Button size='small' className='move-container'>
                                                                             <p>{index.ability.name.toUpperCase()}</p>
-                                                                        </div>
+                                                                        </Button>
                                                                     ))
                                                                 }
                                                             </Accordion.Panel>

@@ -1,5 +1,5 @@
 import {css} from "@emotion/react";
-import {GOLDEN_YELLOW, GREY_BLACK} from "../Constants/Color";
+import {BACKGROUND_COLOR, ELECTRIC_BLUE, GOLDEN_YELLOW, GREY_BLACK} from "../Constants/Color";
 
 export const TopBarCSS = css`
     color: black;
@@ -10,11 +10,6 @@ export const TopBarCSS = css`
     height: auto;
     text-align: center;
     background-image: linear-gradient(75deg, #bd4949, #7b2916);
-`
-
-export const NavigationButtonContainer = css`
-    text-align: center;
-    margin-bottom: 0;
 `
 
 export const NavigationButtonCSS = css`
@@ -105,24 +100,54 @@ export const LoadingCSS = css`
         width: 100%;
 `
 
-export const PokemonCarouselCSS = css`
-    // .pokemonNameContainer {
-    //     background-color: black;
-    // }
-    // h4 {
-    //     font-size: 100px;
-    //     color: white;
-    // }
-`
-
 export const NicknameFormCSS = css`
     background-color: ${GREY_BLACK};
     h4{
         color: ${GOLDEN_YELLOW};
         font-weight: bold;
     }
+    .form-container{
+        margin: auto;
+        .input-container{
+            display: inline-block;
+            width: 70%;
+            min-width: 140px;
+            border: 0x;
+            margin: auto;
+            .input-nickname{
+                min-height: 30px;
+                margin-bottom: 0.5%;
+                float: right;
+                padding-left: 3%;
+                width: 100%;
+                border-radius: 4px;
+                border-style: solid;
+            }
+        }
+        .input-submit-container{
+            display: inline-block;
+            width: auto;
+            margin: 0 0 0 1%;
+            .submit-button{
+                min-width: 40px;
+                width: 100%;
+                float: left;
+                margin-bottom: 4% !important;
+                border-color: ${ELECTRIC_BLUE} !important;
+                background-color: ${ELECTRIC_BLUE};
+                padding: 0 1% 0 1%;
+                p{
+                    color: ${BACKGROUND_COLOR};
+                    margin-bottom: 0;
+                    font-size: 1.2vh;
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+    
     .error-message{
-        margin-top: 0.7em;
+        margin-top: 0.2em;
         color: red;
     }
 `
