@@ -94,7 +94,7 @@ export const PokemonListPage =  () => {
                 <TopBar/>
             </div>
             <div css={PokemonListPageCSS}>
-                <div className='pokemonListTitle'>
+                <div className='pokemon-list-title'>
                     <WhiteSpace size='xl'/>
                     <h2>POKEMON LIST</h2>
                     <WhiteSpace size='xl'/>
@@ -103,14 +103,14 @@ export const PokemonListPage =  () => {
                     <Card.Body>
                         <div>
                             {loading ? <Loading /> :
-                                <div className='gridContainer'>
+                                <div className='grid-container'>
                                     <Grid
                                         data={pokemonData}
                                         hasLine={false}
                                         square={false}
                                         columnNum={3}
                                         renderItem={dataItem => (
-                                            <div className='contentContainer'>
+                                            <div className='content-container'>
                                                 <h5>{dataItem.name.toUpperCase()}</h5>
                                                 <img
                                                     src={dataItem.image}

@@ -95,7 +95,7 @@ export const PokemonDetailPage = () => {
                 <TopBar/>
             </div>
             <div css={PokemonDetailPageCSS}>
-                <div className='pokemonListTitle'>
+                <div className='pokemon-list-title'>
                     <WhiteSpace size='xl'/>
                     <h2>POKEMON DETAIL</h2>
                     <WhiteSpace size='xl'/>
@@ -121,7 +121,7 @@ export const PokemonDetailPage = () => {
                                     </div>
                                     :
                                     <Card>
-                                        <div className='cardContainer'>
+                                        <div className='card-container'>
                                             <WhiteSpace size='xl'/>
                                             <WhiteSpace size='xl'/>
                                             <div className='am-card-header'>
@@ -132,15 +132,15 @@ export const PokemonDetailPage = () => {
                                             <Card.Body>
                                                 <div>
                                                     <WhiteSpace size='sm'/>
-                                                    <h3 className='pokemonName'>{(pokemonData.name).toUpperCase()}</h3>
-                                                    <div className='pokemonImageContainer'>
-                                                        <img src={pokemonData.sprites.front_default} alt='Pokemon' className='pokemonImage'/>
+                                                    <h3 className='pokemon-name'>{(pokemonData.name).toUpperCase()}</h3>
+                                                    <div className='pokemon-image-container'>
+                                                        <img src={pokemonData.sprites.front_default} alt={pokemonData.name} className='pokemon-image'/>
                                                     </div>
-                                                    <div className='pokemonDetailContainer'>
+                                                    <div className='pokemon-detail-container'>
                                                         <WhiteSpace size='md'/>
-                                                        <h4 className='subTitle'>TYPES</h4>
+                                                        <h4 className='subtitle'>TYPES</h4>
                                                         <WhiteSpace size='md'/>
-                                                        <div className='pokemonDetailTypeContainer'>
+                                                        <div className='pokemon-detail-type-container'>
                                                             {
                                                                 pokemonData.types.map(index => (
                                                                     <Button css={checkBackgroundColor(index.type.name)} disabled>

@@ -47,8 +47,8 @@ export const ContainerGithubCSS = css`
 `
 
 export const CarouselComponentCSS = css`
-    width: "100%";
-    textAlign: center
+    width: 100%;
+    text-align: center
     .carousel-container{
         textAlign: center
     }
@@ -93,11 +93,11 @@ export const ContainerPokeballCSS = css`
 `
 
 export const LoadingCSS = css`
-        margin-top: 5%;
-        margin-bottom: 5%;
-        text-align: center;
-        border-radius: 4px;
-        width: 100%;
+   margin-top: 5%;
+   margin-bottom: 5%;
+   text-align: center;
+   border-radius: 4px;
+   width: 100%;
 `
 
 export const NicknameFormCSS = css`
@@ -145,7 +145,6 @@ export const NicknameFormCSS = css`
             }
         }
     }
-    
     .error-message{
         margin-top: 0.2em;
         color: red;

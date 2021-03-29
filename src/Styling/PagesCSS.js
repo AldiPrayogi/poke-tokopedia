@@ -81,7 +81,7 @@ export const PokemonCardsCSS = css`
         border-style: none;
         border: 0px;
     }
-    .pokemonName{
+    .pokemon-name{
         font-weight: 900;
         font-size: 4vh;
         margin-top: 0;
@@ -106,12 +106,12 @@ export const PokemonCardsCSS = css`
             border-style: none;
         }
     }
-    .cardContainer{
+    .card-container{
         width: 72vw;
         margin: auto;
         max-width: 720px;
     }
-    .pokemonImageContainer{
+    .pokemon-image-container{
         background-image: url('/images/2gfwG.jpg');
         border-radius: 15px;
         text-align: center;
@@ -119,11 +119,11 @@ export const PokemonCardsCSS = css`
         width: 100%;
         max-height: 614px;
     }
-    .pokemonDetailContainer{
+    .pokemon-detail-container{
         text-align: left;
         max-width: 850px;
     }
-    .pokemonDetailTypeContainer{
+    .pokemon-detail-type-container{
         text-align: center;
         width: auto;
         max-width: 850px;
@@ -134,7 +134,7 @@ export const PokemonCardsCSS = css`
             color: white;
         }
     }
-    .pokemonImage{
+    .pokemon-image{
         width: 50vh;
         max-width: 80%;
     }
@@ -169,7 +169,7 @@ export const PokemonCardsCSS = css`
         padding: 0px !important;
         border-style: 10px !important;
     }
-    .subTitle{
+    .subtitle{
         background-color: ${BACKGROUND_COLOR};
         text-align: center;
         font-weight: 700;
@@ -183,9 +183,6 @@ export const PokemonCardsCSS = css`
         padding: 0px;
         max-width: 850px;
         background-color: ${ELECTRIC_BLUE};
-    }
-    .pokemonDetailMovesContainer{
-        text-align: center;
     }
     .move-container{        
         display: flex;
@@ -232,12 +229,12 @@ export const PaginationContainer = css`
         background-color: ${BACKGROUND_COLOR};
         width: 20%;
     }
-    .gridContainer{
+    .grid-container{
         margin: auto;
         text-align: center;
         min-height: 20%;
     }
-    .contentContainer{
+    .content-container{
         overflow: hidden;
     }
     h5{
@@ -275,7 +272,7 @@ export const PokemonListPageCSS = css`
     Span{
         font-weight: bold;
     }
-    .pokemonListTitle {
+    .pokemon-list-title {
         background-color: ${GREY_BLACK};
         h2 {
             font-size: 2.2vh;
@@ -293,7 +290,7 @@ export const PokemonDetailPageCSS = css`
     Span{
         font-weight: bold;
     }
-    .pokemonListTitle {
+    .pokemon-list-title {
         background-color: ${GREY_BLACK};
         h2 {
             font-size: 2.2vh;
