@@ -102,15 +102,16 @@ export const PokedexPage = () => {
                                                                     <h4>LEVEL</h4>
                                                                     <h4>WEIGHT</h4>
                                                                     <h4>HEIGHT</h4>
+                                                                    <h4>ABILITIES</h4>
                                                                 </div>
                                                                 <div className='pokedex-info-right'>
                                                                     <h4>: {item.name.toUpperCase()}</h4>
                                                                     <h4>: {item.level}</h4>
                                                                     <h4>: {item.weight}KG</h4>
                                                                     <h4>: {item.height}M</h4>
+                                                                    <h4>:</h4>
                                                                 </div>
                                                                 <div className='abilities-container-title'>
-                                                                    <h4>ABILITIES:</h4>
                                                                 </div>
                                                             </div>
                                                             <div className='abilities-container'>

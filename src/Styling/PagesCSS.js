@@ -547,11 +547,13 @@ export const PokedexContainer = css`
             }
             .pokedex-info-left{
                 display: inline-block;
-                width: 50%;
+                width: 40%;
+                min-width: 54.3px;
             }
             .pokedex-info-right{
                 display: inline-block;
-                width: 50%;
+                width: 60%;
+                min-width: 81.3px;
             }
         }
         h4{
