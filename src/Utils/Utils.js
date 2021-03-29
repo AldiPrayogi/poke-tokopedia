@@ -79,7 +79,7 @@ export const checkBackgroundColorPokedex = (type) => {
         width: 40%;
         margin-left: 5%;
         margin-top: 5%;
-        color: black;
+        color: white;
         padding: 0;
         text-align: center;
         margin-right: 5%;
