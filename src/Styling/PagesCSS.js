@@ -61,7 +61,6 @@ export const PokemonCardsCSS = css`
     }
     .am-card-header {
         font-size: 5vw;
-        font-weight: bolder;
         width: 100%;
         color: white;
         border-radius: 10px;
@@ -74,8 +73,8 @@ export const PokemonCardsCSS = css`
     .am-card-header-content{
         color: #f2cc65;
         border-style: none !important;
-        border-style: none;
-        font-size: 20px;
+        font-weight: bolder;
+        font-size: 0.7em;
         margin: 0px;
         text-align: center;
         border-radius: 20px;
