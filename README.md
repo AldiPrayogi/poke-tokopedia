@@ -11,5 +11,6 @@ The stacks used in this project are:
 5. Emotion
 6. Babel
 7. Formik
-8. Jest (Some configurations were needed because there was a problem with Ant Design, see here https://ant.design/docs/react/getting-started#Test-with-Jest)
+8. Jest (Some configurations were needed because there was a problem with Ant Design, see here: https://ant.design/docs/react/getting-started#Test-with-Jest)
 
+A working deployed site can be seen here: https://aldiprayogi-tkppokemon.netlify.app
