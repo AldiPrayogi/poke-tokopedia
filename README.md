@@ -8,7 +8,8 @@ The stacks used in this project are:
 2. Apollo + GraphQL
 3. Ant Design Mobile + Ant Design
 4. React App Rewired because CRA doesn't support AntDesign
-5. Babel
-6. Formik
-7. Jest (Some configurations were needed because there was a problem with Ant Design, see here https://ant.design/docs/react/getting-started#Test-with-Jest)
+5. Emotion
+6. Babel
+7. Formik
+8. Jest (Some configurations were needed because there was a problem with Ant Design, see here https://ant.design/docs/react/getting-started#Test-with-Jest)
 
