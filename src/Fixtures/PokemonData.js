@@ -70,3 +70,27 @@ export const DetailedPokemonData = {
         name: 'pokemon'
     }
 };
+
+export const PokemonDataCarousel = [
+    {
+        id: "1",
+        url: "https://pokeapi.co/api/v2/pokemon/2/",
+        name: "ivysaur",
+        image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/2.png",
+        __typename: "none"
+    },
+    {
+        id: "1",
+        url: "https://pokeapi.co/api/v2/pokemon/2/",
+        name: "ivysaur",
+        image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/2.png",
+        __typename: "none"
+    },
+    {
+        id: "1",
+        url: "https://pokeapi.co/api/v2/pokemon/2/",
+        name: "ivysaur",
+        image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/2.png",
+        __typename: "none"
+    }
+]

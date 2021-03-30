@@ -2,12 +2,18 @@
 
 import React from 'react';
 import {Button, Modal, WhiteSpace} from 'antd-mobile';
-import 'antd/es/spin/style/css';
 import {NameForm} from './NameForm';
 import {ModalCSS} from "../Styling/PagesCSS";
 import {FIRST_TEXT} from "../Utils/Utils";
+import 'antd/es/spin/style/css';
 
-export const CatchModal =  ({visible, setVisible, pokemon, catchChance, setChance, isLoading, setIsLoading, loadingText, setLoadingText, handleLoading}) => {
+export const CatchModal =
+    ({
+         visible, setVisible, pokemon,
+         catchChance,
+         setChance, isLoading, setIsLoading, loadingText,
+         setLoadingText, handleLoading
+    }) => {
 
     const handleOnClose = () => {
         setVisible(false);
@@ -20,7 +26,6 @@ export const CatchModal =  ({visible, setVisible, pokemon, catchChance, setChanc
     }
 
     const handleThrow = () => {
-        setLoadingText(FIRST_TEXT);
         setTimeout(() => {
             setIsLoading(false);
         }, 4000);
@@ -39,7 +44,6 @@ export const CatchModal =  ({visible, setVisible, pokemon, catchChance, setChanc
                 visible={visible}
                 markClosable={true}
                 transparent
-                afterClose={() => handleOnClose()}
                 css={ModalCSS}
             >
                 {isLoading ?
@@ -76,8 +80,8 @@ export const CatchModal =  ({visible, setVisible, pokemon, catchChance, setChanc
                                     </div>
                                     <WhiteSpace size='md'/>
                                     <div className='button-container'>
-                                        <Button onClick={handleRetry}>Retry</Button>
-                                        <Button onClick={handleOnClose}>Close</Button>
+                                        <Button className='retry-button' onClick={handleRetry}>Retry</Button>
+                                        <Button className='cancel-button' onClick={handleOnClose}>Close</Button>
                                     </div>
                                 </div>
                         }

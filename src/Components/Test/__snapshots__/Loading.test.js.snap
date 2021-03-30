@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Loading should render Loading 1`] = `
+<EmotionCssPropInternal
+  __EMOTION_LABEL_PLEASE_DO_NOT_USE__="Loading"
+  __EMOTION_TYPE_PLEASE_DO_NOT_USE__="div"
+  css={
+    Object {
+      "map": undefined,
+      "name": "1e5c0vr",
+      "next": undefined,
+      "styles": "
+   margin-top: 5%;
+   margin-bottom: 5%;
+   text-align: center;
+   border-radius: 4px;
+   width: 100%;
+",
+      "toString": [Function],
+    }
+  }
+>
+  <Spin
+    size="large"
+    spinning={true}
+    wrapperClassName=""
+  />
+</EmotionCssPropInternal>
+`;

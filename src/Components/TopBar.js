@@ -26,20 +26,20 @@ export const TopBar = () => {
     return(
         <div css={TopBarCSS}>
             <div css={ContainerPokeballCSS}>
-                <a onClick={handlePokeballClick}><img src='/images/PinClipart.com_pokeball-clip-art_843046.png' alt='PokeBall' width='170px'/></a>
+                <a className='pokeball-button' onClick={handlePokeballClick}><img src='/images/PinClipart.com_pokeball-clip-art_843046.png' alt='PokeBall' width='170px'/></a>
                 <h2>GOTTA CATCH 'EM ALL!</h2>
             </div>
             <div css={ContainerGithubCSS}>
-                <a target="_blank" href='https://github.com/AldiPrayogi/poke-tokopedia' rel='noreferrer'>GitHub</a>
+                <a className='github-button' target="_blank" href='https://github.com/AldiPrayogi/poke-tokopedia' rel='noreferrer'>GitHub</a>
             </div>
                 <div css={NavigationButtonCSS}>
-                    <a onClick={handleListClick}>Pokemon List</a>
+                    <a onClick={handleListClick} className='pokemon-list-button'>Pokemon List</a>
                 </div>
                 <div css={NavigationButtonCSS}>
-                    <a onClick={handleHomeClick} style={{margin: "2vw"}}>Home</a>
+                    <a onClick={handleHomeClick} style={{margin: "2vw"}} className='home-button'>Home</a>
                 </div>
                 <div css={NavigationButtonCSS}>
-                    <a onClick={handlePokedexClick}>Your Pokedex</a>
+                    <a onClick={handlePokedexClick}  className='pokedex-button'>Your Pokedex</a>
                 </div>
         </div>
     );

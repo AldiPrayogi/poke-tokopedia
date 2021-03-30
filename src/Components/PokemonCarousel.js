@@ -8,7 +8,7 @@ import {useHistory} from 'react-router-dom';
 export const PokemonCarousel = (data) => {
     const history = useHistory();
 
-    const handleListClick =  (name) => {
+    const handlePokemonClick =  (name) => {
         history.push({
             pathname: `/pokemon-detail/${name}`
         });
@@ -30,12 +30,10 @@ export const PokemonCarousel = (data) => {
                             </div>
                             <WhiteSpace size='xl'/>
                             <img
+                                className='pokemon-image'
                                 src={val.image}
                                 alt={val.name}
-                                onLoad={() => {
-                                    window.dispatchEvent(new Event('resize'));
-                                }}
-                                onClick={() => handleListClick(val.name)}
+                                onClick={() => handlePokemonClick(val.name)}
                             />
                         </div>
                     ))}

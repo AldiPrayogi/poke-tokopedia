@@ -1,0 +1,130 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PokemonCarousel render should render correctly with data 1`] = `
+<EmotionCssPropInternal
+  __EMOTION_LABEL_PLEASE_DO_NOT_USE__="PokemonCarousel"
+  __EMOTION_TYPE_PLEASE_DO_NOT_USE__="div"
+  css={
+    Object {
+      "map": undefined,
+      "name": "djvarp",
+      "next": undefined,
+      "styles": "
+    width: 100%;
+    text-align: center
+    .carousel-container{
+        textAlign: center
+    }
+    .pokemon-name-header{
+        background-color: #222224;
+        width: 110%
+    }
+    .pokemon-name{
+        color: #f0c44d;
+        font-size: 2.7vh;
+        width: 100%;
+        padding-right: 9%;
+    }
+    .am-carousel-wrap{
+        margin-top: 100px important!;
+    }
+    img{
+        height: 25vh;
+        vertical-align: top;
+        padding-right:2%;
+    }
+",
+      "toString": [Function],
+    }
+  }
+>
+  <WingBlank
+    prefixCls="am-wingblank"
+    size="lg"
+  >
+    <Carousel
+      arrows={false}
+      autoplay={false}
+      cellAlign="center"
+      cellSpacing={10}
+      dotActiveStyle={Object {}}
+      dotStyle={Object {}}
+      dots={true}
+      infinite={true}
+      prefixCls="am-carousel"
+      selectedIndex={0}
+      slideWidth={1}
+    >
+      <div
+        className="carousel-container"
+      >
+        <div
+          className="pokemon-name-header"
+        >
+          <h4
+            className="pokemon-name"
+          >
+            IVYSAUR
+          </h4>
+        </div>
+        <WhiteSpace
+          prefixCls="am-whitespace"
+          size="xl"
+        />
+        <img
+          alt="ivysaur"
+          className="pokemon-image"
+          onClick={[Function]}
+          src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/2.png"
+        />
+      </div>
+      <div
+        className="carousel-container"
+      >
+        <div
+          className="pokemon-name-header"
+        >
+          <h4
+            className="pokemon-name"
+          >
+            IVYSAUR
+          </h4>
+        </div>
+        <WhiteSpace
+          prefixCls="am-whitespace"
+          size="xl"
+        />
+        <img
+          alt="ivysaur"
+          className="pokemon-image"
+          onClick={[Function]}
+          src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/2.png"
+        />
+      </div>
+      <div
+        className="carousel-container"
+      >
+        <div
+          className="pokemon-name-header"
+        >
+          <h4
+            className="pokemon-name"
+          >
+            IVYSAUR
+          </h4>
+        </div>
+        <WhiteSpace
+          prefixCls="am-whitespace"
+          size="xl"
+        />
+        <img
+          alt="ivysaur"
+          className="pokemon-image"
+          onClick={[Function]}
+          src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/2.png"
+        />
+      </div>
+    </Carousel>
+  </WingBlank>
+</EmotionCssPropInternal>
+`;

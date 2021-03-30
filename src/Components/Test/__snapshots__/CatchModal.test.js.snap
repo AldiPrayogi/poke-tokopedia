@@ -1,0 +1,442 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CatchModal CatchModal Failed Catch should render correctly with loading false and failed catch 1`] = `
+<div>
+  <EmotionCssPropInternal
+    __EMOTION_LABEL_PLEASE_DO_NOT_USE__="CatchModal"
+    __EMOTION_TYPE_PLEASE_DO_NOT_USE__={[Function]}
+    css={
+      Object {
+        "map": undefined,
+        "name": "rxonfe",
+        "next": undefined,
+        "styles": "
+    max-width: 800px;
+    margin-bottom: 100px;
+    .am-modal-transparent{
+        width: 20vh;
+    }
+    .am-modal-header:{
+        font-weight: bold;
+        border-radius: 10px;
+    }
+    h2{
+        background-color: #222224;
+        color: #f0c44d;
+        font-weight: bolder;
+    }
+    .loading-catch-text{
+        h1{
+            background-color: #222224;
+            color: #f0c44d;
+            font-weight: bolder;
+        }
+        background-color: #373F51;
+        padding: 2vh 0 5px 0;
+    }
+    .pokemon-image{
+        width: 50vw;
+        max-width: 300px;
+        background-image: url('/images/2gfwG.jpg');
+    }
+    .am-modal-content: {
+        background-color: #373F51;
+        padding-top: 0px !important;
+    }
+    .successful-catch-container{
+        background-color: #373F51;
+        h3{
+            font-size: 2.6vw;
+            font-weight: bold;
+            background-color: #373F51;
+            color: white;
+        }
+        h2{
+            font-size: 2.8vh;
+        }
+    }
+    .container{
+        text-align: center;
+        width: 100%;
+        display: inline-block;
+    }
+    .am-button{
+        margin: auto;
+        width: 40%;
+        display: inline-block;
+        color: #f0c44d;
+        background-color: #222224;
+        border-color: #f0c44d;
+    }
+    .failed-catch-container{
+        h1{
+            color: #f0c44d;
+            font-weight: bolder;
+        }
+        background-color: #373F51;
+        padding: 0 0 10px 0;
+    }
+    .failed-catch-text{
+        background-color: #222224;
+        width: 100%;
+        padding: 10px;
+    }
+    .button-container{
+        display: flex;
+        justify-content: space-between;
+        font-weight: bold;
+    }
+    width: 80vw;
+    text-align: center;
+    .button-retry{
+        color: #f0c44d;
+        background-color: #222224;
+    }
+",
+        "toString": [Function],
+      }
+    }
+    markClosable={true}
+    transparent={true}
+    visible={true}
+  >
+    <div>
+      <div
+        className="failed-catch-container"
+      >
+        <div
+          className="failed-catch-text"
+        >
+          <h1>
+            OH NO, THE POKEMON BROKE FREE!
+          </h1>
+        </div>
+        <WhiteSpace
+          prefixCls="am-whitespace"
+          size="md"
+        />
+        <div
+          className="button-container"
+        >
+          <Button
+            activeStyle={Object {}}
+            className="retry-button"
+            disabled={false}
+            inline={false}
+            loading={false}
+            onClick={[Function]}
+            prefixCls="am-button"
+            size="large"
+          >
+            Retry
+          </Button>
+          <Button
+            activeStyle={Object {}}
+            className="cancel-button"
+            disabled={false}
+            inline={false}
+            loading={false}
+            onClick={[Function]}
+            prefixCls="am-button"
+            size="large"
+          >
+            Close
+          </Button>
+        </div>
+      </div>
+    </div>
+  </EmotionCssPropInternal>
+</div>
+`;
+
+exports[`CatchModal CatchModal Loading should render correctly with loading is true 1`] = `
+<div>
+  <EmotionCssPropInternal
+    __EMOTION_LABEL_PLEASE_DO_NOT_USE__="CatchModal"
+    __EMOTION_TYPE_PLEASE_DO_NOT_USE__={[Function]}
+    css={
+      Object {
+        "map": undefined,
+        "name": "rxonfe",
+        "next": undefined,
+        "styles": "
+    max-width: 800px;
+    margin-bottom: 100px;
+    .am-modal-transparent{
+        width: 20vh;
+    }
+    .am-modal-header:{
+        font-weight: bold;
+        border-radius: 10px;
+    }
+    h2{
+        background-color: #222224;
+        color: #f0c44d;
+        font-weight: bolder;
+    }
+    .loading-catch-text{
+        h1{
+            background-color: #222224;
+            color: #f0c44d;
+            font-weight: bolder;
+        }
+        background-color: #373F51;
+        padding: 2vh 0 5px 0;
+    }
+    .pokemon-image{
+        width: 50vw;
+        max-width: 300px;
+        background-image: url('/images/2gfwG.jpg');
+    }
+    .am-modal-content: {
+        background-color: #373F51;
+        padding-top: 0px !important;
+    }
+    .successful-catch-container{
+        background-color: #373F51;
+        h3{
+            font-size: 2.6vw;
+            font-weight: bold;
+            background-color: #373F51;
+            color: white;
+        }
+        h2{
+            font-size: 2.8vh;
+        }
+    }
+    .container{
+        text-align: center;
+        width: 100%;
+        display: inline-block;
+    }
+    .am-button{
+        margin: auto;
+        width: 40%;
+        display: inline-block;
+        color: #f0c44d;
+        background-color: #222224;
+        border-color: #f0c44d;
+    }
+    .failed-catch-container{
+        h1{
+            color: #f0c44d;
+            font-weight: bolder;
+        }
+        background-color: #373F51;
+        padding: 0 0 10px 0;
+    }
+    .failed-catch-text{
+        background-color: #222224;
+        width: 100%;
+        padding: 10px;
+    }
+    .button-container{
+        display: flex;
+        justify-content: space-between;
+        font-weight: bold;
+    }
+    width: 80vw;
+    text-align: center;
+    .button-retry{
+        color: #f0c44d;
+        background-color: #222224;
+    }
+",
+        "toString": [Function],
+      }
+    }
+    markClosable={true}
+    transparent={true}
+    visible={true}
+  >
+    <div>
+      <div
+        className="loading-catch-text"
+      >
+        <WhiteSpace
+          prefixCls="am-whitespace"
+          size="sm"
+        />
+        <h1>
+          YOU THROW A POKEBALL....
+        </h1>
+      </div>
+    </div>
+  </EmotionCssPropInternal>
+</div>
+`;
+
+exports[`CatchModal CatchModal Successful Catch should render correctly with loading false and successful catch 1`] = `
+<div>
+  <EmotionCssPropInternal
+    __EMOTION_LABEL_PLEASE_DO_NOT_USE__="CatchModal"
+    __EMOTION_TYPE_PLEASE_DO_NOT_USE__={[Function]}
+    css={
+      Object {
+        "map": undefined,
+        "name": "rxonfe",
+        "next": undefined,
+        "styles": "
+    max-width: 800px;
+    margin-bottom: 100px;
+    .am-modal-transparent{
+        width: 20vh;
+    }
+    .am-modal-header:{
+        font-weight: bold;
+        border-radius: 10px;
+    }
+    h2{
+        background-color: #222224;
+        color: #f0c44d;
+        font-weight: bolder;
+    }
+    .loading-catch-text{
+        h1{
+            background-color: #222224;
+            color: #f0c44d;
+            font-weight: bolder;
+        }
+        background-color: #373F51;
+        padding: 2vh 0 5px 0;
+    }
+    .pokemon-image{
+        width: 50vw;
+        max-width: 300px;
+        background-image: url('/images/2gfwG.jpg');
+    }
+    .am-modal-content: {
+        background-color: #373F51;
+        padding-top: 0px !important;
+    }
+    .successful-catch-container{
+        background-color: #373F51;
+        h3{
+            font-size: 2.6vw;
+            font-weight: bold;
+            background-color: #373F51;
+            color: white;
+        }
+        h2{
+            font-size: 2.8vh;
+        }
+    }
+    .container{
+        text-align: center;
+        width: 100%;
+        display: inline-block;
+    }
+    .am-button{
+        margin: auto;
+        width: 40%;
+        display: inline-block;
+        color: #f0c44d;
+        background-color: #222224;
+        border-color: #f0c44d;
+    }
+    .failed-catch-container{
+        h1{
+            color: #f0c44d;
+            font-weight: bolder;
+        }
+        background-color: #373F51;
+        padding: 0 0 10px 0;
+    }
+    .failed-catch-text{
+        background-color: #222224;
+        width: 100%;
+        padding: 10px;
+    }
+    .button-container{
+        display: flex;
+        justify-content: space-between;
+        font-weight: bold;
+    }
+    width: 80vw;
+    text-align: center;
+    .button-retry{
+        color: #f0c44d;
+        background-color: #222224;
+    }
+",
+        "toString": [Function],
+      }
+    }
+    markClosable={true}
+    transparent={true}
+    visible={true}
+  >
+    <div>
+      <div
+        className="successful-catch-container"
+      >
+        <div>
+          <h2>
+            CONGRATULATIONS!
+          </h2>
+        </div>
+        <div>
+          <img
+            alt="Pokemon"
+            className="pokemon-image"
+            src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/3.png"
+          />
+        </div>
+        <WhiteSpace
+          prefixCls="am-whitespace"
+          size="md"
+        />
+        <div>
+          <h3>
+            GOTCHA!
+          </h3>
+          <h3>
+            POKEMON
+             WAS CAUGHT!
+          </h3>
+        </div>
+        <WhiteSpace
+          prefixCls="am-whitespace"
+          size="md"
+        />
+        <NameForm
+          pokemon={
+            Object {
+              "abilities": Array [
+                Object {
+                  "ability": Object {
+                    "name": "abc",
+                  },
+                },
+              ],
+              "gender": "Male",
+              "moves": Array [
+                Object {
+                  "move": Object {
+                    "name": "abc",
+                  },
+                },
+              ],
+              "name": "Pokemon",
+              "nickName": "Bulb",
+              "pokemon": Object {
+                "name": "pokemon",
+              },
+              "sprites": Object {
+                "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/3.png",
+              },
+              "types": Array [
+                Object {
+                  "type": Object {
+                    "name": "abc",
+                  },
+                },
+              ],
+            }
+          }
+        />
+      </div>
+    </div>
+  </EmotionCssPropInternal>
+</div>
+`;

@@ -10,7 +10,7 @@ import {useHistory} from 'react-router-dom';
 import {PokemonData} from '../Fixtures/PokemonData'
 const ls = require('local-storage');
 
-const GET_POKEMONS = gql`
+export const GET_POKEMONS = gql`
   query pokemons($limit: Int, $offset: Int) {
     pokemons(limit: $limit, offset: $offset) {
       count
@@ -38,7 +38,7 @@ export const PokemonListPage =  () => {
 
     const history = useHistory();
 
-    const handlePokemonClick =  (name) => {
+    const handlePokemonClick = (name) => {
         history.push({
             pathname: `/pokemon-detail/${name}`
         });

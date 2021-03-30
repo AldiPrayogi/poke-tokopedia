@@ -10,7 +10,7 @@ import {Loading} from "../Components/Loading";
 import {PokemonData} from '../Fixtures/PokemonData';
 import {useHistory} from 'react-router-dom';
 
-const GET_POKEMONS = gql`
+export const GET_POKEMONS = gql`
   query pokemons($limit: Int, $offset: Int) {
     pokemons(limit: $limit, offset: $offset) {
       results {
