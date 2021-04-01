@@ -2,7 +2,6 @@
 
 import React, {useState} from 'react';
 import {Button, Card, List, Modal, WhiteSpace, WingBlank} from "antd-mobile";
-import {TopBar} from "../Components/TopBar";
 import {
     HomePageCSS,
     PokedexContainer,
@@ -47,9 +46,6 @@ export const PokedexPage = () => {
 
     return (
         <div>
-            <div>
-                <TopBar/>
-            </div>
             <div css={HomePageCSS}>
                 <div css={TitleContainerCSS}>
                     <WhiteSpace size='xl'/>

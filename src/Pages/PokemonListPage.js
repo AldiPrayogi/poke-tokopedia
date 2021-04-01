@@ -1,7 +1,6 @@
 /** @jsxImportSource @emotion/react */
 
 import React, {useState} from 'react';
-import {TopBar} from "../Components/TopBar";
 import {PaginationContainer, PokemonListPageCSS} from "../Styling/PagesCSS";
 import {Card, Grid, WhiteSpace, Pagination} from "antd-mobile";
 import {gql, useQuery} from "@apollo/client";
@@ -90,9 +89,6 @@ export const PokemonListPage =  () => {
 
     return (
         <div>
-            <div>
-                <TopBar/>
-            </div>
             <div css={PokemonListPageCSS}>
                 <div className='pokemon-list-title'>
                     <WhiteSpace size='xl'/>

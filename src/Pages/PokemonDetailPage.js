@@ -2,7 +2,6 @@
 
 import React, {useState} from 'react';
 import {Card, WingBlank, WhiteSpace, Button, Accordion} from "antd-mobile";
-import {TopBar} from "../Components/TopBar";
 import {PokemonCardsCSS, PokemonDetailPageCSS} from '../Styling/PagesCSS'
 import {gql, useQuery} from "@apollo/client";
 import {checkBackgroundColor, FIRST_TEXT} from '../Utils/Utils';
@@ -91,9 +90,6 @@ export const PokemonDetailPage = () => {
     }
     return (
         <div>
-            <div>
-                <TopBar/>
-            </div>
             <div css={PokemonDetailPageCSS}>
                 <div className='pokemon-list-title'>
                     <WhiteSpace size='xl'/>

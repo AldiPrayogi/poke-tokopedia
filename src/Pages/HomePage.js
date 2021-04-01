@@ -2,7 +2,6 @@
 
 import React, {useState} from 'react';
 import {WhiteSpace, Card, WingBlank, SearchBar} from "antd-mobile";
-import {TopBar} from "../Components/TopBar";
 import { HomePageCSS, TitleContainerCSS, PokemonCardCarousel} from '../Styling/PagesCSS'
 import {PokemonCarousel} from "../Components/PokemonCarousel";
 import { gql, useQuery } from '@apollo/client';
@@ -54,9 +53,6 @@ export const HomePage = () => {
 
     return (
         <div>
-            <div>
-                <TopBar/>
-            </div>
             <div css={HomePageCSS}>
                 <div css={TitleContainerCSS}>
                     <WhiteSpace size='xl'/>
