@@ -389,7 +389,7 @@ export const ReleaseConfirmationModalCSS = css`
         h2{
             color: ${GOLDEN_YELLOW};
         }
-        background-color: ${GOLDEN_YELLOW};
+        background-color: ${ELECTRIC_BLUE};
         padding: 0 0 10px 0;
         h1{
             font-weight: bolder;
