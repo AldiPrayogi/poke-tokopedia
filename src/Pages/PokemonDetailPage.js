@@ -62,8 +62,6 @@ export const PokemonDetailPage = () => {
         pokemonData = data.pokemon
         if(pokemonData.name === null){
             pokemonData = DetailedPokemonData;
-            console.log(pokemonData);
-            console.log('masuk');
         }
     }
 

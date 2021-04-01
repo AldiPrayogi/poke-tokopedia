@@ -27,14 +27,12 @@ export const PokedexPage = () => {
     }
 
     const handleConfirmedRelease = () => {
-        console.log(deletedPokemon);
         const modifiedPokemon = pokemonList.filter(item => {
             if(item.nickname !== deletedPokemon.nickname){
                 return item;
             }
             return null;
         })
-        console.log(modifiedPokemon);
         ls.set('pokemonList', modifiedPokemon);
         setPokemonList(modifiedPokemon);
         if(modifiedPokemon.length === 0){
