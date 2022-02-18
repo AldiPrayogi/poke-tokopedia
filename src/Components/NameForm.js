@@ -33,7 +33,6 @@ export const NameForm = ({setVisible, pokemon}) => {
         validate: values => {
             const errors = {};
             const truth = temp.some(item =>  item.nickname === values.nickname);
-            console.log(truth);
             if(truth){
                 errors.nickname = 'Nickname already taken';
             }

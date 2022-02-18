@@ -30,7 +30,7 @@ export const CatchModal =  ({visible, setVisible, pokemon, catchChance, setChanc
     const handleRetry = () => {
         setLoadingText(FIRST_TEXT);
         setIsLoading(true);
-        setChance(Math.floor((Math.random() * 100) + 1));
+        setChance(Math.floor((Math.random() * 50) + 1));
         handleThrow();
     }
     return (

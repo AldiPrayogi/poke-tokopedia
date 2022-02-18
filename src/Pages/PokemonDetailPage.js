@@ -82,7 +82,7 @@ export const PokemonDetailPage = () => {
     }
 
     const handlePokemonClick = () => {
-        setChance(Math.floor((Math.random() * 100) + 1));
+        setChance(Math.floor((Math.random() * 50) + 1));
         handleLoading();
         setIsCatchModalVisible(true);
     }

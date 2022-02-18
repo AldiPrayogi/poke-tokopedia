@@ -44,7 +44,6 @@ export const HomePage = () => {
 
     const onChange = (value) => {
         setSearchValue(value)
-        console.log(value);
     }
 
     const onSubmit = (value) => {
