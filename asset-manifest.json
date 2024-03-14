@@ -1,27 +1,25 @@
 {
   "files": {
-    "main.css": "/poke-tokopedia/static/css/main.6dea0f05.chunk.css",
-    "main.js": "/poke-tokopedia/static/js/main.e5b98079.chunk.js",
-    "main.js.map": "/poke-tokopedia/static/js/main.e5b98079.chunk.js.map",
-    "runtime-main.js": "/poke-tokopedia/static/js/runtime-main.f5d146e4.js",
-    "runtime-main.js.map": "/poke-tokopedia/static/js/runtime-main.f5d146e4.js.map",
-    "static/css/2.667ec64c.chunk.css": "/poke-tokopedia/static/css/2.667ec64c.chunk.css",
-    "static/js/2.83ed048c.chunk.js": "/poke-tokopedia/static/js/2.83ed048c.chunk.js",
-    "static/js/2.83ed048c.chunk.js.map": "/poke-tokopedia/static/js/2.83ed048c.chunk.js.map",
-    "static/js/3.dac4276e.chunk.js": "/poke-tokopedia/static/js/3.dac4276e.chunk.js",
-    "static/js/3.dac4276e.chunk.js.map": "/poke-tokopedia/static/js/3.dac4276e.chunk.js.map",
-    "index.html": "/poke-tokopedia/index.html",
-    "static/css/2.667ec64c.chunk.css.map": "/poke-tokopedia/static/css/2.667ec64c.chunk.css.map",
-    "static/css/main.6dea0f05.chunk.css.map": "/poke-tokopedia/static/css/main.6dea0f05.chunk.css.map",
-    "static/js/2.83ed048c.chunk.js.LICENSE.txt": "/poke-tokopedia/static/js/2.83ed048c.chunk.js.LICENSE.txt",
-    "static/media/2gfwG.0b7e9d57.jpg": "/poke-tokopedia/static/media/2gfwG.0b7e9d57.jpg",
-    "static/media/PinClipart.com_pokeball-clip-art_843046.4fe802e6.png": "/poke-tokopedia/static/media/PinClipart.com_pokeball-clip-art_843046.4fe802e6.png"
+    "main.css": "./static/css/main.6dea0f05.chunk.css",
+    "main.js": "./static/js/main.0cb92ffd.chunk.js",
+    "main.js.map": "./static/js/main.0cb92ffd.chunk.js.map",
+    "runtime-main.js": "./static/js/runtime-main.575dfe5e.js",
+    "runtime-main.js.map": "./static/js/runtime-main.575dfe5e.js.map",
+    "static/css/2.39b251d3.chunk.css": "./static/css/2.39b251d3.chunk.css",
+    "static/js/2.03442e36.chunk.js": "./static/js/2.03442e36.chunk.js",
+    "static/js/2.03442e36.chunk.js.map": "./static/js/2.03442e36.chunk.js.map",
+    "static/js/3.939c2289.chunk.js": "./static/js/3.939c2289.chunk.js",
+    "static/js/3.939c2289.chunk.js.map": "./static/js/3.939c2289.chunk.js.map",
+    "index.html": "./index.html",
+    "static/css/2.39b251d3.chunk.css.map": "./static/css/2.39b251d3.chunk.css.map",
+    "static/css/main.6dea0f05.chunk.css.map": "./static/css/main.6dea0f05.chunk.css.map",
+    "static/js/2.03442e36.chunk.js.LICENSE.txt": "./static/js/2.03442e36.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.f5d146e4.js",
-    "static/css/2.667ec64c.chunk.css",
-    "static/js/2.83ed048c.chunk.js",
+    "static/js/runtime-main.575dfe5e.js",
+    "static/css/2.39b251d3.chunk.css",
+    "static/js/2.03442e36.chunk.js",
     "static/css/main.6dea0f05.chunk.css",
-    "static/js/main.e5b98079.chunk.js"
+    "static/js/main.0cb92ffd.chunk.js"
   ]
 }
